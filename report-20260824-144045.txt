@@ -1,0 +1,4 @@
+Capture: /home/fc9190n/FP-check-expanded.core
+Analysed: Mon Aug 24 02:40:45 PM BST 2026
+
+===== windows.pslist =====

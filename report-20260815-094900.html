@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>windows.reflective_load.ReflectiveLoad</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e1e; --panel: #252526; --border: #3c3c3c;
+    --text: #d4d4d4; --head: #4ec9b0; --accent: #569cd6;
+    --pos: #4ec9b0; --neg: #f14c4c; --partial: #dcdcaa;
+  }
+  body {
+    background: var(--bg); color: var(--text); padding: 2rem;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  h1 { font-size: 1.1rem; color: var(--accent); margin: 0 0 0.5rem; font-weight: 600; }
+  .meta { color: #808080; font-size: 0.8rem; margin-bottom: 1rem; line-height: 1.5; }
+  .legend { font-size: 0.8rem; color: #808080; margin-bottom: 0.75rem; }
+  .legend span { margin-right: 1.25rem; font-weight: 600; }
+  .legend .pos { color: var(--pos); }
+  .legend .neg { color: var(--neg); }
+  .legend .partial { color: var(--partial); }
+  .table-scroll { overflow-x: auto; max-width: 100%; }
+  table {
+    border-collapse: collapse; width: 100%; min-width: 900px;
+    font-family: "Consolas", "Menlo", monospace; font-size: 0.85rem;
+    background: var(--panel);
+  }
+  th, td { border: 1px solid var(--border); padding: 6px 14px; text-align: left; white-space: nowrap; }
+  td:last-child { white-space: normal; word-break: break-word; min-width: 320px; }
+  th { background: #2d2d2d; color: var(--head); position: sticky; top: 0; }
+  tr:nth-child(even) td { background: #2a2a2a; }
+  tr:hover td { background: #333333; }
+  td.pos { color: var(--pos); font-weight: 600; }
+  td.neg { color: var(--neg); }
+  td.partial { color: var(--partial); }
+</style>
+</head>
+<body>
+<h1>windows.reflective_load.ReflectiveLoad</h1>
+<div class="meta"><div>Generated 2026-08-15 09:49</div><div>Plugin: windows.reflective_load.ReflectiveLoad</div><div>Capture: /home/fc9190n/T1620-poc-capture.core</div><div>PID filter: 1372</div><div>Command: python3 vol.py -p /home/fc9190n/dissertation-detection-framework/volatility-plugins -f /home/fc9190n/T1620-poc-capture.core windows.reflective_load.ReflectiveLoad --pid 1372</div>1 row(s)</div>
+<div class="legend">
+  <span class="pos">green</span> = Detected / True &nbsp;
+  <span class="neg">red</span> = Missed / False &nbsp;
+  <span class="partial">amber</span> = Partial
+</div>
+<div class="table-scroll">
+<table>
+<thead><tr><th>PID</th><th>Process</th><th>Start VPN</th><th>End VPN</th><th>Also flagged by malfind</th><th>ATT&amp;CK Technique</th><th>Reason</th></tr></thead>
+<tbody>
+<tr><td class="">1372</td><td class="">powershell.exe</td><td class="">0x256d0590000</td><td class="">0x256d0590fff</td><td class="neg">False</td><td class="">T1620</td><td class="">Valid MZ/PE header; absent from InLoad/InInit/InMem; no backing file</td></tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

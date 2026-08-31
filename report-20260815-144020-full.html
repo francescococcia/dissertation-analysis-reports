@@ -1,0 +1,569 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>report-20260815-144020</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e1e; --panel: #252526; --border: #3c3c3c;
+    --text: #d4d4d4; --head: #4ec9b0; --accent: #569cd6;
+    --pos: #4ec9b0; --neg: #f14c4c; --partial: #dcdcaa;
+  }
+  body {
+    background: var(--bg); color: var(--text); padding: 2rem;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    max-width: 1100px; margin: 0 auto;
+  }
+  h1 { font-size: 1.2rem; color: var(--accent); margin: 0 0 0.5rem; font-weight: 600; }
+  .meta { color: #808080; font-size: 0.8rem; margin-bottom: 1.5rem; line-height: 1.5; }
+  details {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 6px;
+    margin-bottom: 0.75rem; overflow: hidden;
+  }
+  summary {
+    padding: 10px 16px; cursor: pointer; font-weight: 600; color: var(--head);
+    font-family: "Consolas", "Menlo", monospace; font-size: 0.9rem;
+    list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "\25B8  "; color: #808080; }
+  details[open] summary::before { content: "\25BE  "; }
+  summary:hover { background: #2a2a2a; }
+  pre {
+    margin: 0; padding: 14px 16px; border-top: 1px solid var(--border);
+    font-family: "Consolas", "Menlo", monospace; font-size: 0.8rem;
+    white-space: pre-wrap; word-break: break-word; overflow-x: auto;
+  }
+  .legend { font-size: 0.8rem; color: #808080; padding: 10px 16px 0; }
+  .legend span { margin-right: 1.25rem; font-weight: 600; }
+  .legend .pos { color: var(--pos); }
+  .legend .neg { color: var(--neg); }
+  .legend .partial { color: var(--partial); }
+  .table-scroll { overflow-x: auto; margin: 10px 16px 16px; }
+  table {
+    border-collapse: collapse; width: 100%; min-width: 900px;
+    font-family: "Consolas", "Menlo", monospace; font-size: 0.85rem;
+  }
+  th, td { border: 1px solid var(--border); padding: 6px 12px; text-align: left; white-space: nowrap; }
+  td:last-child { white-space: normal; word-break: break-word; min-width: 320px; }
+  th { background: #2d2d2d; color: var(--head); }
+  tr:nth-child(even) td { background: #2a2a2a; }
+  td.pos { color: var(--pos); font-weight: 600; }
+  td.neg { color: var(--neg); }
+  td.partial { color: var(--partial); }
+</style>
+</head>
+<body>
+<h1>report-20260815-144020</h1>
+<div class="meta">Capture: /home/fc9190n/T1620-3-capture.core<br>Analysed: Sat Aug 15 02:40:20 PM BST 2026</div>
+<details><summary>windows.pslist</summary><pre>Volatility 3 Framework 2.28.2
+
+PID	PPID	ImageFileName	Offset(V)	Threads	Handles	SessionId	Wow64	CreateTime	ExitTime	File output
+
+4	0	System	0x948b420bb040	123	-	N/A	False	2026-08-15 14:13:09.000000 UTC	N/A	Disabled
+100	4	Registry	0x948b421ca040	4	-	N/A	False	2026-08-15 14:13:04.000000 UTC	N/A	Disabled
+344	4	smss.exe	0x948b425ef080	2	-	N/A	False	2026-08-15 14:13:10.000000 UTC	N/A	Disabled
+440	428	csrss.exe	0x948b42ec50c0	9	-	0	False	2026-08-15 14:13:16.000000 UTC	N/A	Disabled
+512	504	csrss.exe	0x948b42ff7140	10	-	1	False	2026-08-15 14:13:16.000000 UTC	N/A	Disabled
+520	428	wininit.exe	0x948b430020c0	1	-	0	False	2026-08-15 14:13:16.000000 UTC	N/A	Disabled
+576	504	winlogon.exe	0x948b4302c080	3	-	1	False	2026-08-15 14:13:16.000000 UTC	N/A	Disabled
+644	520	services.exe	0x948b4305f080	8	-	0	False	2026-08-15 14:13:17.000000 UTC	N/A	Disabled
+652	520	lsass.exe	0x948b43061080	6	-	0	False	2026-08-15 14:13:17.000000 UTC	N/A	Disabled
+768	644	svchost.exe	0x948b430dc240	9	-	0	False	2026-08-15 14:13:18.000000 UTC	N/A	Disabled
+792	576	fontdrvhost.ex	0x948b4310c140	5	-	1	False	2026-08-15 14:13:18.000000 UTC	N/A	Disabled
+800	520	fontdrvhost.ex	0x948b4310e140	5	-	0	False	2026-08-15 14:13:18.000000 UTC	N/A	Disabled
+892	644	svchost.exe	0x948b431472c0	7	-	0	False	2026-08-15 14:13:19.000000 UTC	N/A	Disabled
+948	644	svchost.exe	0x948b4316e240	3	-	0	False	2026-08-15 14:13:19.000000 UTC	N/A	Disabled
+1020	576	dwm.exe	0x948b431b6080	17	-	1	False	2026-08-15 14:13:19.000000 UTC	N/A	Disabled
+444	644	svchost.exe	0x948b431f4280	2	-	0	False	2026-08-15 14:13:20.000000 UTC	N/A	Disabled
+608	644	svchost.exe	0x948b4624a240	5	-	0	False	2026-08-15 14:13:20.000000 UTC	N/A	Disabled
+788	644	svchost.exe	0x948b4624e300	2	-	0	False	2026-08-15 14:13:20.000000 UTC	N/A	Disabled
+912	644	svchost.exe	0x948b4624c300	4	-	0	False	2026-08-15 14:13:20.000000 UTC	N/A	Disabled
+1072	644	svchost.exe	0x948b462962c0	3	-	0	False	2026-08-15 14:13:20.000000 UTC	N/A	Disabled
+1136	644	svchost.exe	0x948b42ff8080	8	-	0	False	2026-08-15 14:13:20.000000 UTC	N/A	Disabled
+1236	644	VBoxService.ex	0x948b4630c240	14	-	0	False	2026-08-15 14:13:21.000000 UTC	N/A	Disabled
+1272	644	svchost.exe	0x948b4630f2c0	3	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	Disabled
+1304	644	svchost.exe	0x948b463512c0	5	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	Disabled
+1328	644	svchost.exe	0x948b46355300	2	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	Disabled
+1368	644	svchost.exe	0x948b42fee080	7	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	Disabled
+1376	644	svchost.exe	0x948b46303080	6	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	Disabled
+1420	644	svchost.exe	0x948b463b5240	3	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	Disabled
+1428	644	svchost.exe	0x948b463b82c0	5	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	Disabled
+1444	644	svchost.exe	0x948b463bd240	3	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	Disabled
+1636	644	svchost.exe	0x948b46441240	2	-	0	False	2026-08-15 13:13:24.000000 UTC	N/A	Disabled
+1648	644	svchost.exe	0x948b4645e240	7	-	0	False	2026-08-15 13:13:24.000000 UTC	N/A	Disabled
+1688	644	svchost.exe	0x948b4214a080	4	-	0	False	2026-08-15 13:13:24.000000 UTC	N/A	Disabled
+1748	644	svchost.exe	0x948b42108080	9	-	0	False	2026-08-15 13:13:25.000000 UTC	N/A	Disabled
+1760	644	svchost.exe	0x948b4210d080	3	-	0	False	2026-08-15 13:13:25.000000 UTC	N/A	Disabled
+1816	644	svchost.exe	0x948b4209c080	3	-	0	False	2026-08-15 13:13:25.000000 UTC	N/A	Disabled
+1868	644	svchost.exe	0x948b4207b080	6	-	0	False	2026-08-15 13:13:25.000000 UTC	N/A	Disabled
+1904	644	svchost.exe	0x948b4652b300	14	-	0	False	2026-08-15 13:13:25.000000 UTC	N/A	Disabled
+1928	644	svchost.exe	0x948b4653b300	2	-	0	False	2026-08-15 13:13:26.000000 UTC	N/A	Disabled
+2000	644	svchost.exe	0x948b46574240	4	-	0	False	2026-08-15 13:13:26.000000 UTC	N/A	Disabled
+2020	644	svchost.exe	0x948b46578300	5	-	0	False	2026-08-15 13:13:26.000000 UTC	N/A	Disabled
+2236	644	spoolsv.exe	0x948b4657d080	7	-	0	False	2026-08-15 13:13:29.000000 UTC	N/A	Disabled
+2280	644	svchost.exe	0x948b46575080	8	-	0	False	2026-08-15 13:13:29.000000 UTC	N/A	Disabled
+2288	644	svchost.exe	0x948b465e80c0	6	-	0	False	2026-08-15 13:13:29.000000 UTC	N/A	Disabled
+2316	644	svchost.exe	0x948b43096080	9	-	0	False	2026-08-15 13:13:29.000000 UTC	N/A	Disabled
+2340	644	svchost.exe	0x948b4667a080	5	-	0	False	2026-08-15 13:13:29.000000 UTC	N/A	Disabled
+2416	644	svchost.exe	0x948b4308d240	2	-	0	False	2026-08-15 13:13:30.000000 UTC	N/A	Disabled
+2424	644	svchost.exe	0x948b46718080	2	-	0	False	2026-08-15 13:13:30.000000 UTC	N/A	Disabled
+2440	644	svchost.exe	0x948b46717080	5	-	0	False	2026-08-15 13:13:30.000000 UTC	N/A	Disabled
+2448	644	MpDefenderCore	0x948b46716080	9	-	0	False	2026-08-15 13:13:30.000000 UTC	N/A	Disabled
+2476	644	svchost.exe	0x948b46715080	3	-	0	False	2026-08-15 13:13:30.000000 UTC	N/A	Disabled
+2516	644	svchost.exe	0x948b46714080	3	-	0	False	2026-08-15 13:13:30.000000 UTC	N/A	Disabled
+2540	644	svchost.exe	0x948b467130c0	4	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	Disabled
+2560	644	Sysmon64.exe	0x948b466f0080	17	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	Disabled
+2568	644	svchost.exe	0x948b466ef080	15	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	Disabled
+2652	644	MsMpEng.exe	0x948b466ee080	21	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	Disabled
+2688	644	svchost.exe	0x948b466ed080	11	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	Disabled
+2696	644	svchost.exe	0x948b4680d080	5	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	Disabled
+2728	644	wlms.exe	0x948b4680c080	2	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	Disabled
+2780	644	svchost.exe	0x948b4680b080	2	-	0	False	2026-08-15 13:13:32.000000 UTC	N/A	Disabled
+2912	644	sppsvc.exe	0x948b46808080	4	-	0	False	2026-08-15 13:13:33.000000 UTC	N/A	Disabled
+3080	644	svchost.exe	0x948b46807080	12	-	0	False	2026-08-15 13:13:34.000000 UTC	N/A	Disabled
+3288	644	svchost.exe	0x948b46a8f300	4	-	0	False	2026-08-15 13:13:35.000000 UTC	N/A	Disabled
+3304	2316	AggregatorHost	0x948b46a97080	2	-	0	False	2026-08-15 13:13:36.000000 UTC	N/A	Disabled
+3456	768	dllhost.exe	0x948b46b8d080	4	-	0	False	2026-08-15 13:13:37.000000 UTC	N/A	Disabled
+3988	768	unsecapp.exe	0x948b46cee280	1	-	0	False	2026-08-15 13:13:45.000000 UTC	N/A	Disabled
+3444	768	WmiPrvSE.exe	0x948b46ce5080	4	-	0	False	2026-08-15 13:13:47.000000 UTC	N/A	Disabled
+3852	2000	sihost.exe	0x948b46cbb080	9	-	1	False	2026-08-15 13:13:50.000000 UTC	N/A	Disabled
+3804	644	svchost.exe	0x948b46ce4080	5	-	1	False	2026-08-15 13:13:50.000000 UTC	N/A	Disabled
+3872	644	svchost.exe	0x948b46cea300	3	-	1	False	2026-08-15 13:13:51.000000 UTC	N/A	Disabled
+3956	1648	taskhostw.exe	0x948b46eec340	4	-	1	False	2026-08-15 13:13:51.000000 UTC	N/A	Disabled
+2072	1648	MicrosoftEdgeU	0x948b46ee80c0	4	-	0	True	2026-08-15 13:13:51.000000 UTC	N/A	Disabled
+388	644	svchost.exe	0x948b46f98240	3	-	0	False	2026-08-15 13:13:52.000000 UTC	N/A	Disabled
+1088	644	svchost.exe	0x948b46fa2280	4	-	0	False	2026-08-15 13:13:52.000000 UTC	N/A	Disabled
+4124	1088	ctfmon.exe	0x948b46fcb280	9	-	1	False	2026-08-15 13:13:53.000000 UTC	N/A	Disabled
+4284	644	svchost.exe	0x948b47070240	2	-	0	False	2026-08-15 13:13:54.000000 UTC	N/A	Disabled
+4296	644	svchost.exe	0x948b470742c0	4	-	0	False	2026-08-15 13:13:54.000000 UTC	N/A	Disabled
+4304	576	userinit.exe	0x948b47078380	0	-	1	False	2026-08-15 13:13:54.000000 UTC	2026-08-15 13:14:20.000000 UTC	Disabled
+4364	4304	explorer.exe	0x948b46cb6080	35	-	1	False	2026-08-15 13:13:54.000000 UTC	N/A	Disabled
+4748	768	StartMenuExper	0x948b46a8c080	6	-	1	False	2026-08-15 13:14:01.000000 UTC	N/A	Disabled
+4776	768	TextInputHost.	0x948b46ca4080	9	-	1	False	2026-08-15 13:14:01.000000 UTC	N/A	Disabled
+4832	768	SppExtComObj.E	0x948b4712e280	1	-	0	False	2026-08-15 13:14:01.000000 UTC	N/A	Disabled
+5008	768	RuntimeBroker.	0x948b47263300	1	-	1	False	2026-08-15 13:14:02.000000 UTC	N/A	Disabled
+4032	768	SearchApp.exe	0x948b472a0080	41	-	1	False	2026-08-15 13:14:05.000000 UTC	N/A	Disabled
+1976	768	RuntimeBroker.	0x948b47356300	7	-	1	False	2026-08-15 13:14:07.000000 UTC	N/A	Disabled
+732	768	RuntimeBroker.	0x948b47466300	3	-	1	False	2026-08-15 13:14:11.000000 UTC	N/A	Disabled
+5192	644	NisSrv.exe	0x948b475293c0	3	-	0	False	2026-08-15 13:14:13.000000 UTC	N/A	Disabled
+5380	644	svchost.exe	0x948b47550240	9	-	0	False	2026-08-15 13:14:15.000000 UTC	N/A	Disabled
+5716	4364	VBoxTray.exe	0x948b47350080	13	-	1	False	2026-08-15 13:14:19.000000 UTC	N/A	Disabled
+6112	644	svchost.exe	0x948b475b7080	10	-	0	False	2026-08-15 13:14:28.000000 UTC	N/A	Disabled
+5260	644	svchost.exe	0x948b475bf080	1	-	0	False	2026-08-15 13:14:28.000000 UTC	N/A	Disabled
+1672	644	svchost.exe	0x948b4751c080	22	-	0	False	2026-08-15 13:15:32.000000 UTC	N/A	Disabled
+5860	644	msdtc.exe	0x948b476f2080	9	-	0	False	2026-08-15 13:15:33.000000 UTC	N/A	Disabled
+5124	644	svchost.exe	0x948b475c5300	6	-	0	False	2026-08-15 13:15:33.000000 UTC	N/A	Disabled
+2392	644	svchost.exe	0x948b467cb080	1	-	0	False	2026-08-15 13:15:34.000000 UTC	N/A	Disabled
+2668	644	svchost.exe	0x948b4676f080	8	-	0	False	2026-08-15 13:15:34.000000 UTC	N/A	Disabled
+616	644	svchost.exe	0x948b47578080	4	-	1	False	2026-08-15 13:18:19.000000 UTC	N/A	Disabled
+3120	4364	powershell.exe	0x948b4211e080	10	-	1	False	2026-08-15 13:19:06.000000 UTC	N/A	Disabled
+4060	3120	conhost.exe	0x948b42142080	4	-	1	False	2026-08-15 13:19:06.000000 UTC	N/A	Disabled
+328	768	dllhost.exe	0x948b420f2080	6	-	1	False	2026-08-15 13:22:30.000000 UTC	N/A	Disabled
+176	768	ApplicationFra	0x948b42148080	2	-	1	False	2026-08-15 13:22:32.000000 UTC	N/A	Disabled
+4220	644	SecurityHealth	0x948b47584080	5	-	0	False	2026-08-15 13:22:34.000000 UTC	N/A	Disabled
+808	4364	notepad.exe	0x948b420bc080	3	-	1	False	2026-08-15 13:23:01.000000 UTC	N/A	Disabled
+3816	644	svchost.exe	0x948b46dcd080	3	-	0	False	2026-08-15 13:30:03.000000 UTC	N/A	Disabled</pre></details>
+<details><summary>windows.pstree</summary><pre>Volatility 3 Framework 2.28.2
+
+PID	PPID	ImageFileName	Offset(V)	Threads	Handles	SessionId	Wow64	CreateTime	ExitTime	Audit	Cmd	Path
+
+4	0	System	0x948b420bb040	123	-	N/A	False	2026-08-15 14:13:09.000000 UTC	N/A	-	-	-
+* 344	4	smss.exe	0x948b425ef080	2	-	N/A	False	2026-08-15 14:13:10.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\smss.exe	\SystemRoot\System32\smss.exe	\SystemRoot\System32\smss.exe
+* 100	4	Registry	0x948b421ca040	4	-	N/A	False	2026-08-15 14:13:04.000000 UTC	N/A	Registry	-	-
+440	428	csrss.exe	0x948b42ec50c0	9	-	0	False	2026-08-15 14:13:16.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\csrss.exe	%SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16	C:\Windows\system32\csrss.exe
+512	504	csrss.exe	0x948b42ff7140	10	-	1	False	2026-08-15 14:13:16.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\csrss.exe	%SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16	C:\Windows\system32\csrss.exe
+520	428	wininit.exe	0x948b430020c0	1	-	0	False	2026-08-15 14:13:16.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\wininit.exe	wininit.exe	C:\Windows\system32\wininit.exe
+* 800	520	fontdrvhost.ex	0x948b4310e140	5	-	0	False	2026-08-15 14:13:18.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\fontdrvhost.exe	&quot;fontdrvhost.exe&quot;	C:\Windows\system32\fontdrvhost.exe
+* 652	520	lsass.exe	0x948b43061080	6	-	0	False	2026-08-15 14:13:17.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\lsass.exe	C:\Windows\system32\lsass.exe	C:\Windows\system32\lsass.exe
+* 644	520	services.exe	0x948b4305f080	8	-	0	False	2026-08-15 14:13:17.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\services.exe	C:\Windows\system32\services.exe	C:\Windows\system32\services.exe
+** 768	644	svchost.exe	0x948b430dc240	9	-	0	False	2026-08-15 14:13:18.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k DcomLaunch -p	C:\Windows\system32\svchost.exe
+*** 3456	768	dllhost.exe	0x948b46b8d080	4	-	0	False	2026-08-15 13:13:37.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\dllhost.exe	C:\Windows\system32\DllHost.exe /Processid:{3EB3C877-1F16-487C-9050-104DBCD66683}	C:\Windows\system32\DllHost.exe
+*** 4832	768	SppExtComObj.E	0x948b4712e280	1	-	0	False	2026-08-15 13:14:01.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\SppExtComObj.Exe	C:\Windows\system32\SppExtComObj.exe -Embedding	C:\Windows\system32\SppExtComObj.exe
+*** 4032	768	SearchApp.exe	0x948b472a0080	41	-	1	False	2026-08-15 13:14:05.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe	&quot;C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe&quot; -ServerName:CortanaUI.AppX8z9r6jm96hw4bsbneegw0kyxx296wr9t.mca	C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe
+*** 4776	768	TextInputHost.	0x948b46ca4080	9	-	1	False	2026-08-15 13:14:01.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TextInputHost.exe	&quot;C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TextInputHost.exe&quot; -ServerName:InputApp.AppXjd5de1g66v206tj52m9d0dtpppx4cgpn.mca	C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TextInputHost.exe
+*** 328	768	dllhost.exe	0x948b420f2080	6	-	1	False	2026-08-15 13:22:30.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\dllhost.exe	C:\Windows\system32\DllHost.exe /Processid:{973D20D7-562D-44B9-B70B-5A0F49CCDF3F}	C:\Windows\system32\DllHost.exe
+*** 4748	768	StartMenuExper	0x948b46a8c080	6	-	1	False	2026-08-15 13:14:01.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\StartMenuExperienceHost.exe	&quot;C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\StartMenuExperienceHost.exe&quot; -ServerName:App.AppXywbrabmsek0gm3tkwpr5kwzbs55tkqay.mca	C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\StartMenuExperienceHost.exe
+*** 5008	768	RuntimeBroker.	0x948b47263300	1	-	1	False	2026-08-15 13:14:02.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe -Embedding	C:\Windows\System32\RuntimeBroker.exe
+*** 176	768	ApplicationFra	0x948b42148080	2	-	1	False	2026-08-15 13:22:32.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\ApplicationFrameHost.exe	C:\Windows\system32\ApplicationFrameHost.exe -Embedding	C:\Windows\system32\ApplicationFrameHost.exe
+*** 3988	768	unsecapp.exe	0x948b46cee280	1	-	0	False	2026-08-15 13:13:45.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\wbem\unsecapp.exe	C:\Windows\system32\wbem\unsecapp.exe -Embedding	C:\Windows\system32\wbem\unsecapp.exe
+*** 3444	768	WmiPrvSE.exe	0x948b46ce5080	4	-	0	False	2026-08-15 13:13:47.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\wbem\WmiPrvSE.exe	C:\Windows\system32\wbem\wmiprvse.exe	C:\Windows\system32\wbem\wmiprvse.exe
+*** 1976	768	RuntimeBroker.	0x948b47356300	7	-	1	False	2026-08-15 13:14:07.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe -Embedding	C:\Windows\System32\RuntimeBroker.exe
+*** 732	768	RuntimeBroker.	0x948b47466300	3	-	1	False	2026-08-15 13:14:11.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\RuntimeBroker.exe	C:\Windows\System32\RuntimeBroker.exe -Embedding	C:\Windows\System32\RuntimeBroker.exe
+** 2560	644	Sysmon64.exe	0x948b466f0080	17	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\Sysmon64.exe	C:\Windows\Sysmon64.exe	C:\Windows\Sysmon64.exe
+** 2688	644	svchost.exe	0x948b466ed080	11	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s Winmgmt	C:\Windows\system32\svchost.exe
+** 388	644	svchost.exe	0x948b46f98240	3	-	0	False	2026-08-15 13:13:52.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s TokenBroker	C:\Windows\system32\svchost.exe
+** 5380	644	svchost.exe	0x948b47550240	9	-	0	False	2026-08-15 13:14:15.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s wuauserv	C:\Windows\system32\svchost.exe
+** 5124	644	svchost.exe	0x948b475c5300	6	-	0	False	2026-08-15 13:15:33.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s PcaSvc	C:\Windows\system32\svchost.exe
+** 1928	644	svchost.exe	0x948b4653b300	2	-	0	False	2026-08-15 13:13:26.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalServiceNetworkRestricted -p -s WinHttpAutoProxySvc	C:\Windows\system32\svchost.exe
+** 2440	644	svchost.exe	0x948b46717080	5	-	0	False	2026-08-15 13:13:30.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k smbsvcs -s LanmanServer	C:\Windows\System32\svchost.exe
+** 2568	644	svchost.exe	0x948b466ef080	15	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k iissvcs	C:\Windows\system32\svchost.exe
+** 2696	644	svchost.exe	0x948b4680d080	5	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k NetworkService -p -s WinRM	C:\Windows\System32\svchost.exe
+** 1420	644	svchost.exe	0x948b463b5240	3	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s ProfSvc	C:\Windows\system32\svchost.exe
+** 2316	644	svchost.exe	0x948b43096080	9	-	0	False	2026-08-15 13:13:29.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k utcsvc -p	C:\Windows\System32\svchost.exe
+*** 3304	2316	AggregatorHost	0x948b46a97080	2	-	0	False	2026-08-15 13:13:36.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\AggregatorHost.exe	AggregatorHost.exe	C:\Windows\System32\AggregatorHost.exe
+** 3080	644	svchost.exe	0x948b46807080	12	-	0	False	2026-08-15 13:13:34.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k netsvcs	C:\Windows\System32\svchost.exe
+** 5260	644	svchost.exe	0x948b475bf080	1	-	0	False	2026-08-15 13:14:28.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k wusvcs -p -s WaaSMedicSvc	C:\Windows\system32\svchost.exe
+** 912	644	svchost.exe	0x948b4624c300	4	-	0	False	2026-08-15 14:13:20.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k LocalServiceNetworkRestricted -p -s lmhosts	C:\Windows\System32\svchost.exe
+** 2448	644	MpDefenderCore	0x948b46716080	9	-	0	False	2026-08-15 13:13:30.000000 UTC	N/A	\Device\HarddiskVolume2\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\MpDefenderCoreService.exe	&quot;C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\MpDefenderCoreService.exe&quot;	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\MpDefenderCoreService.exe
+** 788	644	svchost.exe	0x948b4624e300	2	-	0	False	2026-08-15 14:13:20.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalServiceNetworkRestricted -p -s TimeBrokerSvc	C:\Windows\system32\svchost.exe
+** 1428	644	svchost.exe	0x948b463b82c0	5	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -p -s EventSystem	C:\Windows\system32\svchost.exe
+** 1304	644	svchost.exe	0x948b463512c0	5	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -p -s FontCache	C:\Windows\system32\svchost.exe
+** 1688	644	svchost.exe	0x948b4214a080	4	-	0	False	2026-08-15 13:13:24.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k NetworkService -p -s NlaSvc	C:\Windows\System32\svchost.exe
+** 1816	644	svchost.exe	0x948b4209c080	3	-	0	False	2026-08-15 13:13:25.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k netsvcs -p -s ShellHWDetection	C:\Windows\System32\svchost.exe
+** 3872	644	svchost.exe	0x948b46cea300	3	-	1	False	2026-08-15 13:13:51.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService	C:\Windows\system32\svchost.exe
+** 1444	644	svchost.exe	0x948b463bd240	3	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k netsvcs -p -s Themes	C:\Windows\System32\svchost.exe
+** 2340	644	svchost.exe	0x948b4667a080	5	-	0	False	2026-08-15 13:13:29.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k NetSvcs -p -s iphlpsvc	C:\Windows\System32\svchost.exe
+** 2424	644	svchost.exe	0x948b46718080	2	-	0	False	2026-08-15 13:13:30.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k appmodel -p -s StateRepository	C:\Windows\system32\svchost.exe
+** 2728	644	wlms.exe	0x948b4680c080	2	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\wlms\wlms.exe	C:\Windows\system32\wlms\wlms.exe	C:\Windows\system32\wlms\wlms.exe
+** 2476	644	svchost.exe	0x948b46715080	3	-	0	False	2026-08-15 13:13:30.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s SysMain	C:\Windows\system32\svchost.exe
+** 1072	644	svchost.exe	0x948b462962c0	3	-	0	False	2026-08-15 14:13:20.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalServiceNoNetwork -p	C:\Windows\system32\svchost.exe
+** 1328	644	svchost.exe	0x948b46355300	2	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -p -s DispBrokerDesktopSvc	C:\Windows\system32\svchost.exe
+** 948	644	svchost.exe	0x948b4316e240	3	-	0	False	2026-08-15 14:13:19.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k DcomLaunch -p -s LSM	C:\Windows\system32\svchost.exe
+** 444	644	svchost.exe	0x948b431f4280	2	-	0	False	2026-08-15 14:13:20.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s NcbService	C:\Windows\System32\svchost.exe
+** 2236	644	spoolsv.exe	0x948b4657d080	7	-	0	False	2026-08-15 13:13:29.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\spoolsv.exe	C:\Windows\System32\spoolsv.exe	C:\Windows\System32\spoolsv.exe
+** 4284	644	svchost.exe	0x948b47070240	2	-	0	False	2026-08-15 13:13:54.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k appmodel -p -s camsvc	C:\Windows\system32\svchost.exe
+** 1088	644	svchost.exe	0x948b46fa2280	4	-	0	False	2026-08-15 13:13:52.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s TabletInputService	C:\Windows\System32\svchost.exe
+*** 4124	1088	ctfmon.exe	0x948b46fcb280	9	-	1	False	2026-08-15 13:13:53.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\ctfmon.exe	&quot;ctfmon.exe&quot;	C:\Windows\system32\ctfmon.exe
+** 4296	644	svchost.exe	0x948b470742c0	4	-	0	False	2026-08-15 13:13:54.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -p -s CDPSvc	C:\Windows\system32\svchost.exe
+** 5192	644	NisSrv.exe	0x948b475293c0	3	-	0	False	2026-08-15 13:14:13.000000 UTC	N/A	\Device\HarddiskVolume2\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\NisSrv.exe	&quot;C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\NisSrv.exe&quot;	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\NisSrv.exe
+** 1868	644	svchost.exe	0x948b4207b080	6	-	0	False	2026-08-15 13:13:25.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k LocalService -p -s netprofm	C:\Windows\System32\svchost.exe
+** 2000	644	svchost.exe	0x948b46574240	4	-	0	False	2026-08-15 13:13:26.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s UserManager	C:\Windows\system32\svchost.exe
+*** 3852	2000	sihost.exe	0x948b46cbb080	9	-	1	False	2026-08-15 13:13:50.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\sihost.exe	sihost.exe	C:\Windows\system32\sihost.exe
+** 1236	644	VBoxService.ex	0x948b4630c240	14	-	0	False	2026-08-15 14:13:21.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\VBoxService.exe	C:\Windows\System32\VBoxService.exe	C:\Windows\System32\VBoxService.exe
+** 1748	644	svchost.exe	0x948b42108080	9	-	0	False	2026-08-15 13:13:25.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k NetworkService -p -s Dnscache	C:\Windows\system32\svchost.exe
+** 2516	644	svchost.exe	0x948b46714080	3	-	0	False	2026-08-15 13:13:30.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s TrkWks	C:\Windows\System32\svchost.exe
+** 1368	644	svchost.exe	0x948b42fee080	7	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalServiceNetworkRestricted -p -s Dhcp	C:\Windows\system32\svchost.exe
+** 3288	644	svchost.exe	0x948b46a8f300	4	-	0	False	2026-08-15 13:13:35.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k NetworkServiceNetworkRestricted -p -s PolicyAgent	C:\Windows\system32\svchost.exe
+** 2392	644	svchost.exe	0x948b467cb080	1	-	0	False	2026-08-15 13:15:34.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s StorSvc	C:\Windows\System32\svchost.exe
+** 2652	644	MsMpEng.exe	0x948b466ee080	21	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	\Device\HarddiskVolume2\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\MsMpEng.exe	&quot;C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\MsMpEng.exe&quot;	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\MsMpEng.exe
+** 2780	644	svchost.exe	0x948b4680b080	2	-	0	False	2026-08-15 13:13:32.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s WpnService	C:\Windows\system32\svchost.exe
+** 3804	644	svchost.exe	0x948b46ce4080	5	-	1	False	2026-08-15 13:13:50.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc	C:\Windows\system32\svchost.exe
+** 1672	644	svchost.exe	0x948b4751c080	22	-	0	False	2026-08-15 13:15:32.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k LocalServiceNoNetwork -p -s DPS	C:\Windows\System32\svchost.exe
+** 608	644	svchost.exe	0x948b4624a240	5	-	0	False	2026-08-15 14:13:20.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s DsmSvc	C:\Windows\system32\svchost.exe
+** 1376	644	svchost.exe	0x948b46303080	6	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s gpsvc	C:\Windows\system32\svchost.exe
+** 1760	644	svchost.exe	0x948b4210d080	3	-	0	False	2026-08-15 13:13:25.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalServiceNetworkRestricted -p	C:\Windows\system32\svchost.exe
+** 2912	644	sppsvc.exe	0x948b46808080	4	-	0	False	2026-08-15 13:13:33.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\sppsvc.exe	C:\Windows\system32\sppsvc.exe	C:\Windows\system32\sppsvc.exe
+** 1636	644	svchost.exe	0x948b46441240	2	-	0	False	2026-08-15 13:13:24.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s SENS	C:\Windows\system32\svchost.exe
+** 2020	644	svchost.exe	0x948b46578300	5	-	0	False	2026-08-15 13:13:26.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k NetworkService -p -s LanmanWorkstation	C:\Windows\System32\svchost.exe
+** 6112	644	svchost.exe	0x948b475b7080	10	-	0	False	2026-08-15 13:14:28.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s UsoSvc	C:\Windows\system32\svchost.exe
+** 5860	644	msdtc.exe	0x948b476f2080	9	-	0	False	2026-08-15 13:15:33.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\msdtc.exe	C:\Windows\System32\msdtc.exe	C:\Windows\System32\msdtc.exe
+** 2280	644	svchost.exe	0x948b46575080	8	-	0	False	2026-08-15 13:13:29.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k apphost -s AppHostSvc	C:\Windows\system32\svchost.exe
+** 616	644	svchost.exe	0x948b47578080	4	-	1	False	2026-08-15 13:18:19.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k ClipboardSvcGroup -p -s cbdhsvc	C:\Windows\system32\svchost.exe
+** 3816	644	svchost.exe	0x948b46dcd080	3	-	0	False	2026-08-15 13:30:03.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s WdiSystemHost	C:\Windows\System32\svchost.exe
+** 2540	644	svchost.exe	0x948b467130c0	4	-	0	False	2026-08-15 13:13:31.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -s W32Time	C:\Windows\system32\svchost.exe
+** 2668	644	svchost.exe	0x948b4676f080	8	-	0	False	2026-08-15 13:15:34.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s UALSVC	C:\Windows\system32\svchost.exe
+** 1136	644	svchost.exe	0x948b42ff8080	8	-	0	False	2026-08-15 14:13:20.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\System32\svchost.exe -k LocalServiceNetworkRestricted -p -s EventLog	C:\Windows\System32\svchost.exe
+** 1648	644	svchost.exe	0x948b4645e240	7	-	0	False	2026-08-15 13:13:24.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s Schedule	C:\Windows\system32\svchost.exe
+*** 2072	1648	MicrosoftEdgeU	0x948b46ee80c0	4	-	0	True	2026-08-15 13:13:51.000000 UTC	N/A	\Device\HarddiskVolume2\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe	&quot;C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe&quot; /c	C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe
+*** 3956	1648	taskhostw.exe	0x948b46eec340	4	-	1	False	2026-08-15 13:13:51.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\taskhostw.exe	taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}	C:\Windows\system32\taskhostw.exe
+** 1904	644	svchost.exe	0x948b4652b300	14	-	0	False	2026-08-15 13:13:25.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalServiceNoNetworkFirewall -p	C:\Windows\system32\svchost.exe
+** 2288	644	svchost.exe	0x948b465e80c0	6	-	0	False	2026-08-15 13:13:29.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k NetworkService -p -s CryptSvc	C:\Windows\system32\svchost.exe
+** 2416	644	svchost.exe	0x948b4308d240	2	-	0	False	2026-08-15 13:13:30.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -p -s SstpSvc	C:\Windows\system32\svchost.exe
+** 4220	644	SecurityHealth	0x948b47584080	5	-	0	False	2026-08-15 13:22:34.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\SecurityHealthService.exe	C:\Windows\system32\SecurityHealthService.exe	C:\Windows\system32\SecurityHealthService.exe
+** 1272	644	svchost.exe	0x948b4630f2c0	3	-	0	False	2026-08-15 14:13:22.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -p -s nsi	C:\Windows\system32\svchost.exe
+** 892	644	svchost.exe	0x948b431472c0	7	-	0	False	2026-08-15 14:13:19.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\svchost.exe	C:\Windows\system32\svchost.exe -k RPCSS -p	C:\Windows\system32\svchost.exe
+576	504	winlogon.exe	0x948b4302c080	3	-	1	False	2026-08-15 14:13:16.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\winlogon.exe	winlogon.exe	C:\Windows\system32\winlogon.exe
+* 792	576	fontdrvhost.ex	0x948b4310c140	5	-	1	False	2026-08-15 14:13:18.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\fontdrvhost.exe	&quot;fontdrvhost.exe&quot;	C:\Windows\system32\fontdrvhost.exe
+* 1020	576	dwm.exe	0x948b431b6080	17	-	1	False	2026-08-15 14:13:19.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\dwm.exe	&quot;dwm.exe&quot;	C:\Windows\system32\dwm.exe
+* 4304	576	userinit.exe	0x948b47078380	0	-	1	False	2026-08-15 13:13:54.000000 UTC	2026-08-15 13:14:20.000000 UTC	\Device\HarddiskVolume2\Windows\System32\userinit.exe	-	-
+** 4364	4304	explorer.exe	0x948b46cb6080	35	-	1	False	2026-08-15 13:13:54.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\explorer.exe	C:\Windows\Explorer.EXE	C:\Windows\Explorer.EXE
+*** 3120	4364	powershell.exe	0x948b4211e080	10	-	1	False	2026-08-15 13:19:06.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\WindowsPowerShell\v1.0\powershell.exe	&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; 	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+**** 4060	3120	conhost.exe	0x948b42142080	4	-	1	False	2026-08-15 13:19:06.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\conhost.exe	\??\C:\Windows\system32\conhost.exe 0x4	C:\Windows\system32\conhost.exe
+*** 808	4364	notepad.exe	0x948b420bc080	3	-	1	False	2026-08-15 13:23:01.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\notepad.exe	&quot;C:\Windows\system32\notepad.exe&quot; 	C:\Windows\system32\notepad.exe
+*** 5716	4364	VBoxTray.exe	0x948b47350080	13	-	1	False	2026-08-15 13:14:19.000000 UTC	N/A	\Device\HarddiskVolume2\Windows\System32\VBoxTray.exe	&quot;C:\Windows\System32\VBoxTray.exe&quot; 	C:\Windows\System32\VBoxTray.exe</pre></details>
+<details><summary>windows.cmdline</summary><pre>Volatility 3 Framework 2.28.2
+
+PID	Process	Args
+
+4	System	-
+100	Registry	-
+344	smss.exe	\SystemRoot\System32\smss.exe
+440	csrss.exe	%SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+512	csrss.exe	%SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,20480,768 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=sxssrv,4 ProfileControl=Off MaxRequestThreads=16
+520	wininit.exe	wininit.exe
+576	winlogon.exe	winlogon.exe
+644	services.exe	C:\Windows\system32\services.exe
+652	lsass.exe	C:\Windows\system32\lsass.exe
+768	svchost.exe	C:\Windows\system32\svchost.exe -k DcomLaunch -p
+792	fontdrvhost.ex	&quot;fontdrvhost.exe&quot;
+800	fontdrvhost.ex	&quot;fontdrvhost.exe&quot;
+892	svchost.exe	C:\Windows\system32\svchost.exe -k RPCSS -p
+948	svchost.exe	C:\Windows\system32\svchost.exe -k DcomLaunch -p -s LSM
+1020	dwm.exe	&quot;dwm.exe&quot;
+444	svchost.exe	C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s NcbService
+608	svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s DsmSvc
+788	svchost.exe	C:\Windows\system32\svchost.exe -k LocalServiceNetworkRestricted -p -s TimeBrokerSvc
+912	svchost.exe	C:\Windows\System32\svchost.exe -k LocalServiceNetworkRestricted -p -s lmhosts
+1072	svchost.exe	C:\Windows\system32\svchost.exe -k LocalServiceNoNetwork -p
+1136	svchost.exe	C:\Windows\System32\svchost.exe -k LocalServiceNetworkRestricted -p -s EventLog
+1236	VBoxService.ex	C:\Windows\System32\VBoxService.exe
+1272	svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -p -s nsi
+1304	svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -p -s FontCache
+1328	svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -p -s DispBrokerDesktopSvc
+1368	svchost.exe	C:\Windows\system32\svchost.exe -k LocalServiceNetworkRestricted -p -s Dhcp
+1376	svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s gpsvc
+1420	svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s ProfSvc
+1428	svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -p -s EventSystem
+1444	svchost.exe	C:\Windows\System32\svchost.exe -k netsvcs -p -s Themes
+1636	svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s SENS
+1648	svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s Schedule
+1688	svchost.exe	C:\Windows\System32\svchost.exe -k NetworkService -p -s NlaSvc
+1748	svchost.exe	C:\Windows\system32\svchost.exe -k NetworkService -p -s Dnscache
+1760	svchost.exe	C:\Windows\system32\svchost.exe -k LocalServiceNetworkRestricted -p
+1816	svchost.exe	C:\Windows\System32\svchost.exe -k netsvcs -p -s ShellHWDetection
+1868	svchost.exe	C:\Windows\System32\svchost.exe -k LocalService -p -s netprofm
+1904	svchost.exe	C:\Windows\system32\svchost.exe -k LocalServiceNoNetworkFirewall -p
+1928	svchost.exe	C:\Windows\system32\svchost.exe -k LocalServiceNetworkRestricted -p -s WinHttpAutoProxySvc
+2000	svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s UserManager
+2020	svchost.exe	C:\Windows\System32\svchost.exe -k NetworkService -p -s LanmanWorkstation
+2236	spoolsv.exe	C:\Windows\System32\spoolsv.exe
+2280	svchost.exe	C:\Windows\system32\svchost.exe -k apphost -s AppHostSvc
+2288	svchost.exe	C:\Windows\system32\svchost.exe -k NetworkService -p -s CryptSvc
+2316	svchost.exe	C:\Windows\System32\svchost.exe -k utcsvc -p
+2340	svchost.exe	C:\Windows\System32\svchost.exe -k NetSvcs -p -s iphlpsvc
+2416	svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -p -s SstpSvc
+2424	svchost.exe	C:\Windows\system32\svchost.exe -k appmodel -p -s StateRepository
+2440	svchost.exe	C:\Windows\System32\svchost.exe -k smbsvcs -s LanmanServer
+2448	MpDefenderCore	&quot;C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\MpDefenderCoreService.exe&quot;
+2476	svchost.exe	C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s SysMain
+2516	svchost.exe	C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s TrkWks
+2540	svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -s W32Time
+2560	Sysmon64.exe	C:\Windows\Sysmon64.exe
+2568	svchost.exe	C:\Windows\system32\svchost.exe -k iissvcs
+2652	MsMpEng.exe	&quot;C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\MsMpEng.exe&quot;
+2688	svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s Winmgmt
+2696	svchost.exe	C:\Windows\System32\svchost.exe -k NetworkService -p -s WinRM
+2728	wlms.exe	C:\Windows\system32\wlms\wlms.exe
+2780	svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s WpnService
+2912	sppsvc.exe	C:\Windows\system32\sppsvc.exe
+3080	svchost.exe	C:\Windows\System32\svchost.exe -k netsvcs
+3288	svchost.exe	C:\Windows\system32\svchost.exe -k NetworkServiceNetworkRestricted -p -s PolicyAgent
+3304	AggregatorHost	AggregatorHost.exe
+3456	dllhost.exe	C:\Windows\system32\DllHost.exe /Processid:{3EB3C877-1F16-487C-9050-104DBCD66683}
+3988	unsecapp.exe	C:\Windows\system32\wbem\unsecapp.exe -Embedding
+3444	WmiPrvSE.exe	C:\Windows\system32\wbem\wmiprvse.exe
+3852	sihost.exe	sihost.exe
+3804	svchost.exe	C:\Windows\system32\svchost.exe -k UnistackSvcGroup -s CDPUserSvc
+3872	svchost.exe	C:\Windows\system32\svchost.exe -k UnistackSvcGroup -s WpnUserService
+3956	taskhostw.exe	taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}
+2072	MicrosoftEdgeU	&quot;C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe&quot; /c
+388	svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s TokenBroker
+1088	svchost.exe	C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s TabletInputService
+4124	ctfmon.exe	&quot;ctfmon.exe&quot;
+4284	svchost.exe	C:\Windows\system32\svchost.exe -k appmodel -p -s camsvc
+4296	svchost.exe	C:\Windows\system32\svchost.exe -k LocalService -p -s CDPSvc
+4304	userinit.exe	-
+4364	explorer.exe	C:\Windows\Explorer.EXE
+4748	StartMenuExper	&quot;C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\StartMenuExperienceHost.exe&quot; -ServerName:App.AppXywbrabmsek0gm3tkwpr5kwzbs55tkqay.mca
+4776	TextInputHost.	&quot;C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TextInputHost.exe&quot; -ServerName:InputApp.AppXjd5de1g66v206tj52m9d0dtpppx4cgpn.mca
+4832	SppExtComObj.E	C:\Windows\system32\SppExtComObj.exe -Embedding
+5008	RuntimeBroker.	C:\Windows\System32\RuntimeBroker.exe -Embedding
+4032	SearchApp.exe	&quot;C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe&quot; -ServerName:CortanaUI.AppX8z9r6jm96hw4bsbneegw0kyxx296wr9t.mca
+1976	RuntimeBroker.	C:\Windows\System32\RuntimeBroker.exe -Embedding
+732	RuntimeBroker.	C:\Windows\System32\RuntimeBroker.exe -Embedding
+5192	NisSrv.exe	&quot;C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\NisSrv.exe&quot;
+5380	svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s wuauserv
+5716	VBoxTray.exe	&quot;C:\Windows\System32\VBoxTray.exe&quot; 
+6112	svchost.exe	C:\Windows\system32\svchost.exe -k netsvcs -p -s UsoSvc
+5260	svchost.exe	C:\Windows\system32\svchost.exe -k wusvcs -p -s WaaSMedicSvc
+1672	svchost.exe	C:\Windows\System32\svchost.exe -k LocalServiceNoNetwork -p -s DPS
+5860	msdtc.exe	C:\Windows\System32\msdtc.exe
+5124	svchost.exe	C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s PcaSvc
+2392	svchost.exe	C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s StorSvc
+2668	svchost.exe	C:\Windows\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s UALSVC
+616	svchost.exe	C:\Windows\system32\svchost.exe -k ClipboardSvcGroup -p -s cbdhsvc
+3120	powershell.exe	&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; 
+4060	conhost.exe	\??\C:\Windows\system32\conhost.exe 0x4
+328	dllhost.exe	C:\Windows\system32\DllHost.exe /Processid:{973D20D7-562D-44B9-B70B-5A0F49CCDF3F}
+176	ApplicationFra	C:\Windows\system32\ApplicationFrameHost.exe -Embedding
+4220	SecurityHealth	C:\Windows\system32\SecurityHealthService.exe
+808	notepad.exe	&quot;C:\Windows\system32\notepad.exe&quot; 
+3816	svchost.exe	C:\Windows\System32\svchost.exe -k LocalSystemNetworkRestricted -p -s WdiSystemHost</pre></details>
+<details><summary>windows.malfind</summary><pre>Volatility 3 Framework 2.28.2
+
+PID	Process	Start VPN	End VPN	Tag	Protection	CommitCharge	PrivateMemory	File output	Notes	Hexdump	Disasm
+
+3120	powershell.exe	0x231eff30000	0x231eff3cfff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	N/A	
+00 00 00 00 00 00 00 00 90 78 16 f0 31 02 00 00 .........x..1...
+90 78 16 f0 31 02 00 00 00 00 16 f0 31 02 00 00 .x..1.......1...
+e0 0d f3 ef 31 02 00 00 00 10 f3 ef 31 02 00 00 ....1.......1...
+00 d0 f3 ef 31 02 00 00 03 00 00 00 01 00 00 00 ....1...........	
+0x231eff30000:	add	byte ptr [rax], al
+0x231eff30002:	add	byte ptr [rax], al
+0x231eff30004:	add	byte ptr [rax], al
+0x231eff30006:	add	byte ptr [rax], al
+0x231eff30008:	nop	
+0x231eff30009:	js	0x231eff30021
+0x231eff3000b:	lock xor	dword ptr [rdx], eax
+0x231eff3000e:	add	byte ptr [rax], al
+0x231eff30010:	nop	
+0x231eff30011:	js	0x231eff30029
+0x231eff30013:	lock xor	dword ptr [rdx], eax
+0x231eff30016:	add	byte ptr [rax], al
+0x231eff30018:	add	byte ptr [rax], al
+3120	powershell.exe	0x7df4e08c0000	0x7df4e08cffff	VadS	PAGE_EXECUTE_READWRITE	1	1	Disabled	N/A	
+00 00 00 00 00 00 00 00 78 0d 00 00 00 00 00 00 ........x.......
+0c 00 00 00 49 c7 c2 00 00 00 00 48 b8 50 4a 94 ....I......H.PJ.
+fe fa 7f 00 00 ff e0 49 c7 c2 01 00 00 00 48 b8 .......I......H.
+50 4a 94 fe fa 7f 00 00 ff e0 49 c7 c2 02 00 00 PJ........I.....	
+0x7df4e08c0000:	add	byte ptr [rax], al
+0x7df4e08c0002:	add	byte ptr [rax], al
+0x7df4e08c0004:	add	byte ptr [rax], al
+0x7df4e08c0006:	add	byte ptr [rax], al
+0x7df4e08c0008:	js	0x7df4e08c0017
+0x7df4e08c000a:	add	byte ptr [rax], al
+0x7df4e08c000c:	add	byte ptr [rax], al
+0x7df4e08c000e:	add	byte ptr [rax], al
+0x7df4e08c0010:	or	al, 0
+0x7df4e08c0012:	add	byte ptr [rax], al
+0x7df4e08c0014:	mov	r10, 0
+0x7df4e08c001b:	movabs	rax, 0x7ffafe944a50
+0x7df4e08c0025:	jmp	rax
+0x7df4e08c0027:	mov	r10, 1
+0x7df4e08c002e:	movabs	rax, 0x7ffafe944a50
+0x7df4e08c0038:	jmp	rax
+3120	powershell.exe	0x7df4e08d0000	0x7df4e096ffff	VadS	PAGE_EXECUTE_READWRITE	2	1	Disabled	N/A	
+d8 ff ff ff ff ff ff ff 08 00 00 00 00 00 00 00 ................
+01 00 00 00 00 00 00 00 00 02 0e 03 38 00 00 00 ............8...
+68 01 d7 07 0c 00 00 00 d8 5d 44 fc fa 7f 00 00 h........]D.....
+00 10 42 fc fa 7f 00 00 08 4a 5b fc fa 7f 00 00 ..B......J[.....	
+0x7df4e08d0000:	fdivr	st(7)</pre></details>
+<details><summary>windows.ldrmodules</summary><pre>Volatility 3 Framework 2.28.2
+
+Pid	Process	Base	InLoad	InInit	InMem	MappedPath
+
+3120	powershell.exe	0x231ee150000	False	False	False	\Windows\System32\WindowsPowerShell\v1.0\en-US\powershell.exe.mui
+3120	powershell.exe	0x231ef910000	False	False	False	\Windows\System32\en-US\propsys.dll.mui
+3120	powershell.exe	0x231efdc0000	False	False	False	\Windows\System32\winnlsres.dll
+3120	powershell.exe	0x231efde0000	False	False	False	\Windows\System32\en-US\winnlsres.dll.mui
+3120	powershell.exe	0x231efdf0000	False	False	False	\Windows\System32\en-US\crypt32.dll.mui
+3120	powershell.exe	0x231f05c0000	False	False	False	\Program Files\WindowsPowerShell\Modules\PSReadline\2.0.0\Microsoft.PowerShell.PSReadline.dll
+3120	powershell.exe	0x231f0130000	False	False	False	N/A
+3120	powershell.exe	0x231f0080000	False	False	False	\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorrc.dll
+3120	powershell.exe	0x231f0470000	False	False	False	\Windows\System32\en-US\KernelBase.dll.mui
+3120	powershell.exe	0x7ffb19990000	True	True	True	\Windows\System32\uxtheme.dll
+3120	powershell.exe	0x7ffaf5a70000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\System.Data\88bfae9c95fda4b3b5d898aa4bb54991\System.Data.ni.dll
+3120	powershell.exe	0x7ff7b30e0000	True	False	True	\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+3120	powershell.exe	0x7ffaf3160000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.CSharp\b2b0081d5b37afd1328e678f1b839bbc\Microsoft.CSharp.ni.dll
+3120	powershell.exe	0x7ffaf4d60000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.P521220ea#\a8cc099a93840074a774eb4a52eb6cc2\Microsoft.PowerShell.Commands.Utility.ni.dll
+3120	powershell.exe	0x7ffb00f90000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll
+3120	powershell.exe	0x7ffafc420000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\mscorlib\26a845b249aefca961715129e3e55539\mscorlib.ni.dll
+3120	powershell.exe	0x7ffaf8cc0000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\System.Management\44c104bea2dadb513d981f9e77a04fd7\System.Management.ni.dll
+3120	powershell.exe	0x7ffaf7bd0000	True	True	True	\Windows\Microsoft.NET\assembly\GAC_64\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll
+3120	powershell.exe	0x7ffaf7940000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll
+3120	powershell.exe	0x7ffaf6a00000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\System.Dynamic\e7c499f8c869feafb1c2b616cba8085f\System.Dynamic.ni.dll
+3120	powershell.exe	0x7ffaf7a90000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\System.Configuration\b9a44b0baacb6723ae3cd17420c887a0\System.Configuration.ni.dll
+3120	powershell.exe	0x7ffaf82a0000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\System.Xml\75553045f4f2b94598c0915fc476734d\System.Xml.ni.dll
+3120	powershell.exe	0x7ffaf8060000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.Pae3498d9#\2aa42b2e108fda75dbc762958d4675bf\Microsoft.PowerShell.Commands.Management.ni.dll
+3120	powershell.exe	0x7ffaf7fa0000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.M870d558a#\9a9a1571dbdb01068550ad606bcf59c2\Microsoft.Management.Infrastructure.Native.ni.dll
+3120	powershell.exe	0x7ffaf8b50000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\System.Dired13b18a9#\9ba8b499cbc7fd43da4b7131a3d8996a\System.DirectoryServices.ni.dll
+3120	powershell.exe	0x7ffaf9730000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\a3bcadd89102c16f39eea68579b45e51\System.Management.Automation.ni.dll
+3120	powershell.exe	0x7ffaf9530000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.W81a3882f#\c4a9c3da7634f2b8e332ff3f81e93bc5\Microsoft.Windows.ServerManager.ServerComponentManager.ni.dll
+3120	powershell.exe	0x7ffaf9650000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\System.Transactions\ecca9283c5f264c4ff6e560778374c22\System.Transactions.ni.dll
+3120	powershell.exe	0x7ffafb7a0000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\System\18195476b780b04f355b39f48f10cc25\System.ni.dll
+3120	powershell.exe	0x7ffafe940000	True	True	True	\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll
+3120	powershell.exe	0x7ffafdec0000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\System.Core\2658402500a165881e568704c14d0d73\System.Core.ni.dll
+3120	powershell.exe	0x7ffafde10000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.W15cd0137#\46d95c143736fbf97175f4bef3270256\Microsoft.Windows.ServerManager.PowerShell.ni.dll
+3120	powershell.exe	0x7ffb00d80000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.Mf49f6405#\a70a8d121bf982a22caf25baf9b1ae50\Microsoft.Management.Infrastructure.ni.dll
+3120	powershell.exe	0x7ffb00c80000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.P6f792626#\c613f51b2867c39b3d31d6caaeaf21f2\Microsoft.PowerShell.Security.ni.dll
+3120	powershell.exe	0x7ffb00c30000	True	True	True	\Windows\Microsoft.NET\assembly\GAC_64\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\System.Transactions.dll
+3120	powershell.exe	0x7ffb00e20000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.Pb378ec07#\d0cf98be3327ef3030b4657bded22cc6\Microsoft.PowerShell.ConsoleHost.ni.dll
+3120	powershell.exe	0x7ffb00ed0000	True	True	True	\Windows\System32\ucrtbase_clr0400.dll
+3120	powershell.exe	0x7ffb108f0000	True	True	True	\Windows\System32\windows.storage.dll
+3120	powershell.exe	0x7ffb0a4e0000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\MpOAV.dll
+3120	powershell.exe	0x7ffb05cf0000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\System.Confe64a9051#\8e4b6743765cc12c0474510c08a6914a\System.Configuration.Install.ni.dll
+3120	powershell.exe	0x7ffb01b50000	True	True	True	\Windows\assembly\NativeImages_v4.0.30319_64\System.Numerics\288187b7a461ce52e2810381f74e0321\System.Numerics.ni.dll
+3120	powershell.exe	0x7ffb01980000	True	True	True	\Windows\System32\mscoree.dll
+3120	powershell.exe	0x7ffb05b70000	True	True	True	\Windows\System32\ntshrui.dll
+3120	powershell.exe	0x7ffb056d0000	True	True	True	\Windows\System32\wshbth.dll
+3120	powershell.exe	0x7ffb0a240000	True	True	True	\Windows\System32\winrnr.dll
+3120	powershell.exe	0x7ffb06960000	True	True	True	\Windows\System32\nlansp_c.dll
+3120	powershell.exe	0x7ffb0db10000	True	True	True	\Windows\System32\miutils.dll
+3120	powershell.exe	0x7ffb0c7b0000	True	True	True	\Windows\System32\wbem\wbemsvc.dll
+3120	powershell.exe	0x7ffb0a590000	True	True	True	\Windows\System32\amsi.dll
+3120	powershell.exe	0x7ffb0c3c0000	True	True	True	\Windows\System32\wbem\fastprox.dll
+3120	powershell.exe	0x7ffb0d090000	True	True	True	\Windows\System32\wbem\wbemprox.dll
+3120	powershell.exe	0x7ffb0d010000	True	True	True	\Windows\System32\wbemcomn.dll
+3120	powershell.exe	0x7ffb0d710000	True	True	True	\Windows\System32\wmidcom.dll
+3120	powershell.exe	0x7ffb0e330000	True	True	True	\ProgramData\Microsoft\Windows Defender\Platform\4.18.26060.3008-0\MpClient.dll
+3120	powershell.exe	0x7ffb0dc10000	True	True	True	\Windows\System32\mi.dll
+3120	powershell.exe	0x7ffb0fe60000	True	True	True	\Windows\System32\NapiNSP.dll
+3120	powershell.exe	0x7ffb13080000	True	True	True	\Windows\System32\linkinfo.dll
+3120	powershell.exe	0x7ffb12c10000	True	True	True	\Windows\System32\msvcp110_win.dll
+3120	powershell.exe	0x7ffb12340000	True	True	True	\Windows\System32\dhcpcsvc6.dll
+3120	powershell.exe	0x7ffb12250000	True	True	True	\Windows\System32\dhcpcsvc.dll
+3120	powershell.exe	0x7ffb125d0000	True	True	True	\Windows\System32\winnsi.dll
+3120	powershell.exe	0x7ffb12e60000	True	True	True	\Windows\System32\policymanager.dll
+3120	powershell.exe	0x7ffb12f10000	True	True	True	\Windows\System32\secur32.dll
+3120	powershell.exe	0x7ffb149f0000	True	True	True	\Windows\System32\srvcli.dll
+3120	powershell.exe	0x7ffb13ae0000	True	True	True	\Windows\System32\mpr.dll
+3120	powershell.exe	0x7ffb13920000	True	True	True	\Windows\System32\cscapi.dll
+3120	powershell.exe	0x7ffb147d0000	True	True	True	\Windows\System32\version.dll
+3120	powershell.exe	0x7ffb14820000	True	True	True	\Windows\System32\vcruntime140_clr0400.dll
+3120	powershell.exe	0x7ffb14ce0000	True	True	True	\Windows\System32\urlmon.dll
+3120	powershell.exe	0x7ffb14a20000	True	True	True	\Windows\System32\iertutil.dll
+3120	powershell.exe	0x7ffb16210000	True	True	True	\Windows\System32\propsys.dll
+3120	powershell.exe	0x7ffb14fb0000	True	True	True	\Windows\System32\atl.dll
+3120	powershell.exe	0x7ffb17b60000	True	True	True	\Windows\System32\Microsoft.Management.Infrastructure.Native.Unmanaged.dll
+3120	powershell.exe	0x7ffb1bca0000	True	True	True	\Windows\System32\ucrtbase.dll
+3120	powershell.exe	0x7ffb1b080000	True	True	True	\Windows\System32\sspicli.dll
+3120	powershell.exe	0x7ffb1adf0000	True	True	True	\Windows\System32\cryptsp.dll
+3120	powershell.exe	0x7ffb1a730000	True	True	True	\Windows\System32\rsaenh.dll
+3120	powershell.exe	0x7ffb1a080000	True	True	True	\Windows\System32\kernel.appcore.dll
+3120	powershell.exe	0x7ffb19ba0000	True	True	True	\Windows\System32\ntmarta.dll
+3120	powershell.exe	0x7ffb1aa10000	True	True	True	\Windows\System32\netutils.dll
+3120	powershell.exe	0x7ffb1a930000	True	True	True	\Windows\System32\dnsapi.dll
+3120	powershell.exe	0x7ffb1a900000	True	True	True	\Windows\System32\IPHLPAPI.DLL
+3120	powershell.exe	0x7ffb1ac40000	True	True	True	\Windows\System32\gpapi.dll
+3120	powershell.exe	0x7ffb1abb0000	True	True	True	\Windows\System32\mswsock.dll
+3120	powershell.exe	0x7ffb1aca0000	True	True	True	\Windows\System32\userenv.dll
+3120	powershell.exe	0x7ffb1af40000	True	True	True	\Windows\System32\bcrypt.dll
+3120	powershell.exe	0x7ffb1ae10000	True	True	True	\Windows\System32\cryptbase.dll
+3120	powershell.exe	0x7ffb1aea0000	True	True	True	\Windows\System32\wldp.dll
+3120	powershell.exe	0x7ffb1b060000	True	True	True	\Windows\System32\msasn1.dll
+3120	powershell.exe	0x7ffb1b780000	True	True	True	\Windows\System32\win32u.dll
+3120	powershell.exe	0x7ffb1b340000	True	True	True	\Windows\System32\dpapi.dll
+3120	powershell.exe	0x7ffb1b2d0000	True	True	True	\Windows\System32\cfgmgr32.dll
+3120	powershell.exe	0x7ffb1b5f0000	True	True	True	\Windows\System32\profapi.dll
+3120	powershell.exe	0x7ffb1b8a0000	True	True	True	\Windows\System32\KernelBase.dll
+3120	powershell.exe	0x7ffb1b820000	True	True	True	\Windows\System32\bcryptprimitives.dll
+3120	powershell.exe	0x7ffb1b7b0000	True	True	True	\Windows\System32\wintrust.dll
+3120	powershell.exe	0x7ffb1bc00000	True	True	True	\Windows\System32\msvcp_win.dll
+3120	powershell.exe	0x7ffb1d610000	True	True	True	\Windows\System32\kernel32.dll
+3120	powershell.exe	0x7ffb1c360000	True	True	True	\Windows\System32\gdi32.dll
+3120	powershell.exe	0x7ffb1c090000	True	True	True	\Windows\System32\user32.dll
+3120	powershell.exe	0x7ffb1bdb0000	True	True	True	\Windows\System32\gdi32full.dll
+3120	powershell.exe	0x7ffb1bed0000	True	True	True	\Windows\System32\crypt32.dll
+3120	powershell.exe	0x7ffb1c240000	True	True	True	\Windows\System32\rpcrt4.dll
+3120	powershell.exe	0x7ffb1c590000	True	True	True	\Windows\System32\shlwapi.dll
+3120	powershell.exe	0x7ffb1c440000	True	True	True	\Windows\System32\ole32.dll
+3120	powershell.exe	0x7ffb1c390000	True	True	True	\Windows\System32\clbcatq.dll
+3120	powershell.exe	0x7ffb1c580000	True	True	True	\Windows\System32\psapi.dll
+3120	powershell.exe	0x7ffb1c650000	True	True	True	\Windows\System32\shell32.dll
+3120	powershell.exe	0x7ffb1d2c0000	True	True	True	\Windows\System32\SHCore.dll
+3120	powershell.exe	0x7ffb1d8c0000	True	True	True	\Windows\System32\oleaut32.dll
+3120	powershell.exe	0x7ffb1d790000	True	True	True	\Windows\System32\msvcrt.dll
+3120	powershell.exe	0x7ffb1d6e0000	True	True	True	\Windows\System32\advapi32.dll
+3120	powershell.exe	0x7ffb1d6d0000	True	True	True	\Windows\System32\nsi.dll
+3120	powershell.exe	0x7ffb1d840000	True	True	True	\Windows\System32\ws2_32.dll
+3120	powershell.exe	0x7ffb1dbf0000	True	True	True	\Windows\System32\combase.dll
+3120	powershell.exe	0x7ffb1db50000	True	True	True	\Windows\System32\sechost.dll
+3120	powershell.exe	0x7ffb1e0f0000	True	True	True	\Windows\System32\ntdll.dll
+3120	powershell.exe	0x7ffb1e060000	True	True	True	\Windows\System32\imm32.dll</pre></details>
+<details open><summary>windows.reflective_load.ReflectiveLoad</summary><div class="legend">
+  <span class="pos">green</span> = Detected / True &nbsp;
+  <span class="neg">red</span> = Missed / False &nbsp;
+  <span class="partial">amber</span> = Partial
+</div>
+<div class="table-scroll">
+<table>
+<thead><tr><th>PID</th><th>Process</th><th>Start VPN</th><th>End VPN</th><th>Also flagged by malfind</th><th>ATT&amp;CK Technique</th><th>Reason</th></tr></thead>
+<tbody>
+<tr><td class="">3120</td><td class="">powershell.exe</td><td class="">0x231f0130000</td><td class="">0x231f0130fff</td><td class="neg">False</td><td class="">T1620</td><td class="">Valid MZ/PE header; absent from InLoad/InInit/InMem; no backing file</td></tr>
+</tbody>
+</table>
+</div></details>
+</body>
+</html>

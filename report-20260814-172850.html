@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>report-20260814-172850</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e1e; --panel: #252526; --border: #3c3c3c;
+    --text: #d4d4d4; --head: #4ec9b0; --accent: #569cd6;
+    --pos: #4ec9b0; --neg: #f14c4c; --partial: #dcdcaa;
+  }
+  body {
+    background: var(--bg); color: var(--text); padding: 2rem;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  h1 { font-size: 1.1rem; color: var(--accent); margin: 0 0 1rem; font-weight: 600; }
+  .meta { color: #808080; font-size: 0.8rem; margin-bottom: 1rem; }
+  table {
+    border-collapse: collapse; width: 100%;
+    font-family: "Consolas", "Menlo", monospace; font-size: 0.85rem;
+    background: var(--panel);
+  }
+  th, td { border: 1px solid var(--border); padding: 6px 14px; text-align: left; white-space: nowrap; }
+  th { background: #2d2d2d; color: var(--head); position: sticky; top: 0; }
+  tr:nth-child(even) td { background: #2a2a2a; }
+  tr:hover td { background: #333333; }
+  td.pos { color: var(--pos); font-weight: 600; }
+  td.neg { color: var(--neg); }
+  td.partial { color: var(--partial); }
+</style>
+</head>
+<body>
+<h1>report-20260814-172850</h1>
+<div class="meta">Generated from report-20260814-172850.csv -- 1 row(s)</div>
+<table>
+<thead><tr><th>TreeDepth</th><th>PID</th><th>Process</th><th>Start VPN</th><th>End VPN</th><th>Also flagged by malfind</th><th>ATT&amp;CK Technique</th><th>Reason</th></tr></thead>
+<tbody>
+<tr><td class="">0</td><td class="">1372</td><td class="">powershell.exe</td><td class="">0x256d0590000</td><td class="">0x256d0590fff</td><td class="neg">False</td><td class="">T1620</td><td class="">Valid MZ/PE header; absent from InLoad/InInit/InMem; no backing file</td></tr>
+</tbody>
+</table>
+</body>
+</html>

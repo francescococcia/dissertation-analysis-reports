@@ -1,0 +1,3 @@
+TreeDepth,PID,Process,Start VPN,End VPN,Also flagged by malfind,ATT&CK Technique,Reason
+0,3120,powershell.exe,0x231f0130000,0x231f0130fff,False,T1620,Valid MZ/PE header; absent from InLoad/InInit/InMem; no backing file
+

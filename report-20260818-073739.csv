@@ -1,0 +1,3 @@
+TreeDepth,PID,Process,Created,Parent,Start VPN,End VPN,Also flagged by malfind,ATT&CK Technique,Reason
+0,880,svchost.exe,2023-02-13 17:54:16.000000 UTC,services.exe (660),0x980000,0x988fff,True,T1620,Valid MZ/PE header; absent from InLoad/InInit/InMem; no backing file
+

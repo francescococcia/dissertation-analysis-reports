@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>windows.reflective_load.ReflectiveLoad</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e1e; --panel: #252526; --border: #3c3c3c;
+    --text: #d4d4d4; --head: #4ec9b0; --accent: #569cd6;
+    --pos: #4ec9b0; --neg: #f14c4c; --partial: #dcdcaa;
+  }
+  body {
+    background: var(--bg); color: var(--text); padding: 2rem;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  h1 { font-size: 1.1rem; color: var(--accent); margin: 0 0 0.5rem; font-weight: 600; }
+  .meta { color: #808080; font-size: 0.8rem; margin-bottom: 1rem; line-height: 1.5; }
+  .legend { font-size: 0.8rem; color: #808080; margin-bottom: 0.4rem; }
+  .legend span { margin-right: 1.25rem; font-weight: 600; }
+  .legend .pos { color: var(--pos); }
+  .legend .neg { color: var(--neg); }
+  .legend .partial { color: var(--partial); }
+  .vpnkey { font-size: 0.78rem; color: #808080; margin-bottom: 0.75rem; }
+  .table-scroll { overflow-x: auto; max-width: 100%; }
+  /* table-layout:auto (the browser default) sizes every column from its own content
+     rather than from hand-guessed pixel widths -- so short columns stay narrow and
+     nothing overflows regardless of how long a value turns out to be. */
+  table {
+    border-collapse: collapse; width: 100%; table-layout: auto;
+    font-family: "Consolas", "Menlo", monospace; font-size: 0.85rem;
+    background: var(--panel);
+  }
+  /* nowrap keeps structured values (PIDs, addresses, timestamps) on one line, which
+     also sets each column's natural width to exactly its widest value. */
+  th, td {
+    border: 1px solid var(--border); padding: 6px 14px; text-align: left;
+    vertical-align: top; white-space: nowrap;
+  }
+  /* The prose column: wraps across lines, and width:100% makes it greedy under
+     auto layout -- it claims all the leftover width so every other column collapses
+     to its content instead of sitting half-empty. */
+  th.wrap, td.wrap {
+    white-space: normal; word-break: break-word; width: 100%; min-width: 300px;
+  }
+  th { background: #2d2d2d; color: var(--head); position: sticky; top: 0; }
+  tr:nth-child(even) td { background: #2a2a2a; }
+  tr:hover td { background: #333333; }
+  td.pos { color: var(--pos); font-weight: 600; }
+  td.neg { color: var(--neg); }
+  td.partial { color: var(--partial); }
+  .nil {
+    background: var(--panel); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); border-radius: 6px;
+    padding: 14px 18px; font-size: 0.85rem; line-height: 1.6; max-width: 780px;
+  }
+  .nil-head { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.6rem; }
+  .nil p { margin: 0.5rem 0; }
+  .nil ol { margin: 0.5rem 0 0.5rem 1.2rem; padding: 0; }
+  .nil li { margin: 0.15rem 0; }
+  .nil-caveat {
+    color: #a0a0a0; border-top: 1px solid var(--border);
+    padding-top: 0.6rem; margin-top: 0.8rem;
+  }
+</style>
+</head>
+<body>
+<h1>windows.reflective_load.ReflectiveLoad</h1>
+<div class="meta"><div>Generated 2026-08-18 10:12</div><div>Plugin: windows.reflective_load.ReflectiveLoad</div><div>Capture: /home/fc9190n/FP-check-expanded.core</div><div>PID filter: 444</div><div>Command: python3 vol.py -p /home/fc9190n/dissertation-detection-framework/volatility-plugins -f /home/fc9190n/FP-check-expanded.core windows.reflective_load.ReflectiveLoad --pid 444</div>0 row(s)</div>
+<div class="nil">
+  <div class="nil-head">No reflectively loaded code found &mdash; 0 detections</div>
+  <p>The detector ran and returned no rows. Nothing in this capture matched all three
+  conditions the reflective-load signature requires:</p>
+  <ol>
+    <li>a memory region carrying a valid MZ/PE header</li>
+    <li>absent from every one of the process's loader lists (InLoad / InInit / InMem)</li>
+    <li>no backing file on disk</li>
+  </ol>
+  
+  <p><strong>How to read this.</strong> For a benign-activity capture this is the expected,
+  clean result. For a capture taken during a known attack it is a genuine miss, and should be
+  reported as one.</p>
+  <p class="nil-caveat"><strong>Caveat.</strong> A null result is only evidence if the activity
+  under test was actually present in this capture, and if the detector is known to fire on
+  positive controls. Confirm both before citing this as evidence of absence.</p>
+</div>
+</body>
+</html>

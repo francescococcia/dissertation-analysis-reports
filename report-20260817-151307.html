@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>windows.reflective_load.ReflectiveLoad</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #1e1e1e; --panel: #252526; --border: #3c3c3c;
+    --text: #d4d4d4; --head: #4ec9b0; --accent: #569cd6;
+    --pos: #4ec9b0; --neg: #f14c4c; --partial: #dcdcaa;
+  }
+  body {
+    background: var(--bg); color: var(--text); padding: 2rem;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  h1 { font-size: 1.1rem; color: var(--accent); margin: 0 0 0.5rem; font-weight: 600; }
+  .meta { color: #808080; font-size: 0.8rem; margin-bottom: 1rem; line-height: 1.5; }
+  .table-scroll { overflow-x: auto; max-width: 100%; }
+  table {
+    border-collapse: collapse; width: 100%; min-width: 1200px; table-layout: fixed;
+    font-family: "Consolas", "Menlo", monospace; font-size: 0.85rem;
+    background: var(--panel);
+  }
+  th, td {
+    border: 1px solid var(--border); padding: 6px 14px; text-align: left;
+    white-space: normal; word-break: break-word; vertical-align: top;
+  }
+  th { background: #2d2d2d; color: var(--head); position: sticky; top: 0; }
+  .colkey { font-size: 0.78rem; color: #a0a0a0; margin-bottom: 0.75rem; }
+  .colkey summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+  .colkey ul { margin: 0.4rem 0 0 1.1rem; padding: 0; }
+  .colkey li { margin: 0.15rem 0; }
+  .colkey .pos, .colkey .neg, .colkey .partial { font-weight: 600; }
+  .colkey .pos { color: var(--pos); }
+  .colkey .neg { color: var(--neg); }
+  .colkey .partial { color: var(--partial); }
+  tr:nth-child(even) td { background: #2a2a2a; }
+  tr:hover td { background: #333333; }
+  td.pos { color: var(--pos); font-weight: 600; }
+  td.neg { color: var(--neg); }
+  td.partial { color: var(--partial); }
+  .nil {
+    background: var(--panel); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); border-radius: 6px;
+    padding: 14px 18px; font-size: 0.85rem; line-height: 1.6; max-width: 780px;
+  }
+  .nil-head { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.6rem; }
+  .nil p { margin: 0.5rem 0; }
+  .nil ol { margin: 0.5rem 0 0.5rem 1.2rem; padding: 0; }
+  .nil li { margin: 0.15rem 0; }
+  .nil-caveat {
+    color: #a0a0a0; border-top: 1px solid var(--border);
+    padding-top: 0.6rem; margin-top: 0.8rem;
+  }
+</style>
+</head>
+<body>
+<h1>windows.reflective_load.ReflectiveLoad</h1>
+<div class="meta"><div>Generated 2026-08-17 15:13</div><div>Plugin: windows.reflective_load.ReflectiveLoad</div><div>Capture: /home/fc9190n/T1620-4-exclusion-free.core</div><div>PID filter: 444</div><div>Command: python3 vol.py -p /home/fc9190n/dissertation-detection-framework/volatility-plugins -f /home/fc9190n/T1620-4-exclusion-free.core windows.reflective_load.ReflectiveLoad --pid 444</div>1 row(s)</div>
+<details class="colkey" open><summary>Legend &amp; column key</summary><ul><li><span class="pos">green</span> = Detected / True</li><li><span class="neg">red</span> = Missed / False</li><li><span class="partial">amber</span> = Partial</li><li>Created = when this process started running</li><li>Parent = the process that started this one, if it could still be identified</li><li>Start VPN = start of the suspicious memory region (its starting address)</li><li>End VPN = end of that same memory region</li><li>Also flagged by malfind = whether Volatility&#x27;s separate, built-in malfind check independently agreed (this plugin does not require it to)</li></ul></details>
+<div class="table-scroll">
+<table>
+<thead><tr><th style="width:70px">PID</th><th style="width:150px">Process</th><th style="width:190px">Created</th><th style="width:170px">Parent</th><th style="width:150px">Start VPN</th><th style="width:150px">End VPN</th><th style="width:110px">Also flagged by malfind</th><th style="width:120px">ATT&amp;CK Technique</th><th>Reason</th></tr></thead>
+<tbody>
+<tr><td class="">444</td><td class="">powershell.exe</td><td class="">2026-08-16 08:54:25.000000 UTC</td><td class="">explorer.exe (4728)</td><td class="">0x223fe710000</td><td class="">0x223fe710fff</td><td class="neg">False</td><td class="">T1620</td><td class="">Valid MZ/PE header; absent from InLoad/InInit/InMem; no backing file</td></tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Local Claude Code state -- machine-specific, not evidence
+.claude/
+
+# Memory captures are large binaries kept out of version control
+*.core
+*.raw
+*.dmp
+*.vmem
+
+# OS noise
+.DS_Store
+Thumbs.db

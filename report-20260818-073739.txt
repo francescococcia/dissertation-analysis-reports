@@ -1,0 +1,1196 @@
+Capture: /home/fc9190n/blackenergy.raw
+Analysed: Tue Aug 18 07:37:39 AM BST 2026
+
+===== windows.pslist =====
+Volatility 3 Framework 2.28.2
+
+PID	PPID	ImageFileName	Offset(V)	Threads	Handles	SessionId	Wow64	CreateTime	ExitTime	File output
+
+4	0	System	0x89c037f8	55	245	N/A	False	N/A	N/A	Disabled
+368	4	smss.exe	0x89965020	3	19	N/A	False	2023-02-14 04:54:15.000000 UTC	N/A	Disabled
+592	368	csrss.exe	0x89a98da0	11	321	0	False	2023-02-14 04:54:15.000000 UTC	N/A	Disabled
+616	368	winlogon.exe	0x89a88da0	18	508	0	False	2023-02-14 04:54:15.000000 UTC	N/A	Disabled
+660	616	services.exe	0x89938998	15	240	0	False	2023-02-14 04:54:15.000000 UTC	N/A	Disabled
+672	616	lsass.exe	0x89aa0020	21	335	0	False	2023-02-14 04:54:15.000000 UTC	N/A	Disabled
+832	660	VBoxService.exe	0x89aaa3d8	9	115	0	False	2023-02-14 04:54:15.000000 UTC	N/A	Disabled
+880	660	svchost.exe	0x89aab590	21	295	0	False	2023-02-13 17:54:16.000000 UTC	N/A	Disabled
+968	660	svchost.exe	0x89a9f6f8	10	244	0	False	2023-02-13 17:54:17.000000 UTC	N/A	Disabled
+1060	660	svchost.exe	0x89730da0	51	1072	0	False	2023-02-13 17:54:17.000000 UTC	N/A	Disabled
+1108	660	svchost.exe	0x897289a8	5	78	0	False	2023-02-13 17:54:17.000000 UTC	N/A	Disabled
+1156	660	svchost.exe	0x899adda0	13	192	0	False	2023-02-13 17:54:17.000000 UTC	N/A	Disabled
+1484	1440	explorer.exe	0x89733938	14	489	0	False	2023-02-13 17:54:18.000000 UTC	N/A	Disabled
+1608	660	spoolsv.exe	0x897075d0	10	106	0	False	2023-02-13 17:54:18.000000 UTC	N/A	Disabled
+480	1060	wscntfy.exe	0x89694388	1	28	0	False	2023-02-13 17:54:30.000000 UTC	N/A	Disabled
+540	660	alg.exe	0x8969d2a0	5	102	0	False	2023-02-13 17:54:30.000000 UTC	N/A	Disabled
+376	1484	VBoxTray.exe	0x89982da0	13	125	0	False	2023-02-13 17:54:30.000000 UTC	N/A	Disabled
+636	1484	msmsgs.exe	0x8994a020	2	157	0	False	2023-02-13 17:54:30.000000 UTC	N/A	Disabled
+1880	1484	taskmgr.exe	0x89a0b2f0	0	-	0	False	2023-02-13 18:25:15.000000 UTC	2023-02-13 18:26:21.000000 UTC	Disabled
+964	1484	rootkit.exe	0x899dd740	0	-	0	False	2023-02-13 18:25:26.000000 UTC	2023-02-13 18:25:26.000000 UTC	Disabled
+1960	964	cmd.exe	0x89a18da0	0	-	0	False	2023-02-13 18:25:26.000000 UTC	2023-02-13 18:25:26.000000 UTC	Disabled
+528	1484	notepad.exe	0x896c5020	0	-	0	False	2023-02-13 18:26:55.000000 UTC	2023-02-13 18:27:46.000000 UTC	Disabled
+1432	1484	notepad.exe	0x89a0d180	0	-	0	False	2023-02-13 18:28:25.000000 UTC	2023-02-13 18:28:40.000000 UTC	Disabled
+1444	1484	notepad.exe	0x899e6da0	0	-	0	False	2023-02-13 18:28:42.000000 UTC	2023-02-13 18:28:47.000000 UTC	Disabled
+276	1484	DumpIt.exe	0x89a0fda0	1	25	0	False	2023-02-13 18:29:08.000000 UTC	N/A	Disabled
+
+===== windows.pstree =====
+Volatility 3 Framework 2.28.2
+
+PID	PPID	ImageFileName	Offset(V)	Threads	Handles	SessionId	Wow64	CreateTime	ExitTime	Audit	Cmd	Path
+
+4	0	System	0x89c037f8	55	245	N/A	False	N/A	N/A	-	-	-
+* 368	4	smss.exe	0x89965020	3	19	N/A	False	2023-02-14 04:54:15.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\smss.exe	\SystemRoot\System32\smss.exe	\SystemRoot\System32\smss.exe
+** 592	368	csrss.exe	0x89a98da0	11	321	0	False	2023-02-14 04:54:15.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\csrss.exe	C:\WINDOWS\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,3072,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ProfileControl=Off MaxRequestThreads=16	\??\C:\WINDOWS\system32\csrss.exe
+** 616	368	winlogon.exe	0x89a88da0	18	508	0	False	2023-02-14 04:54:15.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\winlogon.exe	winlogon.exe	\??\C:\WINDOWS\system32\winlogon.exe
+*** 672	616	lsass.exe	0x89aa0020	21	335	0	False	2023-02-14 04:54:15.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\lsass.exe	C:\WINDOWS\system32\lsass.exe	C:\WINDOWS\system32\lsass.exe
+*** 660	616	services.exe	0x89938998	15	240	0	False	2023-02-14 04:54:15.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\services.exe	C:\WINDOWS\system32\services.exe	C:\WINDOWS\system32\services.exe
+**** 832	660	VBoxService.exe	0x89aaa3d8	9	115	0	False	2023-02-14 04:54:15.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\VBoxService.exe	C:\WINDOWS\System32\VBoxService.exe	C:\WINDOWS\System32\VBoxService.exe
+**** 1060	660	svchost.exe	0x89730da0	51	1072	0	False	2023-02-13 17:54:17.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\svchost.exe	C:\WINDOWS\System32\svchost.exe -k netsvcs	C:\WINDOWS\System32\svchost.exe
+***** 480	1060	wscntfy.exe	0x89694388	1	28	0	False	2023-02-13 17:54:30.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\wscntfy.exe	C:\WINDOWS\system32\wscntfy.exe	C:\WINDOWS\system32\wscntfy.exe
+**** 1156	660	svchost.exe	0x899adda0	13	192	0	False	2023-02-13 17:54:17.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k LocalService	C:\WINDOWS\system32\svchost.exe
+**** 968	660	svchost.exe	0x89a9f6f8	10	244	0	False	2023-02-13 17:54:17.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\svchost.exe	C:\WINDOWS\system32\svchost -k rpcss	C:\WINDOWS\system32\svchost.exe
+**** 1608	660	spoolsv.exe	0x897075d0	10	106	0	False	2023-02-13 17:54:18.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\spoolsv.exe	C:\WINDOWS\system32\spoolsv.exe	C:\WINDOWS\system32\spoolsv.exe
+**** 880	660	svchost.exe	0x89aab590	21	295	0	False	2023-02-13 17:54:16.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\svchost.exe	C:\WINDOWS\system32\svchost -k DcomLaunch	C:\WINDOWS\system32\svchost.exe
+**** 1108	660	svchost.exe	0x897289a8	5	78	0	False	2023-02-13 17:54:17.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\svchost.exe	C:\WINDOWS\system32\svchost.exe -k NetworkService	C:\WINDOWS\system32\svchost.exe
+**** 540	660	alg.exe	0x8969d2a0	5	102	0	False	2023-02-13 17:54:30.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\alg.exe	C:\WINDOWS\System32\alg.exe	C:\WINDOWS\System32\alg.exe
+1484	1440	explorer.exe	0x89733938	14	489	0	False	2023-02-13 17:54:18.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\explorer.exe	C:\WINDOWS\Explorer.EXE	C:\WINDOWS\Explorer.EXE
+* 964	1484	rootkit.exe	0x899dd740	0	-	0	False	2023-02-13 18:25:26.000000 UTC	2023-02-13 18:25:26.000000 UTC	\Device\HarddiskVolume1\Documents and Settings\CyberDefenders\Desktop\rootkit.exe	-	-
+** 1960	964	cmd.exe	0x89a18da0	0	-	0	False	2023-02-13 18:25:26.000000 UTC	2023-02-13 18:25:26.000000 UTC	\Device\HarddiskVolume1\WINDOWS\system32\cmd.exe	-	-
+* 1432	1484	notepad.exe	0x89a0d180	0	-	0	False	2023-02-13 18:28:25.000000 UTC	2023-02-13 18:28:40.000000 UTC	\Device\HarddiskVolume1\WINDOWS\system32\notepad.exe	-	-
+* 1444	1484	notepad.exe	0x899e6da0	0	-	0	False	2023-02-13 18:28:42.000000 UTC	2023-02-13 18:28:47.000000 UTC	\Device\HarddiskVolume1\WINDOWS\system32\notepad.exe	-	-
+* 528	1484	notepad.exe	0x896c5020	0	-	0	False	2023-02-13 18:26:55.000000 UTC	2023-02-13 18:27:46.000000 UTC	\Device\HarddiskVolume1\WINDOWS\system32\notepad.exe	-	-
+* 1880	1484	taskmgr.exe	0x89a0b2f0	0	-	0	False	2023-02-13 18:25:15.000000 UTC	2023-02-13 18:26:21.000000 UTC	\Device\HarddiskVolume1\WINDOWS\system32\taskmgr.exe	-	-
+* 276	1484	DumpIt.exe	0x89a0fda0	1	25	0	False	2023-02-13 18:29:08.000000 UTC	N/A	-	"C:\Documents and Settings\CyberDefenders\Desktop\dumpit-moonsols\DumpIt.exe" 	C:\Documents and Settings\CyberDefenders\Desktop\dumpit-moonsols\DumpIt.exe
+* 376	1484	VBoxTray.exe	0x89982da0	13	125	0	False	2023-02-13 17:54:30.000000 UTC	N/A	\Device\HarddiskVolume1\WINDOWS\system32\VBoxTray.exe	"C:\WINDOWS\system32\VBoxTray.exe" 	C:\WINDOWS\system32\VBoxTray.exe
+* 636	1484	msmsgs.exe	0x8994a020	2	157	0	False	2023-02-13 17:54:30.000000 UTC	N/A	\Device\HarddiskVolume1\Program Files\Messenger\msmsgs.exe	"C:\Program Files\Messenger\msmsgs.exe" /background	C:\Program Files\Messenger\msmsgs.exe
+
+===== windows.cmdline =====
+Volatility 3 Framework 2.28.2
+
+PID	Process	Args
+
+4	System	-
+368	smss.exe	\SystemRoot\System32\smss.exe
+592	csrss.exe	C:\WINDOWS\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,3072,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ProfileControl=Off MaxRequestThreads=16
+616	winlogon.exe	winlogon.exe
+660	services.exe	C:\WINDOWS\system32\services.exe
+672	lsass.exe	C:\WINDOWS\system32\lsass.exe
+832	VBoxService.exe	C:\WINDOWS\System32\VBoxService.exe
+880	svchost.exe	C:\WINDOWS\system32\svchost -k DcomLaunch
+968	svchost.exe	C:\WINDOWS\system32\svchost -k rpcss
+1060	svchost.exe	C:\WINDOWS\System32\svchost.exe -k netsvcs
+1108	svchost.exe	C:\WINDOWS\system32\svchost.exe -k NetworkService
+1156	svchost.exe	C:\WINDOWS\system32\svchost.exe -k LocalService
+1484	explorer.exe	C:\WINDOWS\Explorer.EXE
+1608	spoolsv.exe	C:\WINDOWS\system32\spoolsv.exe
+480	wscntfy.exe	C:\WINDOWS\system32\wscntfy.exe
+540	alg.exe	C:\WINDOWS\System32\alg.exe
+376	VBoxTray.exe	"C:\WINDOWS\system32\VBoxTray.exe" 
+636	msmsgs.exe	"C:\Program Files\Messenger\msmsgs.exe" /background
+1880	taskmgr.exe	-
+964	rootkit.exe	-
+1960	cmd.exe	-
+528	notepad.exe	-
+1432	notepad.exe	-
+1444	notepad.exe	-
+276	DumpIt.exe	"C:\Documents and Settings\CyberDefenders\Desktop\dumpit-moonsols\DumpIt.exe" 
+
+===== windows.malfind =====
+Volatility 3 Framework 2.28.2
+
+PID	Process	Start VPN	End VPN	Tag	Protection	CommitCharge	PrivateMemory	File output	Notes	Hexdump	Disasm
+
+592	csrss.exe	0x7f6f0000	0x7f7effff	Vad 	PAGE_EXECUTE_READWRITE	0	0	Disabled	N/A	
+c8 00 00 00 84 01 00 00 ff ee ff ee 08 70 00 00 .............p..
+08 00 00 00 00 fe 00 00 00 00 10 00 00 20 00 00 ............. ..
+00 02 00 00 00 20 00 00 8d 01 00 00 ff ef fd 7f ..... ..........
+03 00 08 06 00 00 00 00 00 00 00 00 00 00 00 00 ................	
+0x7f6f0000:	enter	0, 0
+0x7f6f0004:	test	byte ptr [ecx], al
+0x7f6f0006:	add	byte ptr [eax], al
+616	winlogon.exe	0x580000	0x59ffff	Vad 	PAGE_EXECUTE_READ	0	0	Disabled	N/A	
+c1 00 00 00 00 01 00 00 ff ee ff ee 09 00 00 00 ................
+09 00 00 00 00 fe 00 00 00 00 10 00 00 20 00 00 ............. ..
+00 02 00 00 00 20 00 00 47 08 00 00 ff ef fd 7f ..... ..G.......
+00 00 08 06 00 00 00 00 00 00 00 00 00 00 00 00 ................	
+0x580000:	rol	dword ptr [eax], 0
+0x580003:	add	byte ptr [eax], al
+0x580005:	add	dword ptr [eax], eax
+0x580007:	add	bh, bh
+0x580009:	out	dx, al
+616	winlogon.exe	0x4a5e0000	0x4a5e3fff	VadS	PAGE_EXECUTE_READWRITE	4	1	Disabled	N/A	
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 25 00 25 00 01 00 00 00 00 00 00 00 ....%.%.........	
+0x4a5e0000:	add	byte ptr [eax], al
+0x4a5e0002:	add	byte ptr [eax], al
+0x4a5e0004:	add	byte ptr [eax], al
+0x4a5e0006:	add	byte ptr [eax], al
+0x4a5e0008:	add	byte ptr [eax], al
+0x4a5e000a:	add	byte ptr [eax], al
+0x4a5e000c:	add	byte ptr [eax], al
+0x4a5e000e:	add	byte ptr [eax], al
+0x4a5e0010:	add	byte ptr [eax], al
+0x4a5e0012:	add	byte ptr [eax], al
+0x4a5e0014:	add	byte ptr [eax], al
+0x4a5e0016:	add	byte ptr [eax], al
+0x4a5e0018:	add	byte ptr [eax], al
+0x4a5e001a:	add	byte ptr [eax], al
+0x4a5e001c:	add	byte ptr [eax], al
+0x4a5e001e:	add	byte ptr [eax], al
+0x4a5e0020:	add	byte ptr [eax], al
+0x4a5e0022:	add	byte ptr [eax], al
+0x4a5e0024:	add	byte ptr [eax], al
+0x4a5e0026:	add	byte ptr [eax], al
+0x4a5e0028:	add	byte ptr [eax], al
+0x4a5e002a:	add	byte ptr [eax], al
+0x4a5e002c:	add	byte ptr [eax], al
+0x4a5e002e:	add	byte ptr [eax], al
+0x4a5e0030:	add	byte ptr [eax], al
+0x4a5e0032:	add	byte ptr [eax], al
+0x4a5e0034:	and	eax, 0x1002500
+0x4a5e0039:	add	byte ptr [eax], al
+0x4a5e003b:	add	byte ptr [eax], al
+0x4a5e003d:	add	byte ptr [eax], al
+616	winlogon.exe	0x2afc0000	0x2afc3fff	VadS	PAGE_EXECUTE_READWRITE	4	1	Disabled	N/A	
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 23 00 23 00 01 00 00 00 00 00 00 00 ....#.#.........	
+0x2afc0000:	add	byte ptr [eax], al
+0x2afc0002:	add	byte ptr [eax], al
+0x2afc0004:	add	byte ptr [eax], al
+0x2afc0006:	add	byte ptr [eax], al
+0x2afc0008:	add	byte ptr [eax], al
+0x2afc000a:	add	byte ptr [eax], al
+0x2afc000c:	add	byte ptr [eax], al
+0x2afc000e:	add	byte ptr [eax], al
+0x2afc0010:	add	byte ptr [eax], al
+0x2afc0012:	add	byte ptr [eax], al
+0x2afc0014:	add	byte ptr [eax], al
+0x2afc0016:	add	byte ptr [eax], al
+0x2afc0018:	add	byte ptr [eax], al
+0x2afc001a:	add	byte ptr [eax], al
+0x2afc001c:	add	byte ptr [eax], al
+0x2afc001e:	add	byte ptr [eax], al
+0x2afc0020:	add	byte ptr [eax], al
+0x2afc0022:	add	byte ptr [eax], al
+0x2afc0024:	add	byte ptr [eax], al
+0x2afc0026:	add	byte ptr [eax], al
+0x2afc0028:	add	byte ptr [eax], al
+0x2afc002a:	add	byte ptr [eax], al
+0x2afc002c:	add	byte ptr [eax], al
+0x2afc002e:	add	byte ptr [eax], al
+0x2afc0030:	add	byte ptr [eax], al
+0x2afc0032:	add	byte ptr [eax], al
+0x2afc0034:	and	eax, dword ptr [eax]
+0x2afc0036:	and	eax, dword ptr [eax]
+0x2afc0038:	add	dword ptr [eax], eax
+0x2afc003a:	add	byte ptr [eax], al
+0x2afc003c:	add	byte ptr [eax], al
+0x2afc003e:	add	byte ptr [eax], al
+616	winlogon.exe	0xe880000	0xe883fff	VadS	PAGE_EXECUTE_READWRITE	4	1	Disabled	N/A	
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 25 00 25 00 01 00 00 00 00 00 00 00 ....%.%.........	
+0xe880000:	add	byte ptr [eax], al
+0xe880002:	add	byte ptr [eax], al
+0xe880004:	add	byte ptr [eax], al
+0xe880006:	add	byte ptr [eax], al
+0xe880008:	add	byte ptr [eax], al
+0xe88000a:	add	byte ptr [eax], al
+0xe88000c:	add	byte ptr [eax], al
+0xe88000e:	add	byte ptr [eax], al
+0xe880010:	add	byte ptr [eax], al
+0xe880012:	add	byte ptr [eax], al
+0xe880014:	add	byte ptr [eax], al
+0xe880016:	add	byte ptr [eax], al
+0xe880018:	add	byte ptr [eax], al
+0xe88001a:	add	byte ptr [eax], al
+0xe88001c:	add	byte ptr [eax], al
+0xe88001e:	add	byte ptr [eax], al
+0xe880020:	add	byte ptr [eax], al
+0xe880022:	add	byte ptr [eax], al
+0xe880024:	add	byte ptr [eax], al
+0xe880026:	add	byte ptr [eax], al
+0xe880028:	add	byte ptr [eax], al
+0xe88002a:	add	byte ptr [eax], al
+0xe88002c:	add	byte ptr [eax], al
+0xe88002e:	add	byte ptr [eax], al
+0xe880030:	add	byte ptr [eax], al
+0xe880032:	add	byte ptr [eax], al
+0xe880034:	and	eax, 0x1002500
+0xe880039:	add	byte ptr [eax], al
+0xe88003b:	add	byte ptr [eax], al
+0xe88003d:	add	byte ptr [eax], al
+616	winlogon.exe	0x16be0000	0x16be3fff	VadS	PAGE_EXECUTE_READWRITE	4	1	Disabled	N/A	
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 28 00 28 00 01 00 00 00 00 00 00 00 ....(.(.........	
+0x16be0000:	add	byte ptr [eax], al
+0x16be0002:	add	byte ptr [eax], al
+0x16be0004:	add	byte ptr [eax], al
+0x16be0006:	add	byte ptr [eax], al
+0x16be0008:	add	byte ptr [eax], al
+0x16be000a:	add	byte ptr [eax], al
+0x16be000c:	add	byte ptr [eax], al
+0x16be000e:	add	byte ptr [eax], al
+0x16be0010:	add	byte ptr [eax], al
+0x16be0012:	add	byte ptr [eax], al
+0x16be0014:	add	byte ptr [eax], al
+0x16be0016:	add	byte ptr [eax], al
+0x16be0018:	add	byte ptr [eax], al
+0x16be001a:	add	byte ptr [eax], al
+0x16be001c:	add	byte ptr [eax], al
+0x16be001e:	add	byte ptr [eax], al
+0x16be0020:	add	byte ptr [eax], al
+0x16be0022:	add	byte ptr [eax], al
+0x16be0024:	add	byte ptr [eax], al
+0x16be0026:	add	byte ptr [eax], al
+0x16be0028:	add	byte ptr [eax], al
+0x16be002a:	add	byte ptr [eax], al
+0x16be002c:	add	byte ptr [eax], al
+0x16be002e:	add	byte ptr [eax], al
+0x16be0030:	add	byte ptr [eax], al
+0x16be0032:	add	byte ptr [eax], al
+0x16be0034:	sub	byte ptr [eax], al
+0x16be0036:	sub	byte ptr [eax], al
+0x16be0038:	add	dword ptr [eax], eax
+0x16be003a:	add	byte ptr [eax], al
+0x16be003c:	add	byte ptr [eax], al
+0x16be003e:	add	byte ptr [eax], al
+616	winlogon.exe	0x2b010000	0x2b013fff	VadS	PAGE_EXECUTE_READWRITE	4	1	Disabled	N/A	
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 2c 00 2c 00 01 00 00 00 00 00 00 00 ....,.,.........	
+0x2b010000:	add	byte ptr [eax], al
+0x2b010002:	add	byte ptr [eax], al
+0x2b010004:	add	byte ptr [eax], al
+0x2b010006:	add	byte ptr [eax], al
+0x2b010008:	add	byte ptr [eax], al
+0x2b01000a:	add	byte ptr [eax], al
+0x2b01000c:	add	byte ptr [eax], al
+0x2b01000e:	add	byte ptr [eax], al
+0x2b010010:	add	byte ptr [eax], al
+0x2b010012:	add	byte ptr [eax], al
+0x2b010014:	add	byte ptr [eax], al
+0x2b010016:	add	byte ptr [eax], al
+0x2b010018:	add	byte ptr [eax], al
+0x2b01001a:	add	byte ptr [eax], al
+0x2b01001c:	add	byte ptr [eax], al
+0x2b01001e:	add	byte ptr [eax], al
+0x2b010020:	add	byte ptr [eax], al
+0x2b010022:	add	byte ptr [eax], al
+0x2b010024:	add	byte ptr [eax], al
+0x2b010026:	add	byte ptr [eax], al
+0x2b010028:	add	byte ptr [eax], al
+0x2b01002a:	add	byte ptr [eax], al
+0x2b01002c:	add	byte ptr [eax], al
+0x2b01002e:	add	byte ptr [eax], al
+0x2b010030:	add	byte ptr [eax], al
+0x2b010032:	add	byte ptr [eax], al
+0x2b010034:	sub	al, 0
+0x2b010036:	sub	al, 0
+0x2b010038:	add	dword ptr [eax], eax
+0x2b01003a:	add	byte ptr [eax], al
+0x2b01003c:	add	byte ptr [eax], al
+0x2b01003e:	add	byte ptr [eax], al
+616	winlogon.exe	0x3ad10000	0x3ad13fff	VadS	PAGE_EXECUTE_READWRITE	4	1	Disabled	N/A	
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 25 00 25 00 01 00 00 00 00 00 00 00 ....%.%.........	
+0x3ad10000:	add	byte ptr [eax], al
+0x3ad10002:	add	byte ptr [eax], al
+0x3ad10004:	add	byte ptr [eax], al
+0x3ad10006:	add	byte ptr [eax], al
+0x3ad10008:	add	byte ptr [eax], al
+0x3ad1000a:	add	byte ptr [eax], al
+0x3ad1000c:	add	byte ptr [eax], al
+0x3ad1000e:	add	byte ptr [eax], al
+0x3ad10010:	add	byte ptr [eax], al
+0x3ad10012:	add	byte ptr [eax], al
+0x3ad10014:	add	byte ptr [eax], al
+0x3ad10016:	add	byte ptr [eax], al
+0x3ad10018:	add	byte ptr [eax], al
+0x3ad1001a:	add	byte ptr [eax], al
+0x3ad1001c:	add	byte ptr [eax], al
+0x3ad1001e:	add	byte ptr [eax], al
+0x3ad10020:	add	byte ptr [eax], al
+0x3ad10022:	add	byte ptr [eax], al
+0x3ad10024:	add	byte ptr [eax], al
+0x3ad10026:	add	byte ptr [eax], al
+0x3ad10028:	add	byte ptr [eax], al
+0x3ad1002a:	add	byte ptr [eax], al
+0x3ad1002c:	add	byte ptr [eax], al
+0x3ad1002e:	add	byte ptr [eax], al
+0x3ad10030:	add	byte ptr [eax], al
+0x3ad10032:	add	byte ptr [eax], al
+0x3ad10034:	and	eax, 0x1002500
+0x3ad10039:	add	byte ptr [eax], al
+0x3ad1003b:	add	byte ptr [eax], al
+0x3ad1003d:	add	byte ptr [eax], al
+616	winlogon.exe	0x3f750000	0x3f753fff	VadS	PAGE_EXECUTE_READWRITE	4	1	Disabled	N/A	
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 27 00 27 00 01 00 00 00 00 00 00 00 ....'.'.........	
+0x3f750000:	add	byte ptr [eax], al
+0x3f750002:	add	byte ptr [eax], al
+0x3f750004:	add	byte ptr [eax], al
+0x3f750006:	add	byte ptr [eax], al
+0x3f750008:	add	byte ptr [eax], al
+0x3f75000a:	add	byte ptr [eax], al
+0x3f75000c:	add	byte ptr [eax], al
+0x3f75000e:	add	byte ptr [eax], al
+0x3f750010:	add	byte ptr [eax], al
+0x3f750012:	add	byte ptr [eax], al
+0x3f750014:	add	byte ptr [eax], al
+0x3f750016:	add	byte ptr [eax], al
+0x3f750018:	add	byte ptr [eax], al
+0x3f75001a:	add	byte ptr [eax], al
+0x3f75001c:	add	byte ptr [eax], al
+0x3f75001e:	add	byte ptr [eax], al
+0x3f750020:	add	byte ptr [eax], al
+0x3f750022:	add	byte ptr [eax], al
+0x3f750024:	add	byte ptr [eax], al
+0x3f750026:	add	byte ptr [eax], al
+0x3f750028:	add	byte ptr [eax], al
+0x3f75002a:	add	byte ptr [eax], al
+0x3f75002c:	add	byte ptr [eax], al
+0x3f75002e:	add	byte ptr [eax], al
+0x3f750030:	add	byte ptr [eax], al
+0x3f750032:	add	byte ptr [eax], al
+0x3f750034:	daa	
+0x3f750035:	add	byte ptr [edi], ah
+0x3f750037:	add	byte ptr [ecx], al
+0x3f750039:	add	byte ptr [eax], al
+0x3f75003b:	add	byte ptr [eax], al
+0x3f75003d:	add	byte ptr [eax], al
+616	winlogon.exe	0x5d080000	0x5d083fff	VadS	PAGE_EXECUTE_READWRITE	4	1	Disabled	N/A	
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 28 00 28 00 01 00 00 00 00 00 00 00 ....(.(.........	
+0x5d080000:	add	byte ptr [eax], al
+0x5d080002:	add	byte ptr [eax], al
+0x5d080004:	add	byte ptr [eax], al
+0x5d080006:	add	byte ptr [eax], al
+0x5d080008:	add	byte ptr [eax], al
+0x5d08000a:	add	byte ptr [eax], al
+0x5d08000c:	add	byte ptr [eax], al
+0x5d08000e:	add	byte ptr [eax], al
+0x5d080010:	add	byte ptr [eax], al
+0x5d080012:	add	byte ptr [eax], al
+0x5d080014:	add	byte ptr [eax], al
+0x5d080016:	add	byte ptr [eax], al
+0x5d080018:	add	byte ptr [eax], al
+0x5d08001a:	add	byte ptr [eax], al
+0x5d08001c:	add	byte ptr [eax], al
+0x5d08001e:	add	byte ptr [eax], al
+0x5d080020:	add	byte ptr [eax], al
+0x5d080022:	add	byte ptr [eax], al
+0x5d080024:	add	byte ptr [eax], al
+0x5d080026:	add	byte ptr [eax], al
+0x5d080028:	add	byte ptr [eax], al
+0x5d08002a:	add	byte ptr [eax], al
+0x5d08002c:	add	byte ptr [eax], al
+0x5d08002e:	add	byte ptr [eax], al
+0x5d080030:	add	byte ptr [eax], al
+0x5d080032:	add	byte ptr [eax], al
+0x5d080034:	sub	byte ptr [eax], al
+0x5d080036:	sub	byte ptr [eax], al
+0x5d080038:	add	dword ptr [eax], eax
+0x5d08003a:	add	byte ptr [eax], al
+0x5d08003c:	add	byte ptr [eax], al
+0x5d08003e:	add	byte ptr [eax], al
+616	winlogon.exe	0x62220000	0x62223fff	VadS	PAGE_EXECUTE_READWRITE	4	1	Disabled	N/A	
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 2a 00 2a 00 01 00 00 00 00 00 00 00 ....*.*.........	
+0x62220000:	add	byte ptr [eax], al
+0x62220002:	add	byte ptr [eax], al
+0x62220004:	add	byte ptr [eax], al
+0x62220006:	add	byte ptr [eax], al
+0x62220008:	add	byte ptr [eax], al
+0x6222000a:	add	byte ptr [eax], al
+0x6222000c:	add	byte ptr [eax], al
+0x6222000e:	add	byte ptr [eax], al
+0x62220010:	add	byte ptr [eax], al
+0x62220012:	add	byte ptr [eax], al
+0x62220014:	add	byte ptr [eax], al
+0x62220016:	add	byte ptr [eax], al
+0x62220018:	add	byte ptr [eax], al
+0x6222001a:	add	byte ptr [eax], al
+0x6222001c:	add	byte ptr [eax], al
+0x6222001e:	add	byte ptr [eax], al
+0x62220020:	add	byte ptr [eax], al
+0x62220022:	add	byte ptr [eax], al
+0x62220024:	add	byte ptr [eax], al
+0x62220026:	add	byte ptr [eax], al
+0x62220028:	add	byte ptr [eax], al
+0x6222002a:	add	byte ptr [eax], al
+0x6222002c:	add	byte ptr [eax], al
+0x6222002e:	add	byte ptr [eax], al
+0x62220030:	add	byte ptr [eax], al
+0x62220032:	add	byte ptr [eax], al
+0x62220034:	sub	al, byte ptr [eax]
+0x62220036:	sub	al, byte ptr [eax]
+0x62220038:	add	dword ptr [eax], eax
+0x6222003a:	add	byte ptr [eax], al
+0x6222003c:	add	byte ptr [eax], al
+0x6222003e:	add	byte ptr [eax], al
+616	winlogon.exe	0x7f6f0000	0x7f7effff	Vad 	PAGE_EXECUTE_READ	0	0	Disabled	N/A	
+c8 00 00 00 84 01 00 00 ff ee ff ee 08 70 00 00 .............p..
+08 00 00 00 00 fe 00 00 00 00 10 00 00 20 00 00 ............. ..
+00 02 00 00 00 20 00 00 8d 01 00 00 ff ef fd 7f ..... ..........
+03 00 08 06 00 00 00 00 00 00 00 00 00 00 00 00 ................	
+0x7f6f0000:	enter	0, 0
+0x7f6f0004:	test	byte ptr [ecx], al
+0x7f6f0006:	add	byte ptr [eax], al
+880	svchost.exe	0x980000	0x988fff	VadS	PAGE_EXECUTE_READWRITE	9	1	Disabled	MZ header	
+4d 5a 90 00 03 00 00 00 04 00 00 00 ff ff 00 00 MZ..............
+b8 00 00 00 00 00 00 00 40 00 00 00 00 00 00 00 ........@.......
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+00 00 00 00 00 00 00 00 00 00 00 00 f8 00 00 00 ................	
+0x980000:	dec	ebp
+0x980001:	pop	edx
+0x980002:	nop	
+0x980003:	add	byte ptr [ebx], al
+0x980005:	add	byte ptr [eax], al
+0x980007:	add	byte ptr [eax + eax], al
+0x98000a:	add	byte ptr [eax], al
+636	msmsgs.exe	0x490000	0x78ffff	Vad 	PAGE_EXECUTE_READ	0	0	Disabled	N/A	
+c1 00 00 00 00 01 00 00 ff ee ff ee 09 00 00 00 ................
+09 00 00 00 00 fe 00 00 00 00 10 00 00 20 00 00 ............. ..
+00 02 00 00 00 20 00 00 1b 1f 00 00 ff ef fd 7f ..... ..........
+00 00 08 06 00 00 00 00 00 00 00 00 00 00 00 00 ................	
+0x490000:	rol	dword ptr [eax], 0
+0x490003:	add	byte ptr [eax], al
+0x490005:	add	dword ptr [eax], eax
+0x490007:	add	bh, bh
+0x490009:	out	dx, al
+
+===== windows.ldrmodules =====
+Volatility 3 Framework 2.28.2
+
+Pid	Process	Base	InLoad	InInit	InMem	MappedPath
+
+4	System	0x7c900000	False	False	False	\WINDOWS\system32\ntdll.dll
+368	smss.exe	0x48580000	True	False	True	\WINDOWS\system32\smss.exe
+368	smss.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+592	csrss.exe	0x460000	False	False	False	\WINDOWS\Fonts\vgasys.fon
+592	csrss.exe	0x4a680000	True	False	True	\WINDOWS\system32\csrss.exe
+592	csrss.exe	0x1210000	False	False	False	\WINDOWS\Fonts\vgaoem.fon
+592	csrss.exe	0x1230000	False	False	False	\WINDOWS\Fonts\ega40woa.fon
+592	csrss.exe	0x1220000	False	False	False	\WINDOWS\Fonts\dosapp.fon
+592	csrss.exe	0x1250000	False	False	False	\WINDOWS\Fonts\cga40woa.fon
+592	csrss.exe	0x1240000	False	False	False	\WINDOWS\Fonts\cga80woa.fon
+592	csrss.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+592	csrss.exe	0x75b40000	True	True	True	\WINDOWS\system32\csrsrv.dll
+592	csrss.exe	0x75b50000	True	True	True	\WINDOWS\system32\basesrv.dll
+592	csrss.exe	0x75b60000	True	True	True	\WINDOWS\system32\winsrv.dll
+592	csrss.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+592	csrss.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+592	csrss.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+592	csrss.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+592	csrss.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+592	csrss.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+592	csrss.exe	0x7e720000	True	True	True	\WINDOWS\system32\sxs.dll
+616	winlogon.exe	0x1000000	True	False	True	\WINDOWS\system32\winlogon.exe
+616	winlogon.exe	0x15a0000	True	True	True	\WINDOWS\system32\xpsp2res.dll
+616	winlogon.exe	0x5b860000	True	True	True	\WINDOWS\system32\netapi32.dll
+616	winlogon.exe	0x71ab0000	True	True	True	\WINDOWS\system32\ws2_32.dll
+616	winlogon.exe	0x71aa0000	True	True	True	\WINDOWS\system32\ws2help.dll
+616	winlogon.exe	0x71bf0000	True	True	True	\WINDOWS\system32\samlib.dll
+616	winlogon.exe	0x72d20000	True	True	True	\WINDOWS\system32\wdmaud.drv
+616	winlogon.exe	0x72d10000	True	True	True	\WINDOWS\system32\msacm32.drv
+616	winlogon.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+616	winlogon.exe	0x769c0000	True	True	True	\WINDOWS\system32\userenv.dll
+616	winlogon.exe	0x76360000	True	True	True	\WINDOWS\system32\winsta.dll
+616	winlogon.exe	0x75970000	True	True	True	\WINDOWS\system32\msgina.dll
+616	winlogon.exe	0x76b40000	True	True	True	\WINDOWS\system32\winmm.dll
+616	winlogon.exe	0x76c30000	True	True	True	\WINDOWS\system32\wintrust.dll
+616	winlogon.exe	0x76f50000	True	True	True	\WINDOWS\system32\wtsapi32.dll
+616	winlogon.exe	0x76f60000	True	True	True	\WINDOWS\system32\wldap32.dll
+616	winlogon.exe	0x77050000	True	True	True	\WINDOWS\system32\comres.dll
+616	winlogon.exe	0x76fd0000	True	True	True	\WINDOWS\system32\clbcatq.dll
+616	winlogon.exe	0x77120000	True	True	True	\WINDOWS\system32\oleaut32.dll
+616	winlogon.exe	0x774e0000	True	True	True	\WINDOWS\system32\ole32.dll
+616	winlogon.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+616	winlogon.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+616	winlogon.exe	0x77920000	True	True	True	\WINDOWS\system32\setupapi.dll
+616	winlogon.exe	0x77c00000	True	True	True	\WINDOWS\system32\version.dll
+616	winlogon.exe	0x77be0000	True	True	True	\WINDOWS\system32\msacm32.dll
+616	winlogon.exe	0x77bd0000	True	True	True	\WINDOWS\system32\midimap.dll
+616	winlogon.exe	0x77c70000	True	True	True	\WINDOWS\system32\msv1_0.dll
+616	winlogon.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+616	winlogon.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+616	winlogon.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+616	winlogon.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+616	winlogon.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+660	services.exe	0x1000000	True	False	True	\WINDOWS\system32\services.exe
+660	services.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+660	services.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+660	services.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+660	services.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+660	services.exe	0x5f770000	True	True	True	\WINDOWS\system32\ncobjapi.dll
+660	services.exe	0x5b860000	True	True	True	\WINDOWS\system32\netapi32.dll
+660	services.exe	0x47260000	True	True	True	\WINDOWS\AppPatch\AcAdProc.dll
+660	services.exe	0x5cb70000	True	True	True	\WINDOWS\system32\shimeng.dll
+660	services.exe	0x76080000	True	True	True	\WINDOWS\system32\msvcp60.dll
+660	services.exe	0x71ab0000	True	True	True	\WINDOWS\system32\ws2_32.dll
+660	services.exe	0x71aa0000	True	True	True	\WINDOWS\system32\ws2help.dll
+660	services.exe	0x776c0000	True	True	True	\WINDOWS\system32\authz.dll
+660	services.exe	0x769c0000	True	True	True	\WINDOWS\system32\userenv.dll
+660	services.exe	0x76360000	True	True	True	\WINDOWS\system32\winsta.dll
+660	services.exe	0x76bf0000	True	True	True	\WINDOWS\system32\psapi.dll
+660	services.exe	0x76f50000	True	True	True	\WINDOWS\system32\wtsapi32.dll
+660	services.exe	0x77b40000	True	True	True	\WINDOWS\system32\apphelp.dll
+660	services.exe	0x77c00000	True	True	True	\WINDOWS\system32\version.dll
+660	services.exe	0x77b70000	True	True	True	\WINDOWS\system32\eventlog.dll
+660	services.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+660	services.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+660	services.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+660	services.exe	0x7dbd0000	True	True	True	\WINDOWS\system32\scesrv.dll
+660	services.exe	0x7dba0000	True	True	True	\WINDOWS\system32\umpnpmgr.dll
+660	services.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+672	lsass.exe	0x1000000	True	False	True	\WINDOWS\system32\lsass.exe
+672	lsass.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+672	lsass.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+672	lsass.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+672	lsass.exe	0x75730000	True	True	True	\WINDOWS\system32\lsasrv.dll
+672	lsass.exe	0x71b20000	True	True	True	\WINDOWS\system32\mpr.dll
+672	lsass.exe	0x5b860000	True	True	True	\WINDOWS\system32\netapi32.dll
+672	lsass.exe	0x5ad70000	True	True	True	\WINDOWS\system32\uxtheme.dll
+672	lsass.exe	0x4d200000	True	True	True	\WINDOWS\system32\msprivs.dll
+672	lsass.exe	0x71ab0000	True	True	True	\WINDOWS\system32\ws2_32.dll
+672	lsass.exe	0x71aa0000	True	True	True	\WINDOWS\system32\ws2help.dll
+672	lsass.exe	0x5cb70000	True	True	True	\WINDOWS\system32\shimeng.dll
+672	lsass.exe	0x6f880000	True	True	True	\WINDOWS\AppPatch\AcGenral.dll
+672	lsass.exe	0x5d090000	True	True	True	\WINDOWS\system32\comctl32.dll
+672	lsass.exe	0x68000000	True	True	True	\WINDOWS\system32\rsaenh.dll
+672	lsass.exe	0x662b0000	True	True	True	\WINDOWS\system32\hnetcfg.dll
+672	lsass.exe	0x68100000	True	True	True	\WINDOWS\system32\dssenh.dll
+672	lsass.exe	0x71a50000	True	True	True	\WINDOWS\system32\mswsock.dll
+672	lsass.exe	0x71a90000	True	True	True	\WINDOWS\system32\wshtcpip.dll
+672	lsass.exe	0x71bf0000	True	True	True	\WINDOWS\system32\samlib.dll
+672	lsass.exe	0x74440000	True	True	True	\WINDOWS\system32\samsrv.dll
+672	lsass.exe	0x71cf0000	True	True	True	\WINDOWS\system32\kerberos.dll
+672	lsass.exe	0x74380000	True	True	True	\WINDOWS\system32\wdigest.dll
+672	lsass.exe	0x74370000	True	True	True	\WINDOWS\system32\winipsec.dll
+672	lsass.exe	0x74410000	True	True	True	\WINDOWS\system32\scecli.dll
+672	lsass.exe	0x743e0000	True	True	True	\WINDOWS\system32\ipsecsvc.dll
+672	lsass.exe	0x743a0000	True	True	True	\WINDOWS\system32\pstorsvc.dll
+672	lsass.exe	0x743c0000	True	True	True	\WINDOWS\system32\psbase.dll
+672	lsass.exe	0x744b0000	True	True	True	\WINDOWS\system32\netlogon.dll
+672	lsass.exe	0x77b20000	True	True	True	\WINDOWS\system32\msasn1.dll
+672	lsass.exe	0x767a0000	True	True	True	\WINDOWS\system32\ntdsapi.dll
+672	lsass.exe	0x76790000	True	True	True	\WINDOWS\system32\cryptdll.dll
+672	lsass.exe	0x76080000	True	True	True	\WINDOWS\system32\msvcp60.dll
+672	lsass.exe	0x75d90000	True	True	True	\WINDOWS\system32\oakley.dll
+672	lsass.exe	0x76f20000	True	True	True	\WINDOWS\system32\dnsapi.dll
+672	lsass.exe	0x76b40000	True	True	True	\WINDOWS\system32\winmm.dll
+672	lsass.exe	0x769c0000	True	True	True	\WINDOWS\system32\userenv.dll
+672	lsass.exe	0x767c0000	True	True	True	\WINDOWS\system32\w32time.dll
+672	lsass.exe	0x767f0000	True	True	True	\WINDOWS\system32\schannel.dll
+672	lsass.exe	0x76d60000	True	True	True	\WINDOWS\system32\iphlpapi.dll
+672	lsass.exe	0x76f60000	True	True	True	\WINDOWS\system32\wldap32.dll
+672	lsass.exe	0x774e0000	True	True	True	\WINDOWS\system32\ole32.dll
+672	lsass.exe	0x77120000	True	True	True	\WINDOWS\system32\oleaut32.dll
+672	lsass.exe	0x773d0000	True	True	True	\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+672	lsass.exe	0x77a80000	True	True	True	\WINDOWS\system32\crypt32.dll
+672	lsass.exe	0x77920000	True	True	True	\WINDOWS\system32\setupapi.dll
+672	lsass.exe	0x776c0000	True	True	True	\WINDOWS\system32\authz.dll
+672	lsass.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+672	lsass.exe	0x77be0000	True	True	True	\WINDOWS\system32\msacm32.dll
+672	lsass.exe	0x77c00000	True	True	True	\WINDOWS\system32\version.dll
+672	lsass.exe	0x77c70000	True	True	True	\WINDOWS\system32\msv1_0.dll
+672	lsass.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+672	lsass.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+672	lsass.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+672	lsass.exe	0x77f60000	True	True	True	\WINDOWS\system32\shlwapi.dll
+672	lsass.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+672	lsass.exe	0x7c9c0000	True	True	True	\WINDOWS\system32\shell32.dll
+832	VBoxService.exe	0x71b20000	True	True	True	\WINDOWS\system32\mpr.dll
+832	VBoxService.exe	0x400000	True	False	True	\WINDOWS\system32\VBoxService.exe
+832	VBoxService.exe	0x5d090000	True	True	True	\WINDOWS\system32\comctl32.dll
+832	VBoxService.exe	0x5b860000	True	True	True	\WINDOWS\system32\netapi32.dll
+832	VBoxService.exe	0x71ab0000	True	True	True	\WINDOWS\system32\ws2_32.dll
+832	VBoxService.exe	0x71aa0000	True	True	True	\WINDOWS\system32\ws2help.dll
+832	VBoxService.exe	0x71a50000	True	True	True	\WINDOWS\system32\mswsock.dll
+832	VBoxService.exe	0x662b0000	True	True	True	\WINDOWS\system32\hnetcfg.dll
+832	VBoxService.exe	0x71a90000	True	True	True	\WINDOWS\system32\wshtcpip.dll
+832	VBoxService.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+832	VBoxService.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+832	VBoxService.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+832	VBoxService.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+832	VBoxService.exe	0x77c00000	True	True	True	\WINDOWS\system32\version.dll
+832	VBoxService.exe	0x773d0000	True	True	True	\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+832	VBoxService.exe	0x76d60000	True	True	True	\WINDOWS\system32\iphlpapi.dll
+832	VBoxService.exe	0x71bf0000	True	True	True	\WINDOWS\system32\samlib.dll
+832	VBoxService.exe	0x76bf0000	True	True	True	\WINDOWS\system32\psapi.dll
+832	VBoxService.exe	0x76360000	True	True	True	\WINDOWS\system32\winsta.dll
+832	VBoxService.exe	0x76f60000	True	True	True	\WINDOWS\system32\wldap32.dll
+832	VBoxService.exe	0x76f50000	True	True	True	\WINDOWS\system32\wtsapi32.dll
+832	VBoxService.exe	0x77690000	True	True	True	\WINDOWS\system32\ntmarta.dll
+832	VBoxService.exe	0x774e0000	True	True	True	\WINDOWS\system32\ole32.dll
+832	VBoxService.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+832	VBoxService.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+832	VBoxService.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+832	VBoxService.exe	0x77f60000	True	True	True	\WINDOWS\system32\shlwapi.dll
+832	VBoxService.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+832	VBoxService.exe	0x7c9c0000	True	True	True	\WINDOWS\system32\shell32.dll
+880	svchost.exe	0x6f880000	True	True	True	\WINDOWS\AppPatch\AcGenral.dll
+880	svchost.exe	0x1000000	True	False	True	\WINDOWS\system32\svchost.exe
+880	svchost.exe	0x670000	True	True	True	\WINDOWS\system32\xpsp2res.dll
+880	svchost.exe	0x980000	False	False	False	N/A
+880	svchost.exe	0x9a0000	False	False	False	\WINDOWS\system32\msxml3r.dll
+880	svchost.exe	0x5ad70000	True	True	True	\WINDOWS\system32\uxtheme.dll
+880	svchost.exe	0x5cb70000	True	True	True	\WINDOWS\system32\shimeng.dll
+880	svchost.exe	0x5b860000	True	True	True	\WINDOWS\system32\netapi32.dll
+880	svchost.exe	0x5d090000	True	True	True	\WINDOWS\system32\comctl32.dll
+880	svchost.exe	0x68000000	True	True	True	\WINDOWS\system32\rsaenh.dll
+880	svchost.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+880	svchost.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+880	svchost.exe	0x76f60000	True	True	True	\WINDOWS\system32\wldap32.dll
+880	svchost.exe	0x76b40000	True	True	True	\WINDOWS\system32\winmm.dll
+880	svchost.exe	0x769c0000	True	True	True	\WINDOWS\system32\userenv.dll
+880	svchost.exe	0x71bf0000	True	True	True	\WINDOWS\system32\samlib.dll
+880	svchost.exe	0x71ab0000	True	True	True	\WINDOWS\system32\ws2_32.dll
+880	svchost.exe	0x71aa0000	True	True	True	\WINDOWS\system32\ws2help.dll
+880	svchost.exe	0x71a50000	True	True	True	\WINDOWS\system32\mswsock.dll
+880	svchost.exe	0x71ad0000	True	True	True	\WINDOWS\system32\wsock32.dll
+880	svchost.exe	0x760f0000	True	True	True	\WINDOWS\system32\termsrv.dll
+880	svchost.exe	0x74f70000	True	True	True	\WINDOWS\system32\icaapi.dll
+880	svchost.exe	0x74980000	True	True	True	\WINDOWS\system32\msxml3.dll
+880	svchost.exe	0x722b0000	True	True	True	\WINDOWS\system32\sensapi.dll
+880	svchost.exe	0x75110000	True	True	True	\WINDOWS\system32\mstlsapi.dll
+880	svchost.exe	0x76a80000	True	True	True	\WINDOWS\system32\rpcss.dll
+880	svchost.exe	0x76b20000	True	True	True	\WINDOWS\system32\atl.dll
+880	svchost.exe	0x76c90000	True	True	True	\WINDOWS\system32\imagehlp.dll
+880	svchost.exe	0x76c30000	True	True	True	\WINDOWS\system32\wintrust.dll
+880	svchost.exe	0x76bc0000	True	True	True	\WINDOWS\system32\regapi.dll
+880	svchost.exe	0x76e10000	True	True	True	\WINDOWS\system32\adsldpc.dll
+880	svchost.exe	0x76ee0000	True	True	True	\WINDOWS\system32\rasapi32.dll
+880	svchost.exe	0x76e90000	True	True	True	\WINDOWS\system32\rasman.dll
+880	svchost.exe	0x76e80000	True	True	True	\WINDOWS\system32\rtutils.dll
+880	svchost.exe	0x76eb0000	True	True	True	\WINDOWS\system32\tapi32.dll
+880	svchost.exe	0x76f20000	True	True	True	\WINDOWS\system32\dnsapi.dll
+880	svchost.exe	0x774e0000	True	True	True	\WINDOWS\system32\ole32.dll
+880	svchost.exe	0x77120000	True	True	True	\WINDOWS\system32\oleaut32.dll
+880	svchost.exe	0x76fd0000	True	True	True	\WINDOWS\system32\clbcatq.dll
+880	svchost.exe	0x76fc0000	True	True	True	\WINDOWS\system32\rasadhlp.dll
+880	svchost.exe	0x77050000	True	True	True	\WINDOWS\system32\comres.dll
+880	svchost.exe	0x773d0000	True	True	True	\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+880	svchost.exe	0x771b0000	True	True	True	\WINDOWS\system32\wininet.dll
+880	svchost.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+880	svchost.exe	0x77be0000	True	True	True	\WINDOWS\system32\msacm32.dll
+880	svchost.exe	0x77690000	True	True	True	\WINDOWS\system32\ntmarta.dll
+880	svchost.exe	0x77920000	True	True	True	\WINDOWS\system32\setupapi.dll
+880	svchost.exe	0x776c0000	True	True	True	\WINDOWS\system32\authz.dll
+880	svchost.exe	0x77a80000	True	True	True	\WINDOWS\system32\crypt32.dll
+880	svchost.exe	0x77b20000	True	True	True	\WINDOWS\system32\msasn1.dll
+880	svchost.exe	0x77c00000	True	True	True	\WINDOWS\system32\version.dll
+880	svchost.exe	0x77cc0000	True	True	True	\WINDOWS\system32\activeds.dll
+880	svchost.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+880	svchost.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+880	svchost.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+880	svchost.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+880	svchost.exe	0x77f60000	True	True	True	\WINDOWS\system32\shlwapi.dll
+880	svchost.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+880	svchost.exe	0x7c9c0000	True	True	True	\WINDOWS\system32\shell32.dll
+880	svchost.exe	0x7e1e0000	True	True	True	\WINDOWS\system32\urlmon.dll
+968	svchost.exe	0x1000000	True	False	True	\WINDOWS\system32\svchost.exe
+968	svchost.exe	0x670000	True	True	True	\WINDOWS\system32\xpsp2res.dll
+968	svchost.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+968	svchost.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+968	svchost.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+968	svchost.exe	0x5cb70000	True	True	True	\WINDOWS\system32\shimeng.dll
+968	svchost.exe	0x5ad70000	True	True	True	\WINDOWS\system32\uxtheme.dll
+968	svchost.exe	0x6f880000	True	True	True	\WINDOWS\AppPatch\AcGenral.dll
+968	svchost.exe	0x5d090000	True	True	True	\WINDOWS\system32\comctl32.dll
+968	svchost.exe	0x68000000	True	True	True	\WINDOWS\system32\rsaenh.dll
+968	svchost.exe	0x662b0000	True	True	True	\WINDOWS\system32\hnetcfg.dll
+968	svchost.exe	0x76b40000	True	True	True	\WINDOWS\system32\winmm.dll
+968	svchost.exe	0x769c0000	True	True	True	\WINDOWS\system32\userenv.dll
+968	svchost.exe	0x71ab0000	True	True	True	\WINDOWS\system32\ws2_32.dll
+968	svchost.exe	0x71aa0000	True	True	True	\WINDOWS\system32\ws2help.dll
+968	svchost.exe	0x71a50000	True	True	True	\WINDOWS\system32\mswsock.dll
+968	svchost.exe	0x71a90000	True	True	True	\WINDOWS\system32\wshtcpip.dll
+968	svchost.exe	0x76a80000	True	True	True	\WINDOWS\system32\rpcss.dll
+968	svchost.exe	0x774e0000	True	True	True	\WINDOWS\system32\ole32.dll
+968	svchost.exe	0x77120000	True	True	True	\WINDOWS\system32\oleaut32.dll
+968	svchost.exe	0x76f20000	True	True	True	\WINDOWS\system32\dnsapi.dll
+968	svchost.exe	0x76d60000	True	True	True	\WINDOWS\system32\iphlpapi.dll
+968	svchost.exe	0x76fb0000	True	True	True	\WINDOWS\system32\winrnr.dll
+968	svchost.exe	0x76f60000	True	True	True	\WINDOWS\system32\wldap32.dll
+968	svchost.exe	0x76fc0000	True	True	True	\WINDOWS\system32\rasadhlp.dll
+968	svchost.exe	0x76fd0000	True	True	True	\WINDOWS\system32\clbcatq.dll
+968	svchost.exe	0x77050000	True	True	True	\WINDOWS\system32\comres.dll
+968	svchost.exe	0x773d0000	True	True	True	\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+968	svchost.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+968	svchost.exe	0x77be0000	True	True	True	\WINDOWS\system32\msacm32.dll
+968	svchost.exe	0x77c00000	True	True	True	\WINDOWS\system32\version.dll
+968	svchost.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+968	svchost.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+968	svchost.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+968	svchost.exe	0x77f60000	True	True	True	\WINDOWS\system32\shlwapi.dll
+968	svchost.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+968	svchost.exe	0x7c9c0000	True	True	True	\WINDOWS\system32\shell32.dll
+1060	svchost.exe	0x478c0000	True	True	True	\WINDOWS\system32\dot3api.dll
+1060	svchost.exe	0x630000	True	True	True	\WINDOWS\system32\xpsp2res.dll
+1060	svchost.exe	0x1000000	True	False	True	\WINDOWS\system32\svchost.exe
+1060	svchost.exe	0x76b40000	True	True	True	\WINDOWS\system32\winmm.dll
+1060	svchost.exe	0x5cb70000	True	True	True	\WINDOWS\system32\shimeng.dll
+1060	svchost.exe	0x5ad70000	True	True	True	\WINDOWS\system32\uxtheme.dll
+1060	svchost.exe	0x59490000	True	True	True	\WINDOWS\system32\wbem\wmisvc.dll
+1060	svchost.exe	0x50000000	True	True	True	\WINDOWS\system32\wuauserv.dll
+1060	svchost.exe	0x4d4f0000	True	True	True	\WINDOWS\system32\winhttp.dll
+1060	svchost.exe	0x4c0a0000	True	True	True	\WINDOWS\system32\wscsvc.dll
+1060	svchost.exe	0x50040000	True	True	True	\WINDOWS\system32\wuaueng.dll
+1060	svchost.exe	0x597f0000	True	True	True	\WINDOWS\system32\wbem\wmiprvsd.dll
+1060	svchost.exe	0x5b860000	True	True	True	\WINDOWS\system32\netapi32.dll
+1060	svchost.exe	0x76360000	True	True	True	\WINDOWS\system32\winsta.dll
+1060	svchost.exe	0x74f50000	True	True	True	\WINDOWS\system32\msidle.dll
+1060	svchost.exe	0x6f880000	True	True	True	\WINDOWS\AppPatch\AcGenral.dll
+1060	svchost.exe	0x5d090000	True	True	True	\WINDOWS\system32\comctl32.dll
+1060	svchost.exe	0x68000000	True	True	True	\WINDOWS\system32\rsaenh.dll
+1060	svchost.exe	0x606b0000	True	True	True	\WINDOWS\system32\esent.dll
+1060	svchost.exe	0x5dca0000	True	True	True	\WINDOWS\system32\onex.dll
+1060	svchost.exe	0x5dcd0000	True	True	True	\WINDOWS\system32\eappprxy.dll
+1060	svchost.exe	0x600a0000	True	True	True	\WINDOWS\system32\mspatcha.dll
+1060	svchost.exe	0x5f770000	True	True	True	\WINDOWS\system32\ncobjapi.dll
+1060	svchost.exe	0x5f740000	True	True	True	\WINDOWS\system32\wbem\ncprov.dll
+1060	svchost.exe	0x662b0000	True	True	True	\WINDOWS\system32\hnetcfg.dll
+1060	svchost.exe	0x66460000	True	True	True	\WINDOWS\system32\ipnathlp.dll
+1060	svchost.exe	0x71bf0000	True	True	True	\WINDOWS\system32\samlib.dll
+1060	svchost.exe	0x71ab0000	True	True	True	\WINDOWS\system32\ws2_32.dll
+1060	svchost.exe	0x71aa0000	True	True	True	\WINDOWS\system32\ws2help.dll
+1060	svchost.exe	0x71a50000	True	True	True	\WINDOWS\system32\mswsock.dll
+1060	svchost.exe	0x708b0000	True	True	True	\WINDOWS\system32\audiosrv.dll
+1060	svchost.exe	0x71a90000	True	True	True	\WINDOWS\system32\wshtcpip.dll
+1060	svchost.exe	0x71ad0000	True	True	True	\WINDOWS\system32\wsock32.dll
+1060	svchost.exe	0x72810000	True	True	True	\WINDOWS\system32\eapolqec.dll
+1060	svchost.exe	0x726c0000	True	True	True	\WINDOWS\system32\qutil.dll
+1060	svchost.exe	0x723d0000	True	True	True	\WINDOWS\system32\winscard.dll
+1060	svchost.exe	0x722d0000	True	True	True	\WINDOWS\system32\sens.dll
+1060	svchost.exe	0x745b0000	True	True	True	\WINDOWS\system32\eappcfg.dll
+1060	svchost.exe	0x736d0000	True	True	True	\WINDOWS\system32\dot3dlg.dll
+1060	svchost.exe	0x73030000	True	True	True	\WINDOWS\system32\wzcsapi.dll
+1060	svchost.exe	0x73000000	True	True	True	\WINDOWS\system32\winspool.drv
+1060	svchost.exe	0x73d20000	True	True	True	\WINDOWS\system32\seclogon.dll
+1060	svchost.exe	0x74f40000	True	True	True	\WINDOWS\pchealth\helpctr\binaries\pchsvc.dll
+1060	svchost.exe	0x74ad0000	True	True	True	\WINDOWS\system32\powrprof.dll
+1060	svchost.exe	0x74f00000	True	True	True	\WINDOWS\system32\ssdpapi.dll
+1060	svchost.exe	0x754d0000	True	True	True	\WINDOWS\system32\cryptui.dll
+1060	svchost.exe	0x75090000	True	True	True	\WINDOWS\system32\srvsvc.dll
+1060	svchost.exe	0x74f90000	True	True	True	\WINDOWS\system32\dmserver.dll
+1060	svchost.exe	0x74f80000	True	True	True	\WINDOWS\system32\ersvc.dll
+1060	svchost.exe	0x75070000	True	True	True	\WINDOWS\system32\trkwks.dll
+1060	svchost.exe	0x75020000	True	True	True	\WINDOWS\system32\wbem\wmiutils.dll
+1060	svchost.exe	0x75150000	True	True	True	\WINDOWS\system32\cabinet.dll
+1060	svchost.exe	0x75130000	True	True	True	\WINDOWS\system32\colbact.dll
+1060	svchost.exe	0x750f0000	True	True	True	\WINDOWS\system32\mtxclu.dll
+1060	svchost.exe	0x750b0000	True	True	True	\WINDOWS\system32\resutils.dll
+1060	svchost.exe	0x751a0000	True	True	True	\WINDOWS\system32\srsvc.dll
+1060	svchost.exe	0x753e0000	True	True	True	\WINDOWS\system32\vssapi.dll
+1060	svchost.exe	0x75260000	True	True	True	\WINDOWS\system32\advpack.dll
+1060	svchost.exe	0x75200000	True	True	True	\WINDOWS\system32\wbem\repdrvfs.dll
+1060	svchost.exe	0x75290000	True	True	True	\WINDOWS\system32\wbem\wbemcomn.dll
+1060	svchost.exe	0x75310000	True	True	True	\WINDOWS\system32\wbem\esscli.dll
+1060	svchost.exe	0x75390000	True	True	True	\WINDOWS\system32\wbem\wbemess.dll
+1060	svchost.exe	0x76080000	True	True	True	\WINDOWS\system32\msvcp60.dll
+1060	svchost.exe	0x75690000	True	True	True	\WINDOWS\system32\wbem\fastprox.dll
+1060	svchost.exe	0x762c0000	True	True	True	\WINDOWS\system32\wbem\wbemcore.dll
+1060	svchost.exe	0x769c0000	True	True	True	\WINDOWS\system32\userenv.dll
+1060	svchost.exe	0x767f0000	True	True	True	\WINDOWS\system32\schannel.dll
+1060	svchost.exe	0x767a0000	True	True	True	\WINDOWS\system32\ntdsapi.dll
+1060	svchost.exe	0x76400000	True	True	True	\WINDOWS\system32\netshell.dll
+1060	svchost.exe	0x76780000	True	True	True	\WINDOWS\system32\shfolder.dll
+1060	svchost.exe	0x76620000	True	True	True	\WINDOWS\system32\comsvcs.dll
+1060	svchost.exe	0x767c0000	True	True	True	\WINDOWS\system32\w32time.dll
+1060	svchost.exe	0x768d0000	True	True	True	\WINDOWS\system32\rasdlg.dll
+1060	svchost.exe	0x76b20000	True	True	True	\WINDOWS\system32\atl.dll
+1060	svchost.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+1060	svchost.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+1060	svchost.exe	0x774e0000	True	True	True	\WINDOWS\system32\ole32.dll
+1060	svchost.exe	0x77120000	True	True	True	\WINDOWS\system32\oleaut32.dll
+1060	svchost.exe	0x76f20000	True	True	True	\WINDOWS\system32\dnsapi.dll
+1060	svchost.exe	0x76d30000	True	True	True	\WINDOWS\system32\wmi.dll
+1060	svchost.exe	0x76bf0000	True	True	True	\WINDOWS\system32\psapi.dll
+1060	svchost.exe	0x76b70000	True	True	True	\WINDOWS\system32\rastls.dll
+1060	svchost.exe	0x76bd0000	True	True	True	\WINDOWS\system32\raschap.dll
+1060	svchost.exe	0x76bb0000	True	True	True	\WINDOWS\system32\sfc.dll
+1060	svchost.exe	0x76c30000	True	True	True	\WINDOWS\system32\wintrust.dll
+1060	svchost.exe	0x76c00000	True	True	True	\WINDOWS\system32\credui.dll
+1060	svchost.exe	0x76c90000	True	True	True	\WINDOWS\system32\imagehlp.dll
+1060	svchost.exe	0x76c60000	True	True	True	\WINDOWS\system32\sfc_os.dll
+1060	svchost.exe	0x76ce0000	True	True	True	\WINDOWS\system32\cryptsvc.dll
+1060	svchost.exe	0x76d10000	True	True	True	\WINDOWS\system32\clusapi.dll
+1060	svchost.exe	0x76d60000	True	True	True	\WINDOWS\system32\iphlpapi.dll
+1060	svchost.exe	0x76d40000	True	True	True	\WINDOWS\system32\mprapi.dll
+1060	svchost.exe	0x76e80000	True	True	True	\WINDOWS\system32\rtutils.dll
+1060	svchost.exe	0x76e10000	True	True	True	\WINDOWS\system32\adsldpc.dll
+1060	svchost.exe	0x76da0000	True	True	True	\WINDOWS\system32\browser.dll
+1060	svchost.exe	0x76de0000	True	True	True	\WINDOWS\system32\upnp.dll
+1060	svchost.exe	0x76e40000	True	True	True	\WINDOWS\system32\wkssvc.dll
+1060	svchost.exe	0x76ee0000	True	True	True	\WINDOWS\system32\rasapi32.dll
+1060	svchost.exe	0x76e90000	True	True	True	\WINDOWS\system32\rasman.dll
+1060	svchost.exe	0x76eb0000	True	True	True	\WINDOWS\system32\tapi32.dll
+1060	svchost.exe	0x76f60000	True	True	True	\WINDOWS\system32\wldap32.dll
+1060	svchost.exe	0x76f50000	True	True	True	\WINDOWS\system32\wtsapi32.dll
+1060	svchost.exe	0x76fd0000	True	True	True	\WINDOWS\system32\clbcatq.dll
+1060	svchost.exe	0x76fb0000	True	True	True	\WINDOWS\system32\winrnr.dll
+1060	svchost.exe	0x76fc0000	True	True	True	\WINDOWS\system32\rasadhlp.dll
+1060	svchost.exe	0x77050000	True	True	True	\WINDOWS\system32\comres.dll
+1060	svchost.exe	0x773d0000	True	True	True	\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+1060	svchost.exe	0x771b0000	True	True	True	\WINDOWS\system32\wininet.dll
+1060	svchost.exe	0x77300000	True	True	True	\WINDOWS\system32\schedsvc.dll
+1060	svchost.exe	0x77be0000	True	True	True	\WINDOWS\system32\msacm32.dll
+1060	svchost.exe	0x776e0000	True	True	True	\WINDOWS\system32\shsvcs.dll
+1060	svchost.exe	0x77690000	True	True	True	\WINDOWS\system32\ntmarta.dll
+1060	svchost.exe	0x776c0000	True	True	True	\WINDOWS\system32\authz.dll
+1060	svchost.exe	0x77a80000	True	True	True	\WINDOWS\system32\crypt32.dll
+1060	svchost.exe	0x77920000	True	True	True	\WINDOWS\system32\setupapi.dll
+1060	svchost.exe	0x77710000	True	True	True	\WINDOWS\system32\es.dll
+1060	svchost.exe	0x77b20000	True	True	True	\WINDOWS\system32\msasn1.dll
+1060	svchost.exe	0x77b90000	True	True	True	\WINDOWS\system32\certcli.dll
+1060	svchost.exe	0x77b40000	True	True	True	\WINDOWS\system32\apphelp.dll
+1060	svchost.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+1060	svchost.exe	0x77c00000	True	True	True	\WINDOWS\system32\version.dll
+1060	svchost.exe	0x77cc0000	True	True	True	\WINDOWS\system32\activeds.dll
+1060	svchost.exe	0x77c70000	True	True	True	\WINDOWS\system32\msv1_0.dll
+1060	svchost.exe	0x77d00000	True	True	True	\WINDOWS\system32\netman.dll
+1060	svchost.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+1060	svchost.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+1060	svchost.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+1060	svchost.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+1060	svchost.exe	0x77f60000	True	True	True	\WINDOWS\system32\shlwapi.dll
+1060	svchost.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+1060	svchost.exe	0x7c9c0000	True	True	True	\WINDOWS\system32\shell32.dll
+1060	svchost.exe	0x7d4b0000	True	True	True	\WINDOWS\system32\dhcpcsvc.dll
+1060	svchost.exe	0x7d1e0000	True	True	True	\WINDOWS\system32\msi.dll
+1060	svchost.exe	0x7db10000	True	True	True	\WINDOWS\system32\wzcsvc.dll
+1060	svchost.exe	0x7e720000	True	True	True	\WINDOWS\system32\sxs.dll
+1108	svchost.exe	0x1000000	True	False	True	\WINDOWS\system32\svchost.exe
+1108	svchost.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+1108	svchost.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+1108	svchost.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+1108	svchost.exe	0x5cb70000	True	True	True	\WINDOWS\system32\shimeng.dll
+1108	svchost.exe	0x5ad70000	True	True	True	\WINDOWS\system32\uxtheme.dll
+1108	svchost.exe	0x6f880000	True	True	True	\WINDOWS\AppPatch\AcGenral.dll
+1108	svchost.exe	0x5d090000	True	True	True	\WINDOWS\system32\comctl32.dll
+1108	svchost.exe	0x68000000	True	True	True	\WINDOWS\system32\rsaenh.dll
+1108	svchost.exe	0x662b0000	True	True	True	\WINDOWS\system32\hnetcfg.dll
+1108	svchost.exe	0x76b40000	True	True	True	\WINDOWS\system32\winmm.dll
+1108	svchost.exe	0x769c0000	True	True	True	\WINDOWS\system32\userenv.dll
+1108	svchost.exe	0x76770000	True	True	True	\WINDOWS\system32\dnsrslvr.dll
+1108	svchost.exe	0x71ab0000	True	True	True	\WINDOWS\system32\ws2_32.dll
+1108	svchost.exe	0x71aa0000	True	True	True	\WINDOWS\system32\ws2help.dll
+1108	svchost.exe	0x71a50000	True	True	True	\WINDOWS\system32\mswsock.dll
+1108	svchost.exe	0x71a90000	True	True	True	\WINDOWS\system32\wshtcpip.dll
+1108	svchost.exe	0x774e0000	True	True	True	\WINDOWS\system32\ole32.dll
+1108	svchost.exe	0x77120000	True	True	True	\WINDOWS\system32\oleaut32.dll
+1108	svchost.exe	0x76f20000	True	True	True	\WINDOWS\system32\dnsapi.dll
+1108	svchost.exe	0x76d60000	True	True	True	\WINDOWS\system32\iphlpapi.dll
+1108	svchost.exe	0x773d0000	True	True	True	\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+1108	svchost.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+1108	svchost.exe	0x77be0000	True	True	True	\WINDOWS\system32\msacm32.dll
+1108	svchost.exe	0x77c00000	True	True	True	\WINDOWS\system32\version.dll
+1108	svchost.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+1108	svchost.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+1108	svchost.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+1108	svchost.exe	0x77f60000	True	True	True	\WINDOWS\system32\shlwapi.dll
+1108	svchost.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+1108	svchost.exe	0x7c9c0000	True	True	True	\WINDOWS\system32\shell32.dll
+1156	svchost.exe	0x630000	True	True	True	\WINDOWS\system32\xpsp2res.dll
+1156	svchost.exe	0x1000000	True	False	True	\WINDOWS\system32\svchost.exe
+1156	svchost.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+1156	svchost.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+1156	svchost.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+1156	svchost.exe	0x5cb70000	True	True	True	\WINDOWS\system32\shimeng.dll
+1156	svchost.exe	0x5ad70000	True	True	True	\WINDOWS\system32\uxtheme.dll
+1156	svchost.exe	0x5a6e0000	True	True	True	\WINDOWS\system32\webclnt.dll
+1156	svchost.exe	0x6f880000	True	True	True	\WINDOWS\AppPatch\AcGenral.dll
+1156	svchost.exe	0x5d090000	True	True	True	\WINDOWS\system32\comctl32.dll
+1156	svchost.exe	0x662b0000	True	True	True	\WINDOWS\system32\hnetcfg.dll
+1156	svchost.exe	0x76b40000	True	True	True	\WINDOWS\system32\winmm.dll
+1156	svchost.exe	0x769c0000	True	True	True	\WINDOWS\system32\userenv.dll
+1156	svchost.exe	0x71bf0000	True	True	True	\WINDOWS\system32\samlib.dll
+1156	svchost.exe	0x71ab0000	True	True	True	\WINDOWS\system32\ws2_32.dll
+1156	svchost.exe	0x71aa0000	True	True	True	\WINDOWS\system32\ws2help.dll
+1156	svchost.exe	0x71a50000	True	True	True	\WINDOWS\system32\mswsock.dll
+1156	svchost.exe	0x71a90000	True	True	True	\WINDOWS\system32\wshtcpip.dll
+1156	svchost.exe	0x71ad0000	True	True	True	\WINDOWS\system32\wsock32.dll
+1156	svchost.exe	0x74c40000	True	True	True	\WINDOWS\system32\lmhsvc.dll
+1156	svchost.exe	0x765e0000	True	True	True	\WINDOWS\system32\ssdpsrv.dll
+1156	svchost.exe	0x76af0000	True	True	True	\WINDOWS\system32\regsvc.dll
+1156	svchost.exe	0x774e0000	True	True	True	\WINDOWS\system32\ole32.dll
+1156	svchost.exe	0x77120000	True	True	True	\WINDOWS\system32\oleaut32.dll
+1156	svchost.exe	0x76f60000	True	True	True	\WINDOWS\system32\wldap32.dll
+1156	svchost.exe	0x76d60000	True	True	True	\WINDOWS\system32\iphlpapi.dll
+1156	svchost.exe	0x76fd0000	True	True	True	\WINDOWS\system32\clbcatq.dll
+1156	svchost.exe	0x77050000	True	True	True	\WINDOWS\system32\comres.dll
+1156	svchost.exe	0x773d0000	True	True	True	\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+1156	svchost.exe	0x771b0000	True	True	True	\WINDOWS\system32\wininet.dll
+1156	svchost.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+1156	svchost.exe	0x77be0000	True	True	True	\WINDOWS\system32\msacm32.dll
+1156	svchost.exe	0x77690000	True	True	True	\WINDOWS\system32\ntmarta.dll
+1156	svchost.exe	0x77a80000	True	True	True	\WINDOWS\system32\crypt32.dll
+1156	svchost.exe	0x77b20000	True	True	True	\WINDOWS\system32\msasn1.dll
+1156	svchost.exe	0x77c00000	True	True	True	\WINDOWS\system32\version.dll
+1156	svchost.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+1156	svchost.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+1156	svchost.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+1156	svchost.exe	0x77f60000	True	True	True	\WINDOWS\system32\shlwapi.dll
+1156	svchost.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+1156	svchost.exe	0x7c9c0000	True	True	True	\WINDOWS\system32\shell32.dll
+1484	explorer.exe	0x1000000	True	False	True	\WINDOWS\explorer.exe
+1484	explorer.exe	0xc30000	True	True	True	\WINDOWS\system32\xpsp2res.dll
+1484	explorer.exe	0x1f50000	False	False	False	\WINDOWS\Resources\Themes\Luna\Shell\NormalColor\shellstyle.dll
+1484	explorer.exe	0x25e0000	False	False	False	\WINDOWS\system32\msxml3r.dll
+1484	explorer.exe	0x5b860000	True	True	True	\WINDOWS\system32\netapi32.dll
+1484	explorer.exe	0x478c0000	True	True	True	\WINDOWS\system32\dot3api.dll
+1484	explorer.exe	0x5ad70000	True	True	True	\WINDOWS\system32\uxtheme.dll
+1484	explorer.exe	0x75f80000	True	True	True	\WINDOWS\system32\browseui.dll
+1484	explorer.exe	0x71cd0000	True	True	True	\WINDOWS\system32\netui0.dll
+1484	explorer.exe	0x5cb70000	True	True	True	\WINDOWS\system32\shimeng.dll
+1484	explorer.exe	0x5ba60000	True	True	True	\WINDOWS\system32\themeui.dll
+1484	explorer.exe	0x6f880000	True	True	True	\WINDOWS\AppPatch\AcGenral.dll
+1484	explorer.exe	0x5d090000	True	True	True	\WINDOWS\system32\comctl32.dll
+1484	explorer.exe	0x5dca0000	True	True	True	\WINDOWS\system32\onex.dll
+1484	explorer.exe	0x5dcd0000	True	True	True	\WINDOWS\system32\eappprxy.dll
+1484	explorer.exe	0x6c1b0000	True	True	True	\WINDOWS\system32\duser.dll
+1484	explorer.exe	0x662b0000	True	True	True	\WINDOWS\system32\hnetcfg.dll
+1484	explorer.exe	0x71bf0000	True	True	True	\WINDOWS\system32\samlib.dll
+1484	explorer.exe	0x71ab0000	True	True	True	\WINDOWS\system32\ws2_32.dll
+1484	explorer.exe	0x71aa0000	True	True	True	\WINDOWS\system32\ws2help.dll
+1484	explorer.exe	0x71600000	True	True	True	\WINDOWS\system32\browselc.dll
+1484	explorer.exe	0x71a50000	True	True	True	\WINDOWS\system32\mswsock.dll
+1484	explorer.exe	0x71800000	True	True	True	\WINDOWS\system32\shdoclc.dll
+1484	explorer.exe	0x71a90000	True	True	True	\WINDOWS\system32\wshtcpip.dll
+1484	explorer.exe	0x71ad0000	True	True	True	\WINDOWS\system32\wsock32.dll
+1484	explorer.exe	0x71b20000	True	True	True	\WINDOWS\system32\mpr.dll
+1484	explorer.exe	0x71c10000	True	True	True	\WINDOWS\system32\ntlanman.dll
+1484	explorer.exe	0x71c90000	True	True	True	\WINDOWS\system32\netui1.dll
+1484	explorer.exe	0x71c80000	True	True	True	\WINDOWS\system32\netrap.dll
+1484	explorer.exe	0x754d0000	True	True	True	\WINDOWS\system32\cryptui.dll
+1484	explorer.exe	0x72d20000	True	True	True	\WINDOWS\system32\wdmaud.drv
+1484	explorer.exe	0x723d0000	True	True	True	\WINDOWS\system32\winscard.dll
+1484	explorer.exe	0x722b0000	True	True	True	\WINDOWS\system32\sensapi.dll
+1484	explorer.exe	0x72d10000	True	True	True	\WINDOWS\system32\msacm32.drv
+1484	explorer.exe	0x72410000	True	True	True	\WINDOWS\system32\mydocs.dll
+1484	explorer.exe	0x736d0000	True	True	True	\WINDOWS\system32\dot3dlg.dll
+1484	explorer.exe	0x73380000	True	True	True	\WINDOWS\system32\zipfldr.dll
+1484	explorer.exe	0x745b0000	True	True	True	\WINDOWS\system32\eappcfg.dll
+1484	explorer.exe	0x74b30000	True	True	True	\WINDOWS\system32\webcheck.dll
+1484	explorer.exe	0x74af0000	True	True	True	\WINDOWS\system32\batmeter.dll
+1484	explorer.exe	0x74ad0000	True	True	True	\WINDOWS\system32\powrprof.dll
+1484	explorer.exe	0x74980000	True	True	True	\WINDOWS\system32\msxml3.dll
+1484	explorer.exe	0x75f60000	True	True	True	\WINDOWS\system32\drprov.dll
+1484	explorer.exe	0x75c50000	True	True	True	\WINDOWS\system32\jscript.dll
+1484	explorer.exe	0x75cf0000	True	True	True	\WINDOWS\system32\mlang.dll
+1484	explorer.exe	0x75f70000	True	True	True	\WINDOWS\system32\davclnt.dll
+1484	explorer.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+1484	explorer.exe	0x774e0000	True	True	True	\WINDOWS\system32\ole32.dll
+1484	explorer.exe	0x76ee0000	True	True	True	\WINDOWS\system32\rasapi32.dll
+1484	explorer.exe	0x76c30000	True	True	True	\WINDOWS\system32\wintrust.dll
+1484	explorer.exe	0x76b40000	True	True	True	\WINDOWS\system32\winmm.dll
+1484	explorer.exe	0x769c0000	True	True	True	\WINDOWS\system32\userenv.dll
+1484	explorer.exe	0x76600000	True	True	True	\WINDOWS\system32\cscdll.dll
+1484	explorer.exe	0x76380000	True	True	True	\WINDOWS\system32\msimg32.dll
+1484	explorer.exe	0x76360000	True	True	True	\WINDOWS\system32\winsta.dll
+1484	explorer.exe	0x76080000	True	True	True	\WINDOWS\system32\msvcp60.dll
+1484	explorer.exe	0x76280000	True	True	True	\WINDOWS\system32\stobject.dll
+1484	explorer.exe	0x76400000	True	True	True	\WINDOWS\system32\netshell.dll
+1484	explorer.exe	0x76390000	True	True	True	\WINDOWS\system32\imm32.dll
+1484	explorer.exe	0x76990000	True	True	True	\WINDOWS\system32\ntshrui.dll
+1484	explorer.exe	0x76980000	True	True	True	\WINDOWS\system32\linkinfo.dll
+1484	explorer.exe	0x76b20000	True	True	True	\WINDOWS\system32\atl.dll
+1484	explorer.exe	0x76c00000	True	True	True	\WINDOWS\system32\credui.dll
+1484	explorer.exe	0x76c90000	True	True	True	\WINDOWS\system32\imagehlp.dll
+1484	explorer.exe	0x76e80000	True	True	True	\WINDOWS\system32\rtutils.dll
+1484	explorer.exe	0x76d60000	True	True	True	\WINDOWS\system32\iphlpapi.dll
+1484	explorer.exe	0x76e90000	True	True	True	\WINDOWS\system32\rasman.dll
+1484	explorer.exe	0x76eb0000	True	True	True	\WINDOWS\system32\tapi32.dll
+1484	explorer.exe	0x77120000	True	True	True	\WINDOWS\system32\oleaut32.dll
+1484	explorer.exe	0x76f60000	True	True	True	\WINDOWS\system32\wldap32.dll
+1484	explorer.exe	0x76f50000	True	True	True	\WINDOWS\system32\wtsapi32.dll
+1484	explorer.exe	0x76f20000	True	True	True	\WINDOWS\system32\dnsapi.dll
+1484	explorer.exe	0x76fd0000	True	True	True	\WINDOWS\system32\clbcatq.dll
+1484	explorer.exe	0x76fc0000	True	True	True	\WINDOWS\system32\rasadhlp.dll
+1484	explorer.exe	0x77050000	True	True	True	\WINDOWS\system32\comres.dll
+1484	explorer.exe	0x771b0000	True	True	True	\WINDOWS\system32\wininet.dll
+1484	explorer.exe	0x773d0000	True	True	True	\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+1484	explorer.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+1484	explorer.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+1484	explorer.exe	0x77a80000	True	True	True	\WINDOWS\system32\crypt32.dll
+1484	explorer.exe	0x77a20000	True	True	True	\WINDOWS\system32\cscui.dll
+1484	explorer.exe	0x77920000	True	True	True	\WINDOWS\system32\setupapi.dll
+1484	explorer.exe	0x77690000	True	True	True	\WINDOWS\system32\ntmarta.dll
+1484	explorer.exe	0x77b20000	True	True	True	\WINDOWS\system32\msasn1.dll
+1484	explorer.exe	0x77c00000	True	True	True	\WINDOWS\system32\version.dll
+1484	explorer.exe	0x77be0000	True	True	True	\WINDOWS\system32\msacm32.dll
+1484	explorer.exe	0x77b40000	True	True	True	\WINDOWS\system32\apphelp.dll
+1484	explorer.exe	0x77bd0000	True	True	True	\WINDOWS\system32\midimap.dll
+1484	explorer.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+1484	explorer.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+1484	explorer.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+1484	explorer.exe	0x77f60000	True	True	True	\WINDOWS\system32\shlwapi.dll
+1484	explorer.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+1484	explorer.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+1484	explorer.exe	0x7e290000	True	True	True	\WINDOWS\system32\shdocvw.dll
+1484	explorer.exe	0x7c9c0000	True	True	True	\WINDOWS\system32\shell32.dll
+1484	explorer.exe	0x7e1e0000	True	True	True	\WINDOWS\system32\urlmon.dll
+1484	explorer.exe	0x7e720000	True	True	True	\WINDOWS\system32\sxs.dll
+1608	spoolsv.exe	0x1000000	True	False	True	\WINDOWS\system32\spoolsv.exe
+1608	spoolsv.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+1608	spoolsv.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+1608	spoolsv.exe	0x6f880000	True	True	True	\WINDOWS\AppPatch\AcGenral.dll
+1608	spoolsv.exe	0x5cb70000	True	True	True	\WINDOWS\system32\shimeng.dll
+1608	spoolsv.exe	0x5ad70000	True	True	True	\WINDOWS\system32\uxtheme.dll
+1608	spoolsv.exe	0x1010000	True	True	True	\WINDOWS\system32\xpsp2res.dll
+1608	spoolsv.exe	0x5b860000	True	True	True	\WINDOWS\system32\netapi32.dll
+1608	spoolsv.exe	0x5d090000	True	True	True	\WINDOWS\system32\comctl32.dll
+1608	spoolsv.exe	0x769c0000	True	True	True	\WINDOWS\system32\userenv.dll
+1608	spoolsv.exe	0x72400000	True	True	True	\WINDOWS\system32\tcpmon.dll
+1608	spoolsv.exe	0x71ab0000	True	True	True	\WINDOWS\system32\ws2_32.dll
+1608	spoolsv.exe	0x71aa0000	True	True	True	\WINDOWS\system32\ws2help.dll
+1608	spoolsv.exe	0x71a50000	True	True	True	\WINDOWS\system32\mswsock.dll
+1608	spoolsv.exe	0x723f0000	True	True	True	\WINDOWS\system32\usbmon.dll
+1608	spoolsv.exe	0x71c80000	True	True	True	\WINDOWS\system32\netrap.dll
+1608	spoolsv.exe	0x742e0000	True	True	True	\WINDOWS\system32\spoolss.dll
+1608	spoolsv.exe	0x73000000	True	True	True	\WINDOWS\system32\winspool.drv
+1608	spoolsv.exe	0x742a0000	True	True	True	\WINDOWS\system32\cnbjmon.dll
+1608	spoolsv.exe	0x74280000	True	True	True	\WINDOWS\system32\pjlmon.dll
+1608	spoolsv.exe	0x75bb0000	True	True	True	\WINDOWS\system32\localspl.dll
+1608	spoolsv.exe	0x74300000	True	True	True	\WINDOWS\system32\inetpp.dll
+1608	spoolsv.exe	0x75c10000	True	True	True	\WINDOWS\system32\win32spl.dll
+1608	spoolsv.exe	0x767a0000	True	True	True	\WINDOWS\system32\ntdsapi.dll
+1608	spoolsv.exe	0x76b40000	True	True	True	\WINDOWS\system32\winmm.dll
+1608	spoolsv.exe	0x774e0000	True	True	True	\WINDOWS\system32\ole32.dll
+1608	spoolsv.exe	0x77120000	True	True	True	\WINDOWS\system32\oleaut32.dll
+1608	spoolsv.exe	0x76f20000	True	True	True	\WINDOWS\system32\dnsapi.dll
+1608	spoolsv.exe	0x76c60000	True	True	True	\WINDOWS\system32\sfc_os.dll
+1608	spoolsv.exe	0x76c30000	True	True	True	\WINDOWS\system32\wintrust.dll
+1608	spoolsv.exe	0x76c90000	True	True	True	\WINDOWS\system32\imagehlp.dll
+1608	spoolsv.exe	0x76fc0000	True	True	True	\WINDOWS\system32\rasadhlp.dll
+1608	spoolsv.exe	0x76fb0000	True	True	True	\WINDOWS\system32\winrnr.dll
+1608	spoolsv.exe	0x76f60000	True	True	True	\WINDOWS\system32\wldap32.dll
+1608	spoolsv.exe	0x76fd0000	True	True	True	\WINDOWS\system32\clbcatq.dll
+1608	spoolsv.exe	0x77050000	True	True	True	\WINDOWS\system32\comres.dll
+1608	spoolsv.exe	0x773d0000	True	True	True	\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+1608	spoolsv.exe	0x77be0000	True	True	True	\WINDOWS\system32\msacm32.dll
+1608	spoolsv.exe	0x77a80000	True	True	True	\WINDOWS\system32\crypt32.dll
+1608	spoolsv.exe	0x77b20000	True	True	True	\WINDOWS\system32\msasn1.dll
+1608	spoolsv.exe	0x77c00000	True	True	True	\WINDOWS\system32\version.dll
+1608	spoolsv.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+1608	spoolsv.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+1608	spoolsv.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+1608	spoolsv.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+1608	spoolsv.exe	0x77f60000	True	True	True	\WINDOWS\system32\shlwapi.dll
+1608	spoolsv.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+1608	spoolsv.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+1608	spoolsv.exe	0x7c9c0000	True	True	True	\WINDOWS\system32\shell32.dll
+480	wscntfy.exe	0x1000000	True	False	True	\WINDOWS\system32\wscntfy.exe
+480	wscntfy.exe	0x7c0000	True	True	True	\WINDOWS\system32\xpsp2res.dll
+480	wscntfy.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+480	wscntfy.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+480	wscntfy.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+480	wscntfy.exe	0x773d0000	True	True	True	\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+480	wscntfy.exe	0x5ad70000	True	True	True	\WINDOWS\system32\uxtheme.dll
+480	wscntfy.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+480	wscntfy.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+480	wscntfy.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+480	wscntfy.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+480	wscntfy.exe	0x77f60000	True	True	True	\WINDOWS\system32\shlwapi.dll
+480	wscntfy.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+480	wscntfy.exe	0x7c9c0000	True	True	True	\WINDOWS\system32\shell32.dll
+540	alg.exe	0x1000000	True	False	True	\WINDOWS\system32\alg.exe
+540	alg.exe	0x680000	True	True	True	\WINDOWS\system32\xpsp2res.dll
+540	alg.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+540	alg.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+540	alg.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+540	alg.exe	0x76b20000	True	True	True	\WINDOWS\system32\atl.dll
+540	alg.exe	0x71ad0000	True	True	True	\WINDOWS\system32\wsock32.dll
+540	alg.exe	0x71ab0000	True	True	True	\WINDOWS\system32\ws2_32.dll
+540	alg.exe	0x71aa0000	True	True	True	\WINDOWS\system32\ws2help.dll
+540	alg.exe	0x71a50000	True	True	True	\WINDOWS\system32\mswsock.dll
+540	alg.exe	0x5cb70000	True	True	True	\WINDOWS\system32\shimeng.dll
+540	alg.exe	0x5ad70000	True	True	True	\WINDOWS\system32\uxtheme.dll
+540	alg.exe	0x6f880000	True	True	True	\WINDOWS\AppPatch\AcGenral.dll
+540	alg.exe	0x5d090000	True	True	True	\WINDOWS\system32\comctl32.dll
+540	alg.exe	0x662b0000	True	True	True	\WINDOWS\system32\hnetcfg.dll
+540	alg.exe	0x71a90000	True	True	True	\WINDOWS\system32\wshtcpip.dll
+540	alg.exe	0x769c0000	True	True	True	\WINDOWS\system32\userenv.dll
+540	alg.exe	0x774e0000	True	True	True	\WINDOWS\system32\ole32.dll
+540	alg.exe	0x77120000	True	True	True	\WINDOWS\system32\oleaut32.dll
+540	alg.exe	0x76b40000	True	True	True	\WINDOWS\system32\winmm.dll
+540	alg.exe	0x76fd0000	True	True	True	\WINDOWS\system32\clbcatq.dll
+540	alg.exe	0x77050000	True	True	True	\WINDOWS\system32\comres.dll
+540	alg.exe	0x773d0000	True	True	True	\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+540	alg.exe	0x77be0000	True	True	True	\WINDOWS\system32\msacm32.dll
+540	alg.exe	0x77c00000	True	True	True	\WINDOWS\system32\version.dll
+540	alg.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+540	alg.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+540	alg.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+540	alg.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+540	alg.exe	0x77f60000	True	True	True	\WINDOWS\system32\shlwapi.dll
+540	alg.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+540	alg.exe	0x7c9c0000	True	True	True	\WINDOWS\system32\shell32.dll
+376	VBoxTray.exe	0x400000	True	False	True	\WINDOWS\system32\VBoxTray.exe
+376	VBoxTray.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+376	VBoxTray.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+376	VBoxTray.exe	0x774e0000	True	True	True	\WINDOWS\system32\ole32.dll
+376	VBoxTray.exe	0x5d090000	True	True	True	\WINDOWS\system32\comctl32.dll
+376	VBoxTray.exe	0x10000000	True	True	True	\WINDOWS\system32\VBoxHook.dll
+376	VBoxTray.exe	0x1420000	True	True	True	\WINDOWS\system32\xpsp2res.dll
+376	VBoxTray.exe	0x5ad70000	True	True	True	\WINDOWS\system32\uxtheme.dll
+376	VBoxTray.exe	0x5b860000	True	True	True	\WINDOWS\system32\netapi32.dll
+376	VBoxTray.exe	0x773d0000	True	True	True	\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\comctl32.dll
+376	VBoxTray.exe	0x71ab0000	True	True	True	\WINDOWS\system32\ws2_32.dll
+376	VBoxTray.exe	0x71aa0000	True	True	True	\WINDOWS\system32\ws2help.dll
+376	VBoxTray.exe	0x76f50000	True	True	True	\WINDOWS\system32\wtsapi32.dll
+376	VBoxTray.exe	0x76360000	True	True	True	\WINDOWS\system32\winsta.dll
+376	VBoxTray.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+376	VBoxTray.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+376	VBoxTray.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+376	VBoxTray.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+376	VBoxTray.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+376	VBoxTray.exe	0x77f60000	True	True	True	\WINDOWS\system32\shlwapi.dll
+376	VBoxTray.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+376	VBoxTray.exe	0x7c9c0000	True	True	True	\WINDOWS\system32\shell32.dll
+636	msmsgs.exe	0x1000000	True	False	True	\Program Files\Messenger\msmsgs.exe
+636	msmsgs.exe	0x10000000	True	True	True	\WINDOWS\system32\xpob2res.dll
+636	msmsgs.exe	0x77120000	True	True	True	\WINDOWS\system32\oleaut32.dll
+636	msmsgs.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+636	msmsgs.exe	0x7e720000	True	True	True	\WINDOWS\system32\sxs.dll
+276	DumpIt.exe	0x400000	True	False	True	\Documents and Settings\CyberDefenders\Desktop\dumpit-moonsols\DumpIt.exe
+276	DumpIt.exe	0x7c900000	True	True	True	\WINDOWS\system32\ntdll.dll
+276	DumpIt.exe	0x7c800000	True	True	True	\WINDOWS\system32\kernel32.dll
+276	DumpIt.exe	0x77dd0000	True	True	True	\WINDOWS\system32\advapi32.dll
+276	DumpIt.exe	0x77c10000	True	True	True	\WINDOWS\system32\msvcrt.dll
+276	DumpIt.exe	0x77e70000	True	True	True	\WINDOWS\system32\rpcrt4.dll
+276	DumpIt.exe	0x77fe0000	True	True	True	\WINDOWS\system32\secur32.dll
+276	DumpIt.exe	0x77f60000	True	True	True	\WINDOWS\system32\shlwapi.dll
+276	DumpIt.exe	0x77f10000	True	True	True	\WINDOWS\system32\gdi32.dll
+276	DumpIt.exe	0x7e410000	True	True	True	\WINDOWS\system32\user32.dll
+
+===== windows.reflective_load.ReflectiveLoad =====
+Volatility 3 Framework 2.28.2
+
+PID	Process	Created	Parent	Start VPN	End VPN	Also flagged by malfind	ATT&CK Technique	Reason
+
+880	svchost.exe	2023-02-13 17:54:16.000000 UTC	services.exe (660)	0x980000	0x988fff	True	T1620	Valid MZ/PE header; absent from InLoad/InInit/InMem; no backing file
+
+===== SUMMARY (custom reflective_load detector only) =====
+Volatility 3 Framework 2.28.2
+
+PID	Process	Created	Parent	Start VPN	End VPN	Also flagged by malfind	ATT&CK Technique	Reason
+
+880	svchost.exe	2023-02-13 17:54:16.000000 UTC	services.exe (660)	0x980000	0x988fff	True	T1620	Valid MZ/PE header; absent from InLoad/InInit/InMem; no backing file
