@@ -1,0 +1,3 @@
+TreeDepth,PID,Process,Created,Parent,Start VPN,End VPN,Also flagged by malfind,Protection,Private,VAD Tag,CommitCharge,PE ImageSize,PE Compile Time,PE Sections,PE Type,Exports,SHA-256,Entropy,Confidence,File output,ATT&CK Technique,Reason
+0,444,powershell.exe,2026-08-16 08:54:25.000000 UTC,explorer.exe (4728),0x223fe710000,0x223fe710fff,False,PAGE_READWRITE,No,Vad ,0,32768,2026-08-16 19:58:21 UTC,"3: .text, .rsrc, .reloc (0/3 resident)",DLL (x86),N/A,6313257a0ff5f52e67013bf9429f940f1b2c21bab29fb884abad665dedf9d3de,2.0686,30,Disabled,T1620,"MZ/PE not in any loader list, no backing file; ImageSize=0x8000 (12% resident); sections readable: 0/3; compiled 2026-08-16 19:58:21 UTC; 3 section(s); entropy=2.07"
+

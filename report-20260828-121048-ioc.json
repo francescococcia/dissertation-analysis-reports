@@ -1,0 +1,55 @@
+{
+  "report_type": "reflective_load_ioc",
+  "capture": "T1055-12-capture-20260828-115803.core",
+  "total_detections": 1,
+  "summary": {
+    "total": 1,
+    "network_hits": 0,
+    "high_confidence": 1,
+    "medium_confidence": 0,
+    "low_confidence": 0
+  },
+  "detections": [
+    {
+      "detection": {
+        "pid": 3724,
+        "process": "notepad.exe",
+        "parent": "process_hollow (2668)",
+        "created": "2026-08-28 10:57:02.000000 UTC",
+        "cmdline": "\"C:\\\\Windows\\\\System32\\\\notepad.exe\""
+      },
+      "memory_region": {
+        "start": "0x7ff727680000",
+        "end": "0x7ff7276c0fff",
+        "protection": "PAGE_EXECUTE_READWRITE",
+        "private": "Yes",
+        "vad_tag": "VadS"
+      },
+      "pe_analysis": {
+        "type": "EXE (x64)",
+        "image_size": "266240",
+        "compile_time": "2026-08-27 18:52:19 UTC",
+        "sections": "18: .text, .data, .rdata, .pdata, .xdata, .bss, .idata, .tls, .reloc, /4, /19, /31, /45, /57, /70, /81, /97, /113 (17/18 resident)",
+        "exports": "N/A"
+      },
+      "indicators": {
+        "sha256": "de43d65903c52a642d0aa1ca729a98071121b488b9c5080351b0227dfabd394e",
+        "entropy": "5.3543",
+        "confidence": 75,
+        "confidence_level": "HIGH",
+        "malfind_corroboration": "True"
+      },
+      "network_connections": [],
+      "strings_of_interest": {
+        "apis": [],
+        "urls": [],
+        "ips": []
+      },
+      "mitre_attack": {
+        "technique_id": "T1620",
+        "technique_name": "Reflective Code Loading",
+        "tactic": "Defense Evasion"
+      }
+    }
+  ]
+}

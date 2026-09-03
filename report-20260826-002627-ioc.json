@@ -1,0 +1,55 @@
+{
+  "report_type": "reflective_load_ioc",
+  "capture": "blackenergy.raw",
+  "total_detections": 1,
+  "summary": {
+    "total": 1,
+    "network_hits": 0,
+    "high_confidence": 1,
+    "medium_confidence": 0,
+    "low_confidence": 0
+  },
+  "detections": [
+    {
+      "detection": {
+        "pid": 880,
+        "process": "svchost.exe",
+        "parent": "services.exe (660)",
+        "created": "2023-02-13 17:54:16.000000 UTC",
+        "cmdline": "C:\\\\WINDOWS\\\\system32\\\\svchost -k DcomLaunch"
+      },
+      "memory_region": {
+        "start": "0x980000",
+        "end": "0x988fff",
+        "protection": "PAGE_EXECUTE_READWRITE",
+        "private": "Yes",
+        "vad_tag": "VadS"
+      },
+      "pe_analysis": {
+        "type": "DLL (x86)",
+        "image_size": "33017",
+        "compile_time": "2008-08-12 16:42:46 UTC",
+        "sections": "5: .text, .rdata, .data, .reloc, .bdata (5/5 resident)",
+        "exports": "ConfAllocGetTextByNameA, ConfAllocGetTextByNameW, ConfGetListNodeByName, ConfGetNodeByName, ConfGetNodeTextA, ConfGetNodeTextW, ConfGetPlgNode, ConfGetRootNode, DownloadFile, PlgSendEvent ... (+4 more)"
+      },
+      "indicators": {
+        "sha256": "8638ab1e5f9ba4cffc66400d36d47f7805733fae828a0cace9421d0bd83eaefa",
+        "entropy": "3.9001",
+        "confidence": 80,
+        "confidence_level": "HIGH",
+        "malfind_corroboration": "True"
+      },
+      "network_connections": [],
+      "strings_of_interest": {
+        "apis": [],
+        "urls": [],
+        "ips": []
+      },
+      "mitre_attack": {
+        "technique_id": "T1620",
+        "technique_name": "Reflective Code Loading",
+        "tactic": "Defense Evasion"
+      }
+    }
+  ]
+}
