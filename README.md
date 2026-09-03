@@ -24,23 +24,26 @@ Each analysis run produces a timestamped set (`report-YYYYMMDD-HHMMSS.*`):
 
 ## Coverage
 
-49 runs, **2026-08-09 – 2026-08-29**, against these captures:
+56 runs, **2026-08-09 – 2026-09-03**, against these captures:
 
 | Capture | Runs | Technique / purpose |
 |---------|-----:|---------------------|
 | `T1620-poc-capture.core` | 14 | Reflective load PoC |
 | `T1620-4-exclusion-free.core` | 10 | Reflective load, exclusions disabled |
 | `FP-check-expanded.core` / `FP-check-capture.core` | 7 | False-positive baseline |
+| `T1055-12-*.core` / `Dll-inject-*.core` | 7 | Process hollowing / DLL injection |
 | `blackenergy.raw` / `Challenge.raw` | 5 | Public reference samples |
 | `T1620-native-rw-*.core` / `T1620-native-rwx-*.core` | 5 | Native RW vs RWX allocation variants |
-| `T1055-12-*.core` / `Dll-inject-*.core` | 3 | Process hollowing / DLL injection |
+| `T1218.010-1-run2-capture.core` | 3 | Regsvr32 proxy execution |
+| `FP-win10-*.core` | 2 | False-positive baseline (Windows **Server 2022**; filename is misleading) |
 | `T1546-003-1-run2-capture.core` | 2 | WMI event subscription |
-| `T1218.010-1-run2-capture.core` | 2 | Regsvr32 proxy execution |
 | `T1620-3-capture.core` | 1 | Reflective load variant |
 
 Runs from `20260824-233039` onward carry a `Plugin:`/`Framework:` header line in
 the `.txt` (ReflectiveLoad v1.3.0, then v1.4.0 from `20260825-175831`); earlier
-runs record the framework version only, inside each plugin section.
+runs record the framework version only, inside each plugin section. The
+`20260903` runs are the specificity result (0 false positives on the `FP-win10`
+Server 2022 baseline) and its re-run.
 
 ## Notes
 

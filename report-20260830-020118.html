@@ -1,0 +1,401 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>windows.reflective_load.ReflectiveLoad</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #f4f5f7; --surface: #ffffff; --surface-inset: #f0f1f4;
+    --border: #d4d8e0; --border-subtle: #e8eaef;
+    --text: #1a1d24; --text-secondary: #3d4451; --text-tertiary: #596069;
+    --accent: #1b5eb5; --accent-bg: #edf2fb; --accent-text: #14487a;
+    --detected: #b45309; --detected-bg: #fef3e2;
+    --positive: #15803d; --positive-bg: #ecfdf5;
+    --negative-text: #4b5563; --negative-bg: #f3f4f6;
+    --conf-high: #dc2626; --conf-high-bg: #fef2f2;
+    --conf-med: #b45309; --conf-med-bg: #fef3e2;
+    --conf-low: #6b7280; --conf-low-bg: #f3f4f6;
+    --mono-bg: #eef0f4; --tag-bg: #e8eaef; --tag-text: #2d3339;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --entropy-track: #e2e4e9; --entropy-fill: #1b5eb5;
+    --reason-bg: #fafbfc; --reason-border: #d4d8e0;
+    --font-ui: "Barlow", -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", "Consolas", "Menlo", monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { 
+    --bg: #0d1117; --surface: #161b22; --surface-inset: #1c2128;
+    --border: #2d333b; --border-subtle: #21262d;
+    --text: #e6edf3; --text-secondary: #adbac7; --text-tertiary: #848d97;
+    --accent: #4493f8; --accent-bg: #121d2f; --accent-text: #79b8ff;
+    --detected: #e09645; --detected-bg: #2a1d11;
+    --positive: #3fb950; --positive-bg: #0d2818;
+    --negative-text: #848d97; --negative-bg: #1c2128;
+    --conf-high: #f87171; --conf-high-bg: #2d1515;
+    --conf-med: #e09645; --conf-med-bg: #2a1d11;
+    --conf-low: #848d97; --conf-low-bg: #1c2128;
+    --mono-bg: #1c2128; --tag-bg: #21262d; --tag-text: #c9d1d9;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    --entropy-track: #21262d; --entropy-fill: #4493f8;
+    --reason-bg: #1c2128; --reason-border: #2d333b;
+ }
+  }
+  :root[data-theme="dark"] { 
+    --bg: #0d1117; --surface: #161b22; --surface-inset: #1c2128;
+    --border: #2d333b; --border-subtle: #21262d;
+    --text: #e6edf3; --text-secondary: #adbac7; --text-tertiary: #848d97;
+    --accent: #4493f8; --accent-bg: #121d2f; --accent-text: #79b8ff;
+    --detected: #e09645; --detected-bg: #2a1d11;
+    --positive: #3fb950; --positive-bg: #0d2818;
+    --negative-text: #848d97; --negative-bg: #1c2128;
+    --conf-high: #f87171; --conf-high-bg: #2d1515;
+    --conf-med: #e09645; --conf-med-bg: #2a1d11;
+    --conf-low: #848d97; --conf-low-bg: #1c2128;
+    --mono-bg: #1c2128; --tag-bg: #21262d; --tag-text: #c9d1d9;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    --entropy-track: #21262d; --entropy-fill: #4493f8;
+    --reason-bg: #1c2128; --reason-border: #2d333b;
+ }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: var(--font-ui); font-size: 14px; line-height: 1.5;
+    padding: 2rem; max-width: 820px; margin: 0 auto;
+  }
+
+  /* Report header */
+  .report-header { margin-bottom: 2rem; }
+  .report-title { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.25rem; }
+  .report-subtitle { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1.25rem; }
+  .report-meta {
+    display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem;
+    font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;
+  }
+  .report-meta dt {
+    font-weight: 600; color: var(--text-tertiary);
+    text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.68rem;
+  }
+  .report-meta dd { font-family: var(--font-mono); font-size: 0.75rem; }
+
+  /* Stat cards */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 0.5rem; }
+  .stat {
+    background: var(--surface); border: 1px solid var(--border-subtle);
+    border-radius: 8px; padding: 0.875rem 1rem; box-shadow: var(--card-shadow);
+  }
+  .stat-value { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.2; }
+  .stat-label { font-size: 0.72rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.15rem; }
+  .stat--alert .stat-value { color: var(--detected); }
+  .stat--neutral .stat-value { color: var(--text-secondary); }
+
+  /* Detection card */
+  .detection {
+    background: var(--surface); border: 1px solid var(--border-subtle);
+    border-radius: 10px; box-shadow: var(--card-shadow); margin-top: 1.5rem; overflow: hidden;
+  }
+  .detection-header {
+    padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border-subtle);
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+  }
+  .detection-id { font-size: 0.7rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+  .detection-process { font-size: 1.1rem; font-weight: 700; font-family: var(--font-mono); }
+  .detection-process .pid { font-weight: 500; color: var(--text-secondary); font-size: 0.85rem; margin-left: 0.35rem; }
+  .detection-parent { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem; }
+  .detection-parent span { font-family: var(--font-mono); font-size: 0.78rem; }
+  .detection-created { font-size: 0.75rem; color: var(--text-tertiary); font-family: var(--font-mono); margin-top: 0.15rem; }
+  .detection-badges { display: flex; flex-direction: column; align-items: flex-end; gap: 0.4rem; flex-shrink: 0; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    padding: 0.25rem 0.6rem; border-radius: 5px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap;
+  }
+  .badge--technique { background: var(--detected-bg); color: var(--detected); border: 1px solid color-mix(in srgb, var(--detected) 25%, transparent); }
+  .badge--malfind-yes { background: var(--positive-bg); color: var(--positive); border: 1px solid color-mix(in srgb, var(--positive) 20%, transparent); }
+  .badge--malfind-no { background: var(--negative-bg); color: var(--negative-text); border: 1px solid var(--border-subtle); }
+  .badge--conf-high { background: var(--conf-high-bg); color: var(--conf-high); border: 1px solid color-mix(in srgb, var(--conf-high) 25%, transparent); }
+  .badge--conf-med { background: var(--conf-med-bg); color: var(--conf-med); border: 1px solid color-mix(in srgb, var(--conf-med) 25%, transparent); }
+  .badge--conf-low { background: var(--conf-low-bg); color: var(--conf-low); border: 1px solid var(--border-subtle); }
+  .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+  /* Card sections + fields */
+  .card-section { padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-subtle); }
+  .card-section:last-child { border-bottom: none; }
+  .section-label { font-size: 0.65rem; font-weight: 700; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 2rem; }
+  @media (max-width: 580px) { .fields { grid-template-columns: 1fr; } }
+  .field-label { font-size: 0.7rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.1rem; }
+  .field-value { font-family: var(--font-mono); font-size: 0.82rem; word-break: break-word; }
+  .field--full { grid-column: 1 / -1; }
+
+  /* Tags */
+  .tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.25rem; }
+  .tag {
+    display: inline-block; background: var(--tag-bg); color: var(--tag-text);
+    font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500;
+    padding: 0.15rem 0.45rem; border-radius: 4px; white-space: nowrap;
+  }
+  .tag--export { background: var(--accent-bg); color: var(--accent-text); }
+  .tag--dim { opacity: 0.45; }
+
+  /* Hash + entropy */
+  .hash-block {
+    background: var(--mono-bg); border-radius: 5px; padding: 0.5rem 0.75rem;
+    font-family: var(--font-mono); font-size: 0.78rem;
+    word-break: break-all; line-height: 1.6; margin-top: 0.25rem; color: var(--text);
+  }
+  .entropy-row { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.5rem; }
+  .entropy-bar { flex: 0 0 auto; width: 200px; height: 6px; background: var(--entropy-track); border-radius: 3px; overflow: hidden; }
+  .entropy-fill { height: 100%; background: var(--entropy-fill); border-radius: 3px; }
+  .entropy-value { font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500; white-space: nowrap; }
+  .entropy-label { font-size: 0.72rem; color: var(--text-secondary); font-style: italic; }
+
+  /* Reason block */
+  .reason {
+    background: var(--reason-bg); border-left: 3px solid var(--accent);
+    border-radius: 0 5px 5px 0; padding: 0.75rem 1rem;
+    font-size: 0.82rem; line-height: 1.65; color: var(--text-secondary); margin-top: 0.25rem;
+  }
+
+  /* Corroboration */
+  .corroboration {
+    display: flex; align-items: flex-start; gap: 0.6rem;
+    padding: 0.65rem 0.85rem; border-radius: 6px; font-size: 0.78rem; line-height: 1.5; margin-top: 0.5rem;
+  }
+  .corroboration--yes { background: var(--positive-bg); color: var(--positive); }
+  .corroboration--no { background: var(--negative-bg); color: var(--negative-text); }
+  .corroboration-icon { font-size: 0.85rem; flex-shrink: 0; margin-top: 0.05rem; }
+  .corroboration-text strong { font-weight: 600; }
+  .corroboration-detail { font-size: 0.72rem; opacity: 0.85; margin-top: 0.1rem; }
+
+  /* Residency indicator */
+  .residency { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; color: var(--text-secondary); margin-left: 0.25rem; }
+  .residency-bar { width: 40px; height: 4px; background: var(--entropy-track); border-radius: 2px; overflow: hidden; display: inline-block; vertical-align: middle; }
+  .residency-fill { height: 100%; background: var(--positive); border-radius: 2px; }
+
+  /* Empty state */
+  .empty-state {
+    background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 10px;
+    box-shadow: var(--card-shadow); margin-top: 1.5rem; padding: 2.5rem 2rem; text-align: center;
+  }
+  .empty-state h2 { font-size: 1rem; font-weight: 600; color: var(--positive); margin-bottom: 0.5rem; }
+  .empty-state p { font-size: 0.82rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto; line-height: 1.6; }
+  .empty-state .criteria {
+    text-align: left; max-width: 400px; margin: 0.75rem auto 0;
+    font-size: 0.78rem; color: var(--text-secondary); line-height: 1.7; list-style: none; padding: 0;
+  }
+  .empty-state .criteria li::before { content: "\2014\0020"; color: var(--text-tertiary); }
+
+  /* Executive summary */
+  .exec-summary {
+    background: var(--surface); border: 1px solid var(--border-subtle);
+    border-radius: 10px; box-shadow: var(--card-shadow);
+    margin-top: 1.25rem; margin-bottom: 0.5rem; overflow: hidden;
+  }
+  .exec-summary-header {
+    padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-subtle);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .exec-summary-title {
+    font-size: 0.7rem; font-weight: 700; color: var(--text-tertiary);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .exec-summary-audience {
+    font-size: 0.68rem; color: var(--text-tertiary); font-style: italic;
+  }
+  .exec-summary-body { padding: 1.25rem 1.5rem; }
+  .exec-summary-body h3 {
+    font-size: 0.78rem; font-weight: 700; color: var(--text);
+    margin: 1.25rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .exec-summary-body h3:first-child { margin-top: 0; }
+  .exec-summary-body p {
+    font-size: 0.88rem; color: var(--text); line-height: 1.7; margin: 0;
+  }
+  .exec-summary-body ul {
+    margin: 0.4rem 0 0 1.25rem; padding: 0;
+    font-size: 0.85rem; color: var(--text); line-height: 1.8;
+  }
+  .exec-summary-body li { margin-bottom: 0.15rem; }
+  .exec-risk {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.3rem 0.75rem; border-radius: 6px;
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.02em;
+  }
+  .exec-risk--high { background: var(--conf-high-bg); color: var(--conf-high); }
+  .exec-risk--medium { background: var(--conf-med-bg); color: var(--conf-med); }
+  .exec-risk--low { background: var(--conf-low-bg); color: var(--conf-low); }
+  .exec-risk--none { background: var(--positive-bg); color: var(--positive); }
+  .exec-finding {
+    background: var(--surface-inset); border-radius: 6px;
+    padding: 0.6rem 0.85rem; margin: 0.4rem 0;
+    font-size: 0.82rem; line-height: 1.6; color: var(--text);
+  }
+  .exec-finding strong { font-weight: 600; }
+  .exec-finding .exec-finding-conf {
+    font-size: 0.72rem; font-weight: 600; margin-left: 0.35rem;
+  }
+
+  /* Footer */
+  .report-footer {
+    margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);
+    font-size: 0.7rem; color: var(--text-tertiary);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+
+  @media print {
+    body { padding: 1cm; max-width: none; }
+    .detection, .stat, .exec-summary { box-shadow: none; border-color: #ccc; }
+  }
+</style>
+</head>
+<body>
+<header class="report-header">
+  <h1 class="report-title">windows.reflective_load.ReflectiveLoad</h1>
+  <p class="report-subtitle">Memory forensics analysis</p>
+  <dl class="report-meta"><div>&lt;div&gt;&lt;dt&gt;Capture&lt;/dt&gt;&lt;dd&gt;T1055-12-capture-20260828-115803.core&lt;/dd&gt;&lt;/div&gt;</div><div>&lt;div&gt;&lt;dt&gt;Analysed&lt;/dt&gt;&lt;dd&gt;2026-08-30 02:06&lt;/dd&gt;&lt;/div&gt;</div></dl>
+  <div class="stats"><div class="stat stat--neutral"><div class="stat-value">106</div><div class="stat-label">Processes examined</div></div><div class="stat stat--alert"><div class="stat-value">1</div><div class="stat-label">detection</div></div><div class="stat stat--neutral"><div class="stat-value">5m 8s</div><div class="stat-label">Duration</div></div><div class="stat stat--neutral"><div class="stat-value">v1.4.0</div><div class="stat-label">Plugin</div></div></div>
+</header>
+<main>
+<section class="exec-summary">
+  <div class="exec-summary-header">
+    <span class="exec-summary-title">Executive Summary</span>
+    <span class="exec-summary-audience">For management and non-technical stakeholders</span>
+  </div>
+  <div class="exec-summary-body">
+    <h3>What was found</h3>
+    <p>1 hidden program was detected running inside this system's memory across 106 processes,
+    loaded using a technique that bypasses normal Windows security monitoring.</p>
+
+    <h3>Risk level</h3>
+    <p><span class="exec-risk exec-risk--high">HIGH RISK</span></p>
+
+    <h3>Findings</h3>
+    <div class="exec-finding"><strong>notepad.exe</strong> (Process ID 3724): a hidden executable program was found loaded into memory without registering with the operating system. It has no file on disk and is invisible to standard security tools. A second, independent detection method also flagged this region.<span class="exec-finding-conf" style="color:var(--conf-high);">75/100 HIGH</span></div>
+
+    <h3>What this means</h3>
+    <p>This technique (MITRE ATT&amp;CK T1620 &mdash; Reflective Code Loading) is used by
+    advanced malware to operate entirely in memory, avoiding antivirus, endpoint detection,
+    and file-based forensic tools. The hidden code is not registered with the Windows loader,
+    making it invisible to standard system monitoring. Only memory forensics can detect it.</p>
+
+    <h3>Recommended actions</h3>
+    <ul>
+      <li>Isolate the affected machine from the network</li>
+      <li>Preserve this memory capture &mdash; it is the primary forensic evidence</li>
+      <li>Escalate to the incident response team for further investigation</li>
+      <li>Search the SHA-256 hash(es) in threat intelligence platforms (VirusTotal, MISP)</li>
+      <li>Investigate how the affected process was started (parent process, command line)</li>
+      <li>Scan other machines in the environment for the same indicator</li>
+    </ul>
+  </div>
+</section>
+<article class="detection">
+  <div class="detection-header">
+    <div>
+      <div class="detection-id">Detection 1 of 1</div>
+      <div class="detection-process">notepad.exe<span class="pid">PID 3724</span></div>
+      <div class="detection-parent">Parent: <span>process_hollow (2668)</span></div>
+      <div class="detection-created">2026-08-28 10:57:02.000000 UTC</div>
+    </div>
+    <div class="detection-badges">
+      <span class="badge badge--technique"><span class="badge-dot"></span>T1620</span>
+      <span class="badge badge--conf-high"><span class="badge-dot"></span>75/100 High</span>
+      <span class="badge badge--malfind-yes"><span class="badge-dot"></span>Also flagged by malfind</span>
+    </div>
+  </div>
+
+  <div class="card-section">
+    <div class="section-label">Memory Region</div>
+    <div class="fields">
+      <div class="field field--full">
+        <div class="field-label">Address range</div>
+        <div class="field-value">0x7ff727680000 – 0x7ff7276c0fff</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Protection</div>
+        <div class="field-value">PAGE_EXECUTE_READWRITE</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Private memory</div>
+        <div class="field-value">Yes</div>
+      </div>
+      <div class="field">
+        <div class="field-label">VAD Tag</div>
+        <div class="field-value">VadS <span style="font-family:var(--font-ui);font-size:0.72rem;color:var(--text-tertiary);">(short, private)</span></div>
+      </div>
+      <div class="field">
+        <div class="field-label">Commit Charge</div>
+        <div class="field-value">65 pages</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-section">
+    <div class="section-label">PE Analysis</div>
+    <div class="fields">
+      <div class="field">
+        <div class="field-label">Image Size</div>
+        <div class="field-value">266,240 bytes (0x41000)</div>
+        <div class="residency"><span class="residency-bar"><span class="residency-fill" style="width:100%"></span></span>100% resident</div>
+      </div>
+      <div class="field">
+        <div class="field-label">PE Type</div>
+        <div class="field-value">EXE (x64)</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Compile Time</div>
+        <div class="field-value">2026-08-27 18:52:19 UTC</div>
+      </div>
+      <div class="field field--full">
+        <div class="field-label">Sections <span style="font-weight:400;text-transform:none;letter-spacing:0;">— 17 of 18 resident</span></div>
+        <div class="tags"><span class="tag">.text</span>
+<span class="tag">.data</span>
+<span class="tag">.rdata</span>
+<span class="tag">.pdata</span>
+<span class="tag">.xdata</span>
+<span class="tag">.bss</span>
+<span class="tag">.idata</span>
+<span class="tag">.tls</span>
+<span class="tag">.reloc</span>
+<span class="tag">/4</span>
+<span class="tag">/19</span>
+<span class="tag">/31</span>
+<span class="tag">/45</span>
+<span class="tag">/57</span>
+<span class="tag">/70</span>
+<span class="tag">/81</span>
+<span class="tag">/97</span>
+<span class="tag tag--dim">/113</span></div>
+      </div>
+      <div class="field field--full">
+        <div class="field-label">Exports</div>
+        <div class="tags"><span style="font-family:var(--font-mono);font-size:0.82rem;">N/A</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-section">
+    <div class="section-label">Forensic Indicators</div>
+    <div class="field" style="margin-bottom:0.75rem;">
+      <div class="field-label">SHA-256</div>
+      <div class="hash-block">de43d65903c52a642d0aa1ca729a98071121b488b9c5080351b0227dfabd394e</div>
+    </div>
+    <div class="field" style="margin-bottom:0.75rem;"><div class="field-label">Shannon Entropy</div><div class="entropy-row"><div class="entropy-bar"><div class="entropy-fill" style="width:66.9%;"></div></div><span class="entropy-value">5.35 / 8.0</span><span class="entropy-label">Moderate</span></div></div>
+    <div class="corroboration corroboration--yes"><span class="corroboration-icon">&#10003;</span><div><div class="corroboration-text"><strong>Corroborated by malfind</strong></div><div class="corroboration-detail">This region’s PAGE_EXECUTE_READWRITE protection independently triggers malfind’s heuristic, providing a second detection signal.</div></div></div>
+    
+  </div>
+
+  <div class="card-section">
+    <div class="section-label">Detection Reason</div>
+    <div class="reason">MZ/PE not in any loader list, no backing file; ImageSize=0x41000 (100% resident); sections readable: 17/18; compiled 2026-08-27 18:52:19 UTC; 18 section(s); entropy=5.35</div>
+  </div>
+</article>
+</main>
+<footer class="report-footer">
+  <span>Coccia, F. (2026)</span>
+  <span>windows.reflective_load.ReflectiveLoad v1.4.0</span>
+</footer>
+</body>
+</html>

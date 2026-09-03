@@ -1,0 +1,56 @@
+{
+  "report_type": "reflective_load_ioc",
+  "capture": "T1218.010-1-run2-capture.core",
+  "total_detections": 1,
+  "summary": {
+    "total": 1,
+    "network_hits": 0,
+    "high_confidence": 0,
+    "medium_confidence": 0,
+    "low_confidence": 1
+  },
+  "detections": [
+    {
+      "detection": {
+        "pid": 3120,
+        "process": "powershell.exe",
+        "parent": "explorer.exe (4364)",
+        "created": "2026-08-15 13:19:06.000000 UTC",
+        "cmdline": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\""
+      },
+      "memory_region": {
+        "start": "0x231f0130000",
+        "end": "0x231f0130fff",
+        "protection": "PAGE_READWRITE",
+        "private": "No",
+        "vad_tag": "Vad"
+      },
+      "pe_analysis": {
+        "type": "DLL (x86)",
+        "image_size": "32768",
+        "compile_time": "2026-08-15 13:24:20 UTC",
+        "sections": "3: .text, .rsrc, .reloc (0/3 resident)",
+        "exports": "N/A"
+      },
+      "indicators": {
+        "sha256": "40fcacd0de827d3b9da7bb43f3773e7291ed866cdbc32dadc5b26059457a49c5",
+        "entropy": "2.0685",
+        "confidence": 30,
+        "confidence_level": "LOW",
+        "malfind_corroboration": "False"
+      },
+      "network_connections": [],
+      "strings_of_interest": {
+        "apis": [],
+        "urls": [],
+        "ips": []
+      },
+      "mitre_attack": {
+        "technique_id": "T1620",
+        "technique_name": "Reflective Code Loading",
+        "tactic": "Stealth",
+        "tactic_id": "TA0005"
+      }
+    }
+  ]
+}
