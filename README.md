@@ -51,6 +51,10 @@ Server 2022 baseline) and its re-run.
   so a result can always be traced to the code that produced it.
 - Memory captures themselves (`.core` / `.raw` / `.dmp`) are **not** stored here —
   they are large and kept outside version control.
+- `malfind-FP-check-expanded-20260904.txt` is a standalone `windows.malfind` dump
+  of the benign Server 2022 baseline — the reproducible source for the "22 false
+  positives vs. 0" specificity evidence (malfind alone flags 22 benign JIT/AV regions;
+  the combined `reflective_load` gate flags 0).
 - Runs are generated wherever `analyze_capture.sh` is invoked (the framework's
   default `REPORT_DIR`, or the Volatility 3 working directory) and archived into
   this repo afterwards.
